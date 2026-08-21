@@ -1,0 +1,22 @@
+{
+  "targets": [
+    {
+      "name": "current-settings",
+      "host": "192.168.1.97",
+      "port": 5432,
+      "database": "theophysics",
+      "user": "postgres",
+      "password": "Moss9pep28$"
+    }
+  ],
+  "mappings": [
+    {
+      "label": "V5",
+      "folder": "O:/_Theophysics_v5",
+      "target": "current-settings",
+      "schema": "public",
+      "table_prefix": "_theophysics_v5_",
+      "last_run": ""
+    }
+  ]
+}

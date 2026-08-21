@@ -1,0 +1,50 @@
+﻿:root {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+}
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  color: #fff;
+}
+
+section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 0.6rem;
+  padding: 0.55rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: #fff;
+  cursor: pointer;
+}
+
+#out {
+  background: #0b1220;
+  padding: 0.9rem;
+  border-radius: 8px;
+  min-height: 180px;
+  overflow: auto;
+}

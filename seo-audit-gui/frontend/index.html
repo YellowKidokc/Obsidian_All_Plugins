@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SEO Audit Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>SEO Audit Dashboard</h1>
+      <p>Draft workflow for page-by-page and batch SEO checks.</p>
+
+      <section>
+        <h2>Single Page Audit</h2>
+        <textarea id="payload" rows="14" placeholder="Paste a JSON payload here"></textarea>
+        <button id="runSingle">Run single audit</button>
+      </section>
+
+      <section>
+        <h2>Batch Audit</h2>
+        <textarea id="batchPayload" rows="14" placeholder='[{"pagePath":"...","series":"...","pageTitle":"..."}]'></textarea>
+        <button id="runBatch">Run batch audit</button>
+      </section>
+
+      <section>
+        <h2>Response</h2>
+        <pre id="out">No output yet.</pre>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
