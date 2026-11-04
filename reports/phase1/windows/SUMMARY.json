@@ -1,0 +1,48 @@
+{
+  "tool": "tools/inventory/inventory.py",
+  "version": "0.1.0",
+  "generated_utc": "2026-11-04T00:24:07+00:00",
+  "roots": {
+    "standalone_gui": "D:\\GitHub\\Codex-Powershell_GUI",
+    "engine": "C:\\Users\\David\\Documents\\faiththruphysics.com\\00_SYSTEM\\01_SYSTEM_OS\\00_VAULT\\02_CONTROL\\01_ENGINE"
+  },
+  "files": 2094,
+  "bytes": 333062409,
+  "scripts_by_language": {
+    "batch": 142,
+    "javascript": 4,
+    "powershell": 173,
+    "python": 677,
+    "shell": 2
+  },
+  "exact_duplicate_groups": 353,
+  "stale_path_hits": 37187,
+  "stale_path_files": 519,
+  "scripts_that_delete": 69,
+  "scripts_that_move_rename": 58,
+  "possible_secret_literals": [
+    "01_ENGINE/CDCM_SETUP.txt",
+    "01_ENGINE/config.txt",
+    "02_OPENAI/CALL/config.txt",
+    "02_OPENAI/CKG/config.txt",
+    "02_OPENAI/DECOMPRESS/config.txt",
+    "02_OPENAI/DOMAIN/config.txt",
+    "02_OPENAI/PAPER-REVIEW/config.txt",
+    "02_OPENAI/VAULT-RATER/config.txt",
+    "02_OPENAI/VAULT-RATER/TSR100/config.txt",
+    "02_OPENAI/YAML-COPILOT/config.txt",
+    "09_OPERATOR/prompts/config.txt",
+    "80_OPENAI/CALL/config.txt",
+    "80_OPENAI/CKG/config.txt",
+    "80_OPENAI/DECOMPRESS/config.txt",
+    "80_OPENAI/DOMAIN/config.txt",
+    "80_OPENAI/PAPER-REVIEW/config.txt",
+    "80_OPENAI/VAULT-RATER/config.txt",
+    "80_OPENAI/VAULT-RATER/TSR100/config.txt",
+    "80_OPENAI/YAML-COPILOT/config.txt",
+    "81_OPENAI_BLANK/CALL/config.txt",
+    "85_VAULT_TOOLS/Scripts/send_templeton.py",
+    "Scripts/send_templeton.py"
+  ],
+  "scan_errors": 0
+}
