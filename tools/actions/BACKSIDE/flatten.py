@@ -101,11 +101,12 @@ def flatten(root: Path, apply: bool) -> int:
             removed.append(d.relative_to(root).as_posix())
         except OSError:
             kept.append(d.relative_to(root).as_posix())
+    undo_launcher = Path(__file__).resolve().parent.parent / "UNDO_FLATTEN.bat"
     receipt = {"tool": "flatten.py", "version": VERSION, "root": str(root), "timestamp": stamp,
                "files_moved": sum(m["status"] == "moved" for m in moves), "failures": failures,
                "renamed": renamed, "folders_removed": removed, "folders_kept_not_empty": kept,
                "manifest": manifest.name,
-               "recovery": f'python flatten.py --undo "{manifest}"'}
+               "recovery": f'"{undo_launcher}" "{manifest}"'}
     (mdir / f"flatten_{stamp}_receipt.json").write_text(json.dumps(receipt, indent=2), encoding="utf-8")
     print(f"\nMoved {receipt['files_moved']} files, {failures} failures. "
           f"Removed {len(removed)} empty folders, kept {len(kept)} non-empty.")

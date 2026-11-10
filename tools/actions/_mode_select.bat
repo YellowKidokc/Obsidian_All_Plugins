@@ -17,7 +17,7 @@ echo   [0] Cancel
 set /p "MODE=Choose: "
 if "%MODE%"=="1" (set "WORKDIR=%SRC%" & exit /b 0)
 if not "%MODE%"=="2" exit /b 1
-for /f "usebackq delims=" %%P in (`%PY% "%~dp0inhouse.py" "%SRC%"`) do set "WORKDIR=%%P"
+for /f "usebackq delims=" %%P in (`%PY% "%~dp0BACKSIDE\inhouse.py" "%SRC%"`) do set "WORKDIR=%%P"
 if "%WORKDIR%"=="" (echo In-house copy failed. & exit /b 1)
 echo Working on copy: %WORKDIR%
 exit /b 0
