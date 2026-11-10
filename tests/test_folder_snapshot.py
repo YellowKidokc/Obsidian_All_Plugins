@@ -50,8 +50,12 @@ class SnapshotTests(unittest.TestCase):
             capture([self.root, self.root/'Road 01'])
 
     def test_html_escapes_names(self):
-        (self.root/'<script>alert(1)</script>'.replace('/', '_')).mkdir()
-        report = render(capture([self.root]))
+        snapshot = capture([self.root])
+        # Windows forbids angle brackets in file and directory names. Inject a
+        # hostile display name into the captured data so this renderer test is
+        # portable while still exercising the XSS boundary directly.
+        snapshot['roots'][0]['children'][0]['name'] = '<script>alert(1)</script>'
+        report = render(snapshot)
         self.assertIn('&lt;script&gt;', report)
         self.assertNotIn('<script>alert(1)', report)
 
