@@ -43,6 +43,39 @@ class QuantumTests(unittest.TestCase):
         self.library.show_here(self.paper['id'], self.writing, 'Ideas')
         self.assertEqual(len(self.library.snapshot()['locations']), 1)
 
+    def test_greek_and_math_survive_read_and_save(self):
+        text = '# Master Equation\n\nχ(X) = C_W[∏ Xᵢ] — grace ≠ entropy\n'
+        file = self.library.resolve(self.paper['vault'], self.paper['path'])
+        file.write_bytes(text.encode('utf-8'))
+        self.assertEqual(self.library.read(self.paper['id']), text)
+        self.library.save(self.paper['id'], text + 'added χ\n')
+        self.assertEqual(file.read_bytes(), (text + 'added χ\n').encode('utf-8'))
+        self.assertEqual([p.name for p in file.parent.iterdir() if p.name.endswith('.saving')], [])
+
+    def test_failed_save_leaves_the_paper_whole(self):
+        file = self.library.resolve(self.paper['vault'], self.paper['path'])
+        before = file.read_bytes()
+        with self.assertRaises(UnicodeEncodeError):
+            self.library.save(self.paper['id'], 'broken \ud800 text')
+        self.assertEqual(file.read_bytes(), before)
+
+    def test_non_utf8_paper_is_refused_not_garbled(self):
+        file = self.library.resolve(self.paper['vault'], self.paper['path'])
+        file.write_bytes(b'caf\xe9 \x8f')
+        with self.assertRaises(ValueError):
+            self.library.read(self.paper['id'])
+        self.assertEqual(file.read_bytes(), b'caf\xe9 \x8f')
+
+    def test_one_file_is_one_record_however_it_is_spelled(self):
+        vault = self.paper['vault']
+        spellings = ['Papers/One paper.md', 'Papers\\One paper.md', './Papers/One paper.md', 'Ideas/../Papers/One paper.md']
+        if self.library.resolve(vault, 'PAPERS').is_dir():      # case-insensitive disk (Windows)
+            spellings.append('papers/ONE PAPER.md')
+        self.assertEqual({self.library.register(vault, s) for s in spellings}, {self.paper['id']})
+        for folder in ['Ideas', 'Ideas/', '.\\Ideas']:
+            self.library.show_here(self.paper['id'], self.writing, folder)
+        self.assertEqual(len(self.library.snapshot()['locations']), 1)
+
 
 if __name__ == '__main__':
     unittest.main()
