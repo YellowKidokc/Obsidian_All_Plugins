@@ -1,5 +1,6 @@
 """Local, single-user paper registry. Run: python quantum.py --demo."""
 import argparse
+from contextlib import contextmanager
 import json
 import mimetypes
 import sqlite3
@@ -22,10 +23,15 @@ class Library:
                     UNIQUE(paper,vault,folder));
             ''')
 
+    @contextmanager
     def connect(self):
         db = sqlite3.connect(self.db)
         db.row_factory = sqlite3.Row
-        return db
+        try:
+            with db:
+                yield db
+        finally:
+            db.close()
 
     def resolve(self, vault, relative):
         with self.connect() as db:
