@@ -5,7 +5,7 @@ actions, the paper registry, the dashboard, canonization, semantic tagging and
 review. Markdown files in the vault stay the master copy; every tool here reads
 and writes them safely and logs who changed what.
 
-Status: **plan only**. Nothing has been moved in yet. The prompt for the
+Status: **plan only**. Nothing has been imported yet except `apps/registry` (seeded from David-OSv3). The Codex prompt is at the bottom; it runs as one pass.
 implementing agent (Codex) is at the bottom of this file.
 
 ---
@@ -49,6 +49,7 @@ Obsidian_All_Plugins/
     quantum/                paper registry, web UI, right-click menu, history
     dashboard/              the home page: folder grid, views, actions, health
     canonization/           Canonization Workbench (backend + frontend + plugin)
+    registry/               OBSIDIAN_REGISTRY.html generator (progress, structure, identity; docs/FIS_OBSIDIAN_SPLIT_PLAN.md)
   plugins/
     semantic-ai/            Obsidian plugin
     review/                 CriticMarkup chapter review (section 4)
@@ -101,6 +102,18 @@ views (which break every path, the registry and logs) with Obsidian's
 "Excluded files" setting (`.obsidian/app.json` → `userIgnoreFilters`). A view =
 a named set of excluded folders; switching rewrites only that setting.
 
+**F. Obsidian progress page (`OBSIDIAN_REGISTRY.html`).** The spec is
+`docs/FIS_OBSIDIAN_SPLIT_PLAN.md`, sections 5–16. In short: a vault roll-up grid of
+every series with a progress bar; per-series and per-paper progression boxes backed
+by evidence on disk. A folder that exists but holds no valid receipt and response
+is **Present, not verified**, never Done. It also covers series structure
+conformance against `docs/SERIES_STRUCTURE_STANDARD_DRAFT_2026-11-18.md` (Moral
+Decline is the reference), `.backside` matching, the axiom-chain governance panel,
+Quantum "also shown in" and history, and editorial review counts. Identity follows
+`docs/DOCUMENT_IDENTITY_STANDARD_v1.0.md`. The page reports; it never assigns IDs,
+admits canon, moves or renames. Start from David-OSv3's `registry_scan.py` and
+`registry_template.html` (copy them into `apps/registry`).
+
 **E. Canonization + Semantic AI share one concept registry.** Same concept ID
 whether it came from a canon card or a semantic tag. Do this after both are in
 the repo and working; do not merge the two plugins into one.
@@ -139,53 +152,57 @@ blue, fact red, style purple, note green.
 ```text
 You are consolidating David's Obsidian tooling into this repository
 (YellowKidokc/Obsidian_All_Plugins, branch OBS-Plugin-Final-Claude). Read this
-whole README first; sections 1–5 are the spec.
+whole README and everything in docs/ first. They are the spec. Do the whole job
+in ONE pass and open ONE pull request. Commit in logical chunks inside it so it
+can be reviewed, but do not stop between parts.
 
-Work in small, separately committed phases. After each phase, run the tests and
-stop with a short report (what moved, what was skipped and why, what to verify).
+1. Import (history-preserving where the source is a git repo, via git subtree):
+     YellowKidokc/OBS_-Quantum_Paper (branch OBS-Plugin-Final-Claude) -> apps/quantum
+     YellowKidokc/OBS-BAT-DASHBOARD (branch OBS-Plugin-Final-Claude) -> apps/dashboard
+     YellowKidokc/Canonization (branch feature/integrated-canonization-20260904) -> apps/canonization
+     YellowKidokc/theophysics-semantic-ai -> plugins/semantic-ai
+     DavidLoweOKC/theophysics-axiom-chain -> content/axiom-chain (exclude .lake/)
+   If a source is not reachable from your environment, leave a clearly marked
+   placeholder folder with a README naming the source, and continue.
+   apps/registry is already seeded with registry_scan.py, registry_template.html,
+   fis_gates.py and its test.
+   Root .gitignore: .env*, node_modules/, .venv/, __pycache__/, .lake/, generated
+   build/dist output, *.sqlite registries, .fisnote, *.pyc. No secrets in git.
 
-Phase 1 — Import, history-preserving where the source is a git repo.
-  - Use `git subtree add --prefix=<target> <source-path-or-url> <branch>` for:
-      OBS_-Quantum_Paper → apps/quantum
-      OBS-BAT-DASHBOARD → apps/dashboard (move its tools/actions into actions/ in a later commit)
-      Canonization (branch feature/integrated-canonization-20260904) → apps/canonization
-      theophysics-semantic-ai → plugins/semantic-ai
-      theophysics-axiom-chain → content/axiom-chain
-  - Copy plain folders (no git): theophysics-vault-cleaner → actions/vault-cleaner,
-    theophysics_writing_audit_scripts → actions/paper-audit,
-    YellowKidokc-Canonization → legacy/canonization-v0.3.
-  - Root .gitignore must exclude: .env*, node_modules/, .venv/, __pycache__/,
-    .lake/, build/, dist/ outputs that are generated, *.sqlite registries,
-    .fisnote, *.pyc. Check nothing secret or generated was committed; if a
-    subtree brought one in, remove it in a follow-up commit and report it.
-  - Do NOT delete or modify anything outside this repository.
+2. actions/_lib shared helpers: atomic UTF-8 write, never-overwrite move, dry-run
+   plan, receipt writer, Quantum history logging (import apps/quantum).
 
-Phase 2 — Shared library and action menu.
-  - actions/_lib: atomic UTF-8 write, safe move (never overwrite), dry-run plan
-    object, receipt writer, Quantum history logging (import apps/quantum).
-  - OBSIDIAN_ACTIONS.bat + a Python entry point: numbered menu and drag-and-drop.
-  - Port flatten/convert/search-report/snapshot, vault-cleaner and paper-audit
-    onto _lib, dry run by default.
+3. OBSIDIAN_ACTIONS.bat + Python entry point (numbered menu, drag-and-drop)
+   with every action from README section 3A, dry run by default.
 
-Phase 3 — Navigation index (README section 3B). Include tests for: nested
-  folders, hand-written text preserved outside the nav block, idempotent re-run,
-  dot-folders skipped, names with spaces and Unicode, UNC root.
+4. Navigation index (section 3B and split plan 16.4) with tests: nested folders,
+   hand-written text kept outside the nav block, idempotent re-run, dot-folders
+   skipped, spaces/Unicode names, UNC root.
 
-Phase 4 — Combine markdown action (section 3A).
+5. Combine markdown action (section 3A).
 
-Phase 5 — Views via Obsidian excluded files (section 3D). Keep the old rename
-  views behind an explicit --legacy-rename flag, off by default, with a warning.
+6. Views via Obsidian excluded files (section 3D); old rename views only behind
+   --legacy-rename with a warning.
 
-Phase 6 — Dashboard folder grid (section 3C), served by apps/quantum's server,
-  standard library only on the Python side, no build step for the page.
+7. apps/registry: OBSIDIAN_REGISTRY.html per docs/FIS_OBSIDIAN_SPLIT_PLAN.md
+   sections 5-16, including the vault roll-up grid, the evidence-backed status
+   model, series structure conformance, backside matching, the axiom governance
+   panel, Quantum also-shown-in/history, editorial review counts, and every pilot
+   acceptance test in section 14 as an automated test using fixture folders.
+   Same scan JSON also feeds the _INDEX.md navigation notes.
 
-Phase 7 — review plugin (section 4).
+8. Dashboard folder grid (section 3C) served by apps/quantum's local server,
+   linking to the registry pages.
 
-Phase 8 — Shared concept registry for canonization + semantic-ai (section 3E):
-  write a design note first and stop for David's approval before coding it.
+9. plugins/review (section 4).
 
-Constraints: Python 3.10+ standard library for Python tools unless a component
-already depends on more (the Canonization backend does). Windows paths and UNC
-must work. Never print or commit secrets. If anything is ambiguous, choose the
-safer option and list it in your phase report.
+10. Shared concept registry for canonization + semantic-ai (section 3E): write
+    docs/CONCEPT_REGISTRY_DESIGN.md only. Do not implement it; David approves first.
+
+Hard rules: never assign document IDs, admit canon, rename or delete user
+files; observe-and-report tools write nothing outside their output/receipt
+paths; Windows + UNC paths must work; Python 3.10+ standard library for Python
+tools unless a component already depends on more; all existing tests pass and
+new behaviour has tests. If something is ambiguous, choose the safer option and
+list it in the PR description under "Decisions for David".
 ```
