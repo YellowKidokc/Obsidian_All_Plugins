@@ -77,5 +77,138 @@ class QuantumTests(unittest.TestCase):
         self.assertEqual(len(self.library.snapshot()['locations']), 1)
 
 
+class UpgradeTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.library = Library(self.temp.name)
+        demo(self.library)
+        lib = self.library
+        self.research = lib.find_vault('Research')
+        self.writing = lib.find_vault('Writing')
+        self.ids = []
+        for name in ['a.md', 'b.md', 'c.md']:
+            lib.resolve(self.research, 'Ideas/' + name).write_text(f'# {name}\n', encoding='utf-8')
+            self.ids.append(lib.register(self.research, 'Ideas/' + name))
+
+    def test_batch_move_moves_all(self):
+        moved = self.library.batch_move(self.ids, self.writing, 'Ideas')
+        self.assertEqual(moved, self.ids)
+        for pid in self.ids:
+            self.assertEqual(self.library.paper(pid)['vault'], self.writing)
+            self.assertTrue(self.library.read(pid).startswith('# '))
+        self.assertEqual(list(self.library.resolve(self.research, 'Ideas').glob('*.md')), [])
+
+    def test_batch_move_is_all_or_nothing(self):
+        blocker = self.library.resolve(self.writing, 'Ideas/c.md')
+        blocker.write_text('keep me', encoding='utf-8')
+        with self.assertRaises(FileExistsError):
+            self.library.batch_move(self.ids, self.writing, 'Ideas')
+        self.assertEqual(blocker.read_text(encoding='utf-8'), 'keep me')
+        self.assertFalse(self.library.resolve(self.writing, 'Ideas/a.md').exists())
+        for pid in self.ids:
+            self.assertEqual(self.library.paper(pid)['vault'], self.research)
+
+    def test_move_folder(self):
+        moved = self.library.move_folder(self.research, 'Ideas', self.writing, 'Papers')
+        self.assertEqual(set(moved), set(self.ids))
+
+    def test_batch_register(self):
+        self.assertEqual(self.library.batch_register(self.research, ['Ideas/a.md', 'Ideas\\b.md']), self.ids[:2])
+
+    def test_reconcile_moved_stale_new_restored(self):
+        lib = self.library
+        lib.resolve(self.research, 'Ideas/a.md').rename(lib.resolve(self.research, 'Papers/a.md'))
+        gone = lib.resolve(self.research, 'Ideas/b.md')
+        saved = gone.read_bytes()
+        gone.unlink()
+        lib.resolve(self.research, 'Papers/fresh.md').write_text('# fresh\n', encoding='utf-8')
+        report = lib.reconcile(self.research)
+        self.assertEqual(report['moved'][0]['to'], 'Papers/a.md')
+        self.assertEqual(lib.read(self.ids[0]), '# a.md\n')
+        self.assertEqual([s['id'] for s in report['stale']], [self.ids[1]])
+        self.assertEqual(lib.paper(self.ids[1])['status'], 'stale')
+        self.assertEqual([n['path'] for n in report['new']], ['Papers/fresh.md'])
+        gone.write_bytes(saved)
+        self.assertEqual(lib.reconcile(self.research)['restored'], [self.ids[1]])
+        self.assertEqual(lib.paper(self.ids[1])['status'], 'active')
+
+    def test_reconcile_does_not_guess_between_duplicates(self):
+        lib = self.library
+        src = lib.resolve(self.research, 'Ideas/a.md')
+        (lib.resolve(self.research, 'Papers') / 'a.md').write_bytes(src.read_bytes())
+        (lib.resolve(self.research, '') / 'a.md').write_bytes(src.read_bytes())
+        src.unlink()
+        report = lib.reconcile(self.research)
+        self.assertEqual(len(report['ambiguous']), 1)
+        self.assertEqual(report['moved'], [])
+
+    def test_tangent_is_a_paper(self):
+        lib = self.library
+        lib.save(self.ids[0], '# Displacement data\n\nProhibition and the War on Drugs.\n')
+        tid = lib.create_tangent(self.ids[0], 'historical')
+        self.assertEqual(lib.create_tangent(self.ids[0], 'historical'), tid)
+        self.assertEqual(lib.tangent(tid)['paper'], self.ids[0])
+        lib.link_tangent(tid, self.ids[1], 0.9)
+        lib.link_tangent(tid, self.ids[2], 0.4)
+        self.assertEqual([t['id'] for t in lib.tangent_search('war drugs')], [tid])
+        self.assertEqual(lib.tangent_search('soviet'), [])
+        self.assertEqual(lib.tangents_for(self.ids[1])['referenced'][0]['id'], tid)
+        with self.assertRaises(ValueError):
+            lib.link_tangent('nope', self.ids[1])
+
+    def test_cross_drive_move_without_hard_links(self):
+        import os
+        from unittest import mock
+        with mock.patch.object(os, 'link', side_effect=OSError(18, 'Invalid cross-device link')):
+            self.library.move(self.ids[0], self.writing, 'Papers')
+        self.assertEqual(self.library.read(self.ids[0]), '# a.md\n')
+        self.assertFalse(self.library.resolve(self.research, 'Ideas/a.md').exists())
+        leftovers = [p for p in Path(self.temp.name).rglob('*') if p.name.endswith('.moving')]
+        self.assertEqual(leftovers, [])
+
+    def test_export_import_roundtrip(self):
+        backup = Path(self.temp.name) / 'backup.json'
+        counts = self.library.export_registry(backup)
+        self.assertEqual(counts['papers'], 5)
+        fresh = Library(Path(self.temp.name) / 'other-state')
+        fresh.import_registry(backup)
+        self.assertEqual(fresh.read(self.ids[0]), '# a.md\n')
+
+    def test_history_records_who_moved_what(self):
+        lib = self.library
+        claude = Library(self.temp.name, actor='claude-terminal-3')
+        claude.move(self.ids[0], self.writing, 'Papers')
+        with lib.acting_as('gpt-agent'):
+            lib.batch_move(self.ids[1:], self.writing, 'Ideas')
+        # someone moves a file by hand, reconcile notices
+        lib.resolve(self.writing, 'Ideas/b.md').rename(lib.resolve(self.writing, 'Papers/b.md'))
+        lib.reconcile(self.writing)
+        moves = {(e['paper'], e['action']): e for e in lib.history(limit=500)}
+        first = moves[(self.ids[0], 'move')]
+        self.assertEqual(first['actor'], 'claude-terminal-3')
+        self.assertEqual((first['source'], first['target']), ('Research:Ideas/a.md', 'Writing:Papers/a.md'))
+        self.assertEqual(moves[(self.ids[2], 'batch-move')]['actor'], 'gpt-agent')
+        ext = moves[(self.ids[1], 'external-move')]
+        self.assertTrue(ext['actor'].startswith('external'))
+        self.assertEqual(ext['target'], 'Writing:Papers/b.md')
+        self.assertEqual([e['action'] for e in lib.history(self.ids[1])][:2], ['external-move', 'batch-move'])
+
+    def test_portable_roots(self):
+        state = Path(self.temp.name) / 'portable'
+        vault = state / 'vaults' / 'V'
+        (vault / 'P').mkdir(parents=True)
+        (vault / 'P' / 'x.md').write_text('# x\n', encoding='utf-8')
+        lib = Library(state)
+        vid = lib.add_vault('V', vault, portable=True)
+        pid = lib.register(vid, 'P/x.md')
+        with lib.connect() as db:
+            self.assertEqual(db.execute('SELECT root FROM vaults').fetchone()['root'], 'vaults/V')
+        self.assertEqual(lib.add_vault('V', str(vault).replace('/', '\\')), vid)
+        moved = Path(self.temp.name) / 'moved'
+        state.rename(moved)
+        self.assertEqual(Library(moved).read(pid), '# x\n')
+
+
 if __name__ == '__main__':
     unittest.main()

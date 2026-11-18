@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<button backcol="none" display="both" label_pos="right" textcol="none">
+	<label>Quantum Paper</label>
+	<tip>Move, also-show, or see the history of the selected paper (Quantum Papers)</tip>
+	<icon1>#move</icon1>
+	<function type="normal">
+		<instruction>"C:\Users\David\AppData\Local\Programs\Python\Python313\pythonw.exe" "D:\GitHub\OBS_-Quantum_Paper\quantum.py" --pick {filepath}</instruction>
+	</function>
+</button>

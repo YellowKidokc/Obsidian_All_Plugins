@@ -30,7 +30,51 @@ python -m unittest discover -s tests -v
 - Folder memberships live in the SQLite registry under `--state`; back it up along
   with your vaults. Keep the same server address for copied browser links.
 - Links use permanent registry IDs. Moves made through this app preserve them.
-  External moves/renames are not reconciled yet.
+  After external moves, run `--reconcile`: files are matched by name (ambiguous
+  duplicates are reported, not guessed), vanished files are marked `stale`, new files
+  are registered. Renames made outside the app show up as one stale + one new.
+
+## Batch, backup and tangent commands
+
+```sh
+python quantum.py --reconcile
+python quantum.py --move-folder VAULT FOLDER DEST_VAULT DEST_FOLDER   # all or nothing
+python quantum.py --export-registry backup.json
+python quantum.py --import-registry backup.json                      # merges
+python quantum.py --portable --vault ../vaults/MyVault               # root stored relative to --state
+```
+
+### Right-click a paper
+
+```sh
+python quantum.py --init-vault "\\server\share\B_series"   # registry lives in B_series\.quantum
+python quantum.py --install-menu                          # adds "Quantum Paper…" to .md right-click
+```
+
+Right-click any `.md` file → **Quantum Paper…** (Windows 11: under *Show more options*)
+→ *Move it to…* / *Also show it in…* / *History* → pick a folder. Moves are logged as
+`<you> (right-click)`. The registry stores the vault relative to `.quantum`, so the whole
+folder can be moved or copied elsewhere. If this repo moves, run `--install-menu` again.
+`--uninstall-menu` removes the entry.
+
+### Who moved what
+
+Every register, move, batch move, save, membership and tangent change is logged with
+time, actor, from and to. Give each terminal or AI its own name:
+
+```sh
+python quantum.py --actor claude-terminal-3 --move-folder ...   # or set QP_ACTOR=gpt-agent
+python quantum.py --history                                     # everything, oldest first
+python quantum.py --history "Papers/One paper.md"               # one paper (path or id)
+```
+
+Web/API callers send an `X-QP-Actor` header (or `"actor"` in the JSON body);
+`GET /api/history` and `/api/history/<paper id>` return the log. Moves made outside
+the tool can't name their mover; `--reconcile` logs them as `external (seen by <actor>)`.
+
+API: `/api/batch-move`, `/api/batch-register`, `/api/reconcile`, `/api/tangent/create`
+(marks a registered paper as a tangent), `/api/tangent/search`. `GET /api/paper/<id>`
+now includes the paper's tangents.
 - Markdown source editing and internal paper-link navigation; no rich rendering yet.
 - This is not yet an installable Obsidian plugin. Native Obsidian explorer entries,
   cross-device sync, automatic file discovery, external link handlers, authentication,
