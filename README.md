@@ -34,6 +34,20 @@ python -m unittest discover -s tests -v
   duplicates are reported, not guessed), vanished files are marked `stale`, new files
   are registered. Renames made outside the app show up as one stale + one new.
 
+## One list of actions: command line, API and screen
+
+Every action is defined once in `ACTIONS` in `quantum.py` and appears everywhere:
+
+```sh
+python quantum.py --actions                                   # list them
+python quantum.py --run move paper=ID vault=Writing folder=Papers
+python quantum.py --run undo                                  # undo the last move
+```
+
+In the browser: **Ctrl+K** opens a search box that finds any paper or runs any action.
+You can also right-click a paper in the tree, or use the ⋯ button. Moves show a toast with
+**Undo**. API: `GET /api/actions`, `POST /api/run/<name>`. The plan is in `docs/ACTIONS.md`.
+
 ## Batch, backup and tangent commands
 
 ```sh

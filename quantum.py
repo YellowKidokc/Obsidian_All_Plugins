@@ -298,7 +298,9 @@ class Library:
             new_path = target.relative_to(self.vault_root(vault)).as_posix()
             with self.connect() as db:
                 db.execute('UPDATE papers SET vault=?,path=? WHERE id=?', (vault, new_path, paper))
-                self.log(db, 'move', paper, self.where(row['vault'], row['path']), self.where(vault, new_path))
+                self.log(db, 'move', paper, self.where(row['vault'], row['path']), self.where(vault, new_path),
+                         details={'from_vault': row['vault'],
+                                  'from_folder': row['path'].rpartition('/')[0]})
         except Exception:
             target.unlink()
             raise
@@ -805,6 +807,80 @@ def uninstall_menu():
                 pass
 
 
+def undo_last(library):
+    """Undo the most recent move that has not been undone yet."""
+    with library.connect() as db:
+        undone = set()
+        for r in db.execute("SELECT details FROM events WHERE action='undo'"):
+            d = json.loads(r['details'])
+            undone.update({d['event'], d.get('move_event')})
+        for e in db.execute("SELECT * FROM events WHERE action='move' ORDER BY id DESC LIMIT 200"):
+            d = json.loads(e['details'] or '{}')
+            if e['id'] not in undone and 'from_vault' in d:
+                break
+        else:
+            raise ValueError('Nothing to undo')
+    library.move(e['paper'], d['from_vault'], d['from_folder'])
+    with library.connect() as db:
+        back = db.execute("SELECT MAX(id) FROM events WHERE action='move' AND paper=?", (e['paper'],)).fetchone()[0]
+        library.log(db, 'undo', e['paper'], e['target'], e['source'],
+                    details={'event': e['id'], 'move_event': back})
+    return {'undone': e['id'], 'paper': e['paper'], 'back_to': e['source']}
+
+
+# ── One list of actions ─────────────────────────────────────────
+# Each action feeds the CLI (--run NAME key=value), the API (POST /api/run/NAME)
+# and the GUI command palette (GET /api/actions). Add an action here once and
+# it shows up in all three.
+ACTIONS = [
+    dict(name='move', group='Organize', label='Move original to another folder',
+         args=['paper', 'vault', 'folder'], needs='paper+folder',
+         fn=lambda L, a: L.move(a['paper'], a['vault'], a['folder'])),
+    dict(name='show', group='Organize', label='Also show in another folder',
+         args=['paper', 'vault', 'folder'], needs='paper+folder',
+         fn=lambda L, a: L.show_here(a['paper'], a['vault'], a['folder'])),
+    dict(name='move-folder', group='Organize', label='Move a whole folder (all or nothing)',
+         args=['vault', 'folder', 'dest_vault', 'dest_folder'], needs='folder+folder',
+         fn=lambda L, a: {'moved': L.move_folder(a['vault'], a['folder'], a['dest_vault'], a['dest_folder'])}),
+    dict(name='register', group='Organize', label='Register a Markdown file',
+         args=['vault', 'path'], needs='path',
+         fn=lambda L, a: {'id': L.register(a['vault'], a['path'])}),
+    dict(name='scan', group='Find', label='Register every Markdown file in all vaults',
+         args=[], fn=lambda L, a: L.scan_all()),
+    dict(name='reconcile', group='Safety', label='Repair registry after outside changes',
+         args=[], fn=lambda L, a: L.reconcile_all()),
+    dict(name='undo', group='Safety', label='Undo last move',
+         args=[], fn=lambda L, a: undo_last(L)),
+    dict(name='history', group='Safety', label='Show history (who changed what)',
+         args=[], fn=lambda L, a: {'events': L.history(a.get('paper'))}),
+    dict(name='tangent', group='Write', label='Make a tangent of this paper',
+         args=['paper'], needs='paper',
+         fn=lambda L, a: {'id': L.create_tangent(a['paper'], a.get('scope', 'deep-dive'))}),
+    dict(name='export-registry', group='Safety', label='Back up the registry to JSON',
+         args=['file'], needs='file',
+         fn=lambda L, a: L.export_registry(a['file'])),
+]
+ACTION_BY_NAME = {a['name']: a for a in ACTIONS}
+
+
+def run_action(library, name, args):
+    action = ACTION_BY_NAME.get(name)
+    if not action:
+        raise ValueError(f'Unknown action: {name}')
+    missing = [k for k in action['args'] if k not in args]
+    if missing:
+        raise ValueError(f'{name} needs: {", ".join(missing)}')
+    for key in ('vault', 'dest_vault'):
+        if key in args and args[key]:
+            args[key] = library.find_vault(args[key])
+    result = action['fn'](library, args)
+    return result if isinstance(result, dict) else {'ok': True}
+
+
+def action_list():
+    return [{k: v for k, v in a.items() if k != 'fn'} for a in ACTIONS]
+
+
 def handler(library):
     web = Path(__file__).parent / 'web'
 
@@ -832,6 +908,8 @@ def handler(library):
             try:
                 if path == '/api/library':
                     return self.respond(200, library.snapshot())
+                if path == '/api/actions':
+                    return self.respond(200, {'actions': action_list()})
                 if path == '/api/history':
                     return self.respond(200, {'events': library.history()})
                 if path.startswith('/api/history/'):
@@ -861,6 +939,8 @@ def handler(library):
                 if data.get('actor'):
                     library._local.actor = str(data['actor'])
                 action = urlparse(self.path).path
+                if action.startswith('/api/run/'):
+                    return self.respond(200, run_action(library, action.rsplit('/', 1)[1], data))
                 if action == '/api/show':
                     library.show_here(data['paper'], data['vault'], data['folder'])
                 elif action == '/api/move':
@@ -935,7 +1015,14 @@ if __name__ == '__main__':
     parser.add_argument('--pick', metavar='FILE', help='Right-click flow: move/show a paper via folder picker')
     parser.add_argument('--install-menu', action='store_true', help='Add "Quantum Paper…" to the .md right-click menu')
     parser.add_argument('--uninstall-menu', action='store_true', help='Remove the right-click menu entry')
+    parser.add_argument('--actions', action='store_true', help='List every action (same list as the GUI palette)')
+    parser.add_argument('--run', nargs='+', metavar=('ACTION', 'KEY=VALUE'),
+                        help='Run any action, e.g. --run move paper=ID vault=Research folder=Papers')
     args = parser.parse_args()
+    if args.actions:
+        for a in ACTIONS:
+            print(f"  {a['group']:<9} {a['name']:<16} {a['label']}  [{' '.join(a['args'])}]")
+        sys.exit(0)
     if args.pick:
         pick(args.pick, args.actor)
         sys.exit(0)
@@ -957,6 +1044,13 @@ if __name__ == '__main__':
         demo(library)
 
     try:
+        if args.run:
+            name, pairs = args.run[0], args.run[1:]
+            if any('=' not in p for p in pairs):
+                raise ValueError('Arguments must look like key=value')
+            print(json.dumps(run_action(library, name, dict(p.split('=', 1) for p in pairs)),
+                             indent=2, ensure_ascii=False, default=str))
+            sys.exit(0)
         if args.history is not None:
             target = args.history or None
             if target:

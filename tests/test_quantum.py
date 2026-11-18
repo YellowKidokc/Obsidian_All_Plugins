@@ -1,7 +1,7 @@
 import tempfile
 import unittest
 from pathlib import Path
-from quantum import Library, demo
+from quantum import Library, demo, run_action, action_list
 
 
 class QuantumTests(unittest.TestCase):
@@ -28,6 +28,21 @@ class QuantumTests(unittest.TestCase):
         restored = Library(self.temp.name)
         self.assertEqual(restored.read(paper_id), '# Edited from a shared location')
         self.assertEqual(len(list(Path(self.temp.name).rglob('One paper.md'))), 1)
+
+    def test_actions_run_by_name_and_undo_moves_back(self):
+        names = {a['name'] for a in action_list()}
+        self.assertTrue({'move', 'show', 'undo', 'reconcile'} <= names)
+        self.assertNotIn('fn', action_list()[0])
+        run_action(self.library, 'move', {'paper': self.paper['id'], 'vault': 'Writing', 'folder': 'Papers'})
+        self.assertEqual(self.library.paper(self.paper['id'])['vault'], self.writing)
+        result = run_action(self.library, 'undo', {})
+        self.assertEqual(result['paper'], self.paper['id'])
+        self.assertEqual(self.library.paper(self.paper['id'])['path'], 'Papers/One paper.md')
+        self.assertNotEqual(self.library.paper(self.paper['id'])['vault'], self.writing)
+        with self.assertRaises(ValueError):
+            run_action(self.library, 'undo', {})
+        with self.assertRaises(ValueError):
+            run_action(self.library, 'move', {'paper': self.paper['id']})
 
     def test_move_never_overwrites(self):
         target = self.library.resolve(self.writing, 'Papers/One paper.md')
