@@ -1,0 +1,10 @@
+{
+  "build_plugin": "passed",
+  "local_fixture": {
+    "notes": 2,
+    "edges": 1,
+    "source_unchanged": true
+  },
+  "live_obsidian_or_gpu_acceptance": "not_run",
+  "paid_calls": 0
+}

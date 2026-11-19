@@ -67,3 +67,12 @@ No original source directory was removed. No push or production vault activation
 ## Module design notes
 
 Obsidian-Plugin-Module-Notes is preserved under docs/module-notes with history and 46 source blobs verified. This is design/documentation, not a runnable plugin. See [MODULE_NOTES_CROSSWALK.md](MODULE_NOTES_CROSSWALK.md) for the proposed research modules mapped to the imported code and remaining gaps.
+
+
+## External review and visualization additions
+
+- plugins/second-brain-black-hole: optional MIT-licensed visualization plugin and standalone HTML importer; plugin build passes, two-note fixture preserves source bytes. Live Obsidian/GPU acceptance pending.
+- vendor/plannotator: pinned upstream submodule for a separate review adapter. Local checkout/build is incomplete; see PLANNOTATOR_INTEGRATION.md and initialize the dependency in a fresh checkout. No agent hooks or real Inbox settings were installed.
+- docs/external-references/PhD_NOTES_REFERENCE.md: linked reference to the supplied research vault, plus four original workflow templates in templates/research-workflows. The personal 112 MB vault is not republished as application code.
+
+Current end-to-end implementation assignment: ../CODEX_START_HERE.md. Git publication does not imply the component integrations or corpus activation are complete.

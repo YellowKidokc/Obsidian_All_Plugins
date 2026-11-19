@@ -1,0 +1,284 @@
+{
+  "source_path": "\\\\192.168.2.50\\h_hp\\Downloads\\Compressed\\second-brain-black-hole-main",
+  "upstream": "https://github.com/williamwasen/second-brain-black-hole",
+  "import_type": "downloaded_source_snapshot_no_git_history",
+  "destination": "plugins/second-brain-black-hole",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 20,
+      "sha256": "65b1023623fb87849b0d7e7a39141bd9d2662d98dcd55fefc9e8bf1683d2d934"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 325,
+      "sha256": "e0925dc001427172be83d171bf0ae1b81bb192f2c684ad61e8891b749362731d"
+    },
+    {
+      "path": ".npmrc",
+      "bytes": 22,
+      "sha256": "c57340483c1a07a5bd36ab2890c9803076bffbf497eb368464c6f479b55c4a6b"
+    },
+    {
+      "path": "Build My Brain (Windows).bat",
+      "bytes": 2796,
+      "sha256": "aca8bc9a19e1fc751cc66db0c824fcdfe27194fe781de27ce90069d0c302b497"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "bytes": 580,
+      "sha256": "64a8a64f4d303e0084de2f27532ef4cd4983c266a8a3b1b9b216e2186ad8f24e"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1069,
+      "sha256": "b119fa9c5cdf93d8a79f9f07025588e7e9da56750f5ebdcb0a01cd82e6d6c015"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 366,
+      "sha256": "8ac3e272dd8ec931d82a53361ee26bb6b5854fded4a84d10b41ee66adb7e447a"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 167564,
+      "sha256": "8ce91ff207b19df8febf0004c3802e3ee158333071df83fdea101c75479e595c"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1077,
+      "sha256": "7d2ca45525b39656244cb3e648a47308eacafe205863dce6ba910a37b2ddba46"
+    },
+    {
+      "path": "PROMPT.md",
+      "bytes": 3770,
+      "sha256": "dc9970e994f7c952b2aeff962107b035f931b83fcd44a7baf68003beb0d52d11"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10569,
+      "sha256": "d03197914f613dba8a544b10b68293d70d786c3c4a9b06cf490553becd73dd9a"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 461,
+      "sha256": "76a9f985125bdf4b14d333082904649ceedb81a0ed944c2d19cd1a995795bb8e"
+    },
+    {
+      "path": "versions.json",
+      "bytes": 41,
+      "sha256": "6a326156ff2c4568b5f0f6d00f00e13d1d5a9407476c3d0d9c9523050acd488a"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "bytes": 2033,
+      "sha256": "602a0fe0a86283c1a461975cc4e8c8554e2eff618187a0664c48bd36ac17b746"
+    },
+    {
+      "path": "data/sample-graph.json",
+      "bytes": 22592,
+      "sha256": "8b6704810396be33b7f96a145a6edaac9f6238a1360773a1f55aa06ca08a6a19"
+    },
+    {
+      "path": "docs/index.html",
+      "bytes": 143394,
+      "sha256": "37901b3b6aa3a71dc6d168998e0b0ff4142179d6544dac03338e711dd168b382"
+    },
+    {
+      "path": "examples/notes/Ideas/Camera Basics.md",
+      "bytes": 179,
+      "sha256": "05ee26f1c8b5bc85ced61568d2a0f0fc6ada977dd28b03e95aa6cc5d66181c8c"
+    },
+    {
+      "path": "examples/notes/Ideas/Compound Interest.md",
+      "bytes": 161,
+      "sha256": "23b84fa45d7674ce28711fde0132b5d77d9ff0c29993d818067db27fb85683e3"
+    },
+    {
+      "path": "examples/notes/Ideas/Hand Tools Notes.md",
+      "bytes": 153,
+      "sha256": "fca166e3029a960add4232a38a2dac29abe96fea766358415af6b0fd2f1d1eaa"
+    },
+    {
+      "path": "examples/notes/Journal/Morning Routine.md",
+      "bytes": 152,
+      "sha256": "110cb217e554c27861b71b157f0356a3cd3274f9ec895840217f6b36616769a5"
+    },
+    {
+      "path": "examples/notes/Journal/Spring Budget.md",
+      "bytes": 136,
+      "sha256": "3cc87e8aa01b838aa1ebf0c89b346c75f23f72f6ff7ea74968f20fb675a7569d"
+    },
+    {
+      "path": "examples/notes/Journal/Weekly Review 1.md",
+      "bytes": 198,
+      "sha256": "6ab2415a6ac36f0a0318c920f81919015f944263586b984c16d684fb7fa8420d"
+    },
+    {
+      "path": "examples/notes/People/Alex Sample.md",
+      "bytes": 83,
+      "sha256": "cbc28917389e9916a95dab66bdad4fb95a81d2b49bfbfdf1f2e9958636198fe4"
+    },
+    {
+      "path": "examples/notes/People/Jordan Sample.md",
+      "bytes": 122,
+      "sha256": "2bf052364b7c7b71eaba0026d852af5859033dfede1f47d6a94a5b17bd74ec78"
+    },
+    {
+      "path": "examples/notes/Projects/Garage Workshop.md",
+      "bytes": 331,
+      "sha256": "5c7b8613994938a7b6134e36310e6db54a61126455dd9f4b8d6e1358105b034b"
+    },
+    {
+      "path": "examples/notes/Projects/Photo Series.md",
+      "bytes": 186,
+      "sha256": "0e5330d4d068319802230baf64cd43b43489a567952b64afaa3eec2efbcbd5ee"
+    },
+    {
+      "path": "examples/notes/Projects/Tool Inventory.md",
+      "bytes": 151,
+      "sha256": "b4b20a7587e6019c89d6a094e000b51c8bb9b08e6fe2529e3255d18763c72876"
+    },
+    {
+      "path": "examples/notes/Reading/Deep Work Notes.md",
+      "bytes": 152,
+      "sha256": "d3565055881908dd123e49c0a4726ad0b47c33803c3fff68c9802c193270f638"
+    },
+    {
+      "path": "examples/notes/Reading/Habits Podcast.md",
+      "bytes": 111,
+      "sha256": "599fc0d0dd29af32c0ba79b418367e2e8a8e32ca27861434c25b740d952cf9ef"
+    },
+    {
+      "path": "examples/notes/Reading/Statistics Course.md",
+      "bytes": 188,
+      "sha256": "078373a3b12012ea4dc0ec3ef4c23d336f42b27ef3c8b01db17aabcf98d48c38"
+    },
+    {
+      "path": "obsidian/esbuild.config.mjs",
+      "bytes": 1408,
+      "sha256": "39b0102a00ad14f8fc9013c0351862ff41e2e59efd1ec5e6e9427cc175a12341"
+    },
+    {
+      "path": "obsidian/main.ts",
+      "bytes": 1575,
+      "sha256": "f90ab444100d1916dfad407e5a65522a6c79c0691f8a9f470652c7dc5999f8d3"
+    },
+    {
+      "path": "obsidian/settings.ts",
+      "bytes": 3031,
+      "sha256": "0cba7026f86348fd6b44367f09e7bb215ecd436850bb244ac8b9e1992bc137b3"
+    },
+    {
+      "path": "obsidian/styles.css",
+      "bytes": 963,
+      "sha256": "d22ffa022cf8f44acb82f602bef27aafd0292925f9c12a4819792c484eeafc2f"
+    },
+    {
+      "path": "obsidian/vault-graph.ts",
+      "bytes": 3291,
+      "sha256": "5670ccf737149a41d5af555a7b90ab38a35d46830ef11fa8281c67b553eac0e2"
+    },
+    {
+      "path": "obsidian/view.ts",
+      "bytes": 3475,
+      "sha256": "72b346ddff3d7c63b17502d5b56812febd3d5002b27d7630fcbce7f0c524395d"
+    },
+    {
+      "path": "obsidian/test/build-harness.mjs",
+      "bytes": 1293,
+      "sha256": "68e2d69896a1ff8335e1599821786a36b11e583e87290a6a42689067a9d5306a"
+    },
+    {
+      "path": "obsidian/test/harness.mjs",
+      "bytes": 12000,
+      "sha256": "d493c51b0395ede6169bf69a6ece3388bc4b4639fb24d7e0b43636a913e323cb"
+    },
+    {
+      "path": "obsidian/test/make-vaults.mjs",
+      "bytes": 4354,
+      "sha256": "32a7dce9d375034f73129b92257442f440b7f62bc419ebb6c594aebf33b28e41"
+    },
+    {
+      "path": "obsidian/test/obsidian-mock.mjs",
+      "bytes": 7942,
+      "sha256": "b4d62789bf58ba55a32539d81a2b77b501fdb47f8ed09fca287ba7d5b0511ab9"
+    },
+    {
+      "path": "scripts/assemble.mjs",
+      "bytes": 1632,
+      "sha256": "96fab060561549c12d5b68e9f26b3d522ef8871ee9a6a46ff241842e388a5038"
+    },
+    {
+      "path": "scripts/build.mjs",
+      "bytes": 747,
+      "sha256": "7894734450035cbcbc6f299004e8e9d87f5ee8a16ca693d63b45db52882d5b85"
+    },
+    {
+      "path": "scripts/import-markdown.mjs",
+      "bytes": 12944,
+      "sha256": "0fec08d46fab0e5e1a6e73e19ac29df92753ef8ac0308f4ceca860727ccc290a"
+    },
+    {
+      "path": "scripts/make-sample.mjs",
+      "bytes": 3877,
+      "sha256": "d121887bc2a62cfd1ccd57d4e7171e5b0354fdb1215e1a5eff32be46d0211ad5"
+    },
+    {
+      "path": "scripts/version-bump.mjs",
+      "bytes": 775,
+      "sha256": "dfe2c17d0a0afa4298db3ceb3ecbf9e7996124717ec836eecbc49ef923f73ebf"
+    },
+    {
+      "path": "src/accretion.js",
+      "bytes": 13140,
+      "sha256": "5534291a31980bca88d5bd852b6354b0b32dab8327f901ec71882d26b1a7286f"
+    },
+    {
+      "path": "src/app.mjs",
+      "bytes": 22400,
+      "sha256": "c52990e670d852bdc61932d9982499e81e51ddcd0d856d9c15cf9626e9ae8313"
+    },
+    {
+      "path": "src/blackhole.css",
+      "bytes": 5739,
+      "sha256": "420caa6a2c45ab0fbed03a065f662488d67b320467c20594233a6e839e516336"
+    },
+    {
+      "path": "src/blackhole.d.ts",
+      "bytes": 1619,
+      "sha256": "c05d2a4c78813a43638558208435fb2332711547d92558f866e2a4e84302703b"
+    },
+    {
+      "path": "src/blackhole.js",
+      "bytes": 37570,
+      "sha256": "040e3acfe77d04411ee50f044f46d10e68e089a66e091a57065cc082fc5ce6fa"
+    },
+    {
+      "path": "src/graph.d.ts",
+      "bytes": 858,
+      "sha256": "f978f0344184a053a72334d7f883dc221a8f2f779c64863fba7f4289c4f98b5b"
+    },
+    {
+      "path": "src/graph.js",
+      "bytes": 4669,
+      "sha256": "72a51fae54b10cabc17287cf1c2f30322f1f31d2911b8bbc0a13d0ef0ca7e1c7"
+    },
+    {
+      "path": "src/lensing.js",
+      "bytes": 14028,
+      "sha256": "b29f173f58df36fa8e3956c22ffe17926068be8512ed783fdaf75ce51ce2bf4f"
+    },
+    {
+      "path": "src/prototype.html",
+      "bytes": 29117,
+      "sha256": "673ed7e2ab16b033daa0f3bf71e578dcfaf57f5d88fd8ace82bad8b4bc37bd11"
+    },
+    {
+      "path": "src/sky.js",
+      "bytes": 13577,
+      "sha256": "1d50ff52cacdf2f78380be8dc1db813eefd6e8e9826b20afe2fd57ed98d85532"
+    }
+  ],
+  "source_changed": false
+}

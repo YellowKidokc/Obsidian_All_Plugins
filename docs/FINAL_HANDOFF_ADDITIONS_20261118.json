@@ -1,0 +1,13 @@
+{
+  "second_brain": "source_snapshot_imported_and_fixture_tested",
+  "phd_notes": "reference_guide_and_original_workflow_templates_only",
+  "plannotator": {
+    "integration": "pinned_git_submodule",
+    "commit": "951857cfffc191c3c62c0547342e394bbb8f8898",
+    "checkout_and_tests": "pending_in_fresh_checkout",
+    "supplied_download": "incomplete_root_manifest_and_packages_missing"
+  },
+  "coding_prompt": "CODEX_START_HERE.md",
+  "live_vault_changes": false,
+  "paid_calls": 0
+}

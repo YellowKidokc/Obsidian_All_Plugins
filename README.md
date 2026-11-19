@@ -1,5 +1,7 @@
 # Obsidian_All_Plugins
 
+**Current coding handoff:** Read [CODEX_START_HERE.md](CODEX_START_HERE.md). It defines the integrated build and current boundaries; the older consolidation prompt below is historical reference.
+
 One home for everything David uses to run his Obsidian vaults: plugins, file
 actions, the paper registry, the dashboard, canonization, semantic tagging and
 review. Markdown files in the vault stay the master copy; every tool here reads
@@ -146,7 +148,9 @@ blue, fact red, style purple, note green.
 
 ---
 
-## Prompt for Codex
+## Historical consolidation prompt
+
+Use CODEX_START_HERE.md for the current coding assignment. The original draft below is retained for context, not as a second independent task list.
 
 ```text
 You are consolidating David's Obsidian tooling into this repository
