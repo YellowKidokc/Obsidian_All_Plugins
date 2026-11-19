@@ -154,6 +154,7 @@ def main():
     target = commands.add_parser('review-target')
     target.add_argument('paper')
     target.add_argument('--html', action='store_true')
+    target.add_argument('--artifact', help='Current projection artifact ID from the export')
     review = commands.add_parser('import-review')
     review.add_argument('paper')
     review.add_argument('target')
@@ -194,7 +195,7 @@ def main():
             if command == 'prepare':
                 print(prepare(index, paper, args.actor, list(projections.TASKS) if 'all' in args.codes else args.codes))
             elif command == 'review-target':
-                print(review_target(index, paper, args.html))
+                print(review_target(index, paper, args.html, args.artifact))
             elif command == 'import-review':
                 print(import_review(index, paper, args.actor, args.response.read_bytes(), args.span, args.target))
             elif command == 'translate-math':

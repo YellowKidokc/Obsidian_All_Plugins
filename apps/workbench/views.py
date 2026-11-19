@@ -158,11 +158,18 @@ def export(index, snapshot, actor):
     chart.title = 'Snapshot totals'
     chart.add_data(Reference(dashboard, min_col=2, min_row=1, max_row=5), titles_from_data=True)
     chart.set_categories(Reference(dashboard, min_col=1, min_row=2, max_row=5))
-    dashboard.add_chart(chart, 'D2')
+    dashboard.add_chart(chart, 'E2')
+    dashboard.freeze_panes = 'A2'
+    dashboard.column_dimensions['A'].width = 26
+    dashboard.column_dimensions['B'].width = 18
+    dashboard.column_dimensions['C'].width = 28
 
+    report_sections = []
     def sheet(name, headers, rows):
         tab = workbook.create_sheet(name)
         tab.append(headers)
+        rows = list(rows)
+        report_sections.append((name, headers, rows))
         for row in rows:
             tab.append(row)
             for cell in tab[tab.max_row]:
@@ -203,19 +210,23 @@ def export(index, snapshot, actor):
             (r['id'], r['paper_id'], r['actor'], r['provenance']['source_sha256'], r['current'],
              str(r['provenance']['locator']), r['provenance']['engine'], r['provenance']['recorded_at'],
              json_bytes(r['data']).decode()[:2000], 'fis.json · ' + r['id']) for r in snapshot['records'] if r['kind'] == kind))
+    source_links = ''.join(
+        f'<li><a href="sources/{paper["sha256"]}.md">{escape(paper["path"])}</a></li>'
+        for paper in snapshot['papers'] if paper['availability'] == 'present')
+    sections = ''.join(
+        f'<details open><summary>{escape(name)} ({len(rows)})</summary>{table(headers, rows)}</details>'
+        for name, headers, rows in report_sections)
+    html = html_document('Workbench export', '<h1>Workbench export</h1>'
+                         + table(('Measure', 'Total'), summary)
+                         + f'<h2>Preserved sources</h2><ul>{source_links}</ul>'
+                         + sections)
     stream = io.BytesIO()
     workbook.save(stream)
     paths = {
         'workbench.xlsx': stream.getvalue(),
         'fis.json': json_bytes(payload),
         'relationships.json': json_bytes(graph),
-        'index.html': html_document('Workbench export',
-                                   '<h1>Workbench export</h1>' + table(('Measure', 'Total'), summary)
-                                   + '<h2>Papers</h2>' + table(('Series', 'Path', 'State'),
-                                       ((p['series'], p['path'], p['availability']) for p in snapshot['papers']))
-                                   + '<h2>Processing</h2>' + table(('Paper', 'Task', 'State'),
-                                       ((p['paper_id'], p['task'], p['status']) for p in snapshot['processing']))
-                                   ).encode(),
+        'index.html': html.encode(),
     }
     for name, raw in paths.items():
         create(folder / name, raw)

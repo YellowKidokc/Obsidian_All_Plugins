@@ -106,8 +106,20 @@ def import_projection(index, snapshot, run_id, actor, response):
     return artifact
 
 
-def review_target(index, paper, render_html=False):
+def review_target(index, paper, render_html=False, artifact_id=None):
     raw = index.source(paper)
+    name = 'source'
+    if artifact_id:
+        record = next((r for r in index.current()['records'] if r['id'] == artifact_id
+                       and r['kind'] == 'artifacts' and r['current'] and r['paper_id'] == paper['id']), None)
+        if not record:
+            raise ValueError('Choose a current projection artifact from this paper')
+        artifact = contained(index.state, record['data']['artifact'])
+        result = artifact.read_bytes()
+        if artifact.suffix != '.json' or digest(result) != record['data']['artifact_sha256']:
+            raise ValueError('Review requires a verified projection result')
+        raw = json.loads(result)['content_markdown'].encode()
+        name = 'projection-' + artifact_id
     content = raw
     kind = 'md'
     if render_html:
@@ -116,7 +128,7 @@ def review_target(index, paper, render_html=False):
         body = escape(raw.decode('utf-8-sig'))
         content = f'<!doctype html><meta charset="utf-8"><title>Source review</title><pre>{body}</pre>'.encode()
         kind = 'html'
-    path = index.state / 'review' / paper['id'] / paper['sha256'] / f'source.{kind}'
+    path = index.state / 'review' / paper['id'] / paper['sha256'] / f'{name}.{kind}'
     create(path, content)
     return path
 
@@ -127,11 +139,14 @@ def import_review(index, paper, actor, response, span, target):
         raise ValueError('Expected a Plannotator annotate --json decision')
     folder = index.state / 'review' / paper['id'] / paper['sha256']
     target = Path(target).absolute()
-    if target.parent != folder or target.name not in {'source.md', 'source.html'}:
+    if target.parent != folder or target.suffix not in {'.md', '.html'}:
         raise ValueError('Choose an exported review target for this source version')
+    if target.stem != 'source' and not target.stem.startswith('projection-'):
+        raise ValueError('Unknown review target kind')
     if payload.get('target') != str(target):
         raise ValueError('Decision target differs from the versioned review file')
-    if target != review_target(index, paper, target.suffix == '.html'):
+    artifact = target.stem.removeprefix('projection-') if target.stem != 'source' else None
+    if target != review_target(index, paper, target.suffix == '.html', artifact):
         raise ValueError('Review target must match its exported bytes')
     feedback = payload.get('feedback', '')
     if not isinstance(feedback, str):
@@ -139,7 +154,8 @@ def import_review(index, paper, actor, response, span, target):
     event = index.record('reviews', paper, actor,
                          {'decision': payload['decision'], 'feedback': feedback,
                           'target': target.relative_to(index.state).as_posix(),
-                          'target_sha256': digest(target.read_bytes()), 'status': 'human_review'},
+                          'target_sha256': digest(target.read_bytes()), 'projection_artifact_id': artifact,
+                          'status': 'human_review'},
                          engine='plannotator-manual', locator=span, validation='recorded')
     log = index.state / 'review' / paper['id'] / 'AI Review Log' / f"{event['id']}.md"
     text = (f"# AI Review Log entry\n\n{actor} · {event['provenance']['recorded_at']}\n\n"

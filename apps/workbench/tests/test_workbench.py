@@ -110,6 +110,13 @@ def test_projection_receipts_review_and_export_parity(fixture):
     decision = json.dumps(dict(decision='annotated', target=str(target), feedback='Clarify the scope'))
     log = import_review(index, paper, 'Fixture reviewer', decision, [7, 7], target)
     assert 'Clarify the scope' in log.read_text()
+    artifact = next(r for r in index.current()['records'] if r['kind'] == 'artifacts'
+                    and r['data']['task'] == 'contradiction_pass')
+    projected_review = review_target(index, paper, artifact_id=artifact['id'])
+    assert projected_review.read_text() == payload['content_markdown']
+    approval = json.dumps(dict(decision='approved', target=str(projected_review)))
+    import_review(index, paper, 'Fixture reviewer', approval, [7, 7], projected_review)
+    assert index.current()['records'][-1]['data']['projection_artifact_id'] == artifact['id']
     report = export(index, index.current(), 'fixture')
     workbook = load_workbook(report / 'workbench.xlsx', read_only=True)
     excel = {label: value for label, value, _ in workbook['Dashboard'].values}
