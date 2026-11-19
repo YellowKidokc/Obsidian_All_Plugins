@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HTML Vault Review</title>
+<style>
+:root{--bg:#f7f6f2;--panel:#fff;--ink:#1d1d1f;--mute:#6b6b70;--line:#e3e1da;--accent:#3b5bdb;
+--grammar:#ffd8a8;--clarity:#a5d8ff;--fact:#ffc9c9;--style:#d0bfff;--note:#b2f2bb;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17171a;--panel:#1f1f23;--ink:#ececf0;--mute:#9a9aa3;--line:#33333a;--accent:#748ffc;
+--grammar:#8a5a1c;--clarity:#1c5a8a;--fact:#8a2c2c;--style:#5a3c8a;--note:#2c6a3a;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,Segoe UI,sans-serif;height:100vh;display:grid;grid-template-columns:230px 1fr 320px;grid-template-rows:48px 1fr}
+header{grid-column:1/-1;display:flex;align-items:center;gap:10px;padding:0 14px;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{font-size:15px;margin:0 auto 0 0}
+button{font:inherit;font-size:13px;padding:5px 10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;cursor:pointer}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+aside,#notes{overflow:auto;background:var(--panel);border-right:1px solid var(--line);padding:10px}
+#notes{border-right:0;border-left:1px solid var(--line)}
+.folder{font-weight:600;font-size:12px;color:var(--mute);text-transform:uppercase;margin:12px 4px 4px}
+.file{padding:5px 8px;border-radius:5px;cursor:pointer}
+.file:hover{background:var(--bg)} .file.sel{background:var(--accent);color:#fff}
+main{overflow:auto;padding:30px 48px}
+#doc{max-width:720px;margin:auto;font-family:Georgia,serif;font-size:17px}
+textarea{width:100%;max-width:720px;display:block;margin:auto;height:calc(100vh - 120px);font:14px/1.6 ui-monospace,Consolas,monospace;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:16px}
+[hidden]{display:none!important}
+mark{border-radius:3px;padding:0 1px;cursor:pointer;color:inherit}
+mark.grammar{background:var(--grammar)} mark.clarity{background:var(--clarity)} mark.fact{background:var(--fact)} mark.style{background:var(--style)} mark.note{background:var(--note)}
+mark.active{outline:2px solid var(--accent)}
+.card{border:1px solid var(--line);border-left:5px solid;border-radius:8px;padding:10px;margin-bottom:10px;font-size:13px}
+.card.active{box-shadow:0 0 0 2px var(--accent)}
+.card.grammar{border-left-color:var(--grammar)} .card.clarity{border-left-color:var(--clarity)} .card.fact{border-left-color:var(--fact)} .card.style{border-left-color:var(--style)} .card.note{border-left-color:var(--note)}
+.card .t{font-weight:600;text-transform:capitalize}
+.card del{color:var(--mute)} .card ins{text-decoration:none;font-weight:600}
+.card .row{display:flex;gap:6px;margin-top:8px}
+.legend span{display:inline-block;font-size:11px;padding:1px 6px;border-radius:4px;margin:2px}
+#addnote{display:none;border:1px dashed var(--accent);border-radius:8px;padding:10px;margin-bottom:10px;font-size:13px}
+#addnote textarea{height:60px;font-size:13px}
+.empty{color:var(--mute);font-size:13px}
+@media (max-width:900px){body{grid-template-columns:1fr;grid-template-rows:48px auto 1fr auto}aside,#notes{max-height:30vh}main{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>📚 HTML Vault — Review</h1>
+  <button id="bEdit">Edit (Markdown)</button>
+  <button id="bReview" class="on">Review (HTML)</button>
+  <button id="bAI">✨ AI review</button>
+  <button id="bExport">Export HTML</button>
+</header>
+<aside id="tree"></aside>
+<main><div id="doc"></div><textarea id="src" hidden></textarea></main>
+<section id="notes">
+  <div class="legend">
+    <span style="background:var(--grammar)">grammar</span><span style="background:var(--clarity)">clarity</span><span style="background:var(--fact)">fact</span><span style="background:var(--style)">style</span><span style="background:var(--note)">your note</span>
+  </div>
+  <p class="empty">Select text in the document to add a note. Click a highlight to jump to its card.</p>
+  <div id="addnote"><div><b>Note on:</b> <i id="anText"></i></div><textarea id="anBody" placeholder="Your note…"></textarea><div class="row" style="display:flex;gap:6px;margin-top:6px"><button id="anSave" class="on">Add note</button><button id="anCancel">Cancel</button></div></div>
+  <div id="cards"></div>
+</section>
+<script>
+// ---------- data ----------
+const DEMO = {
+  "Book": {
+    "Chapter 1 — Origins.md": "# Chapter 1 — Origins\n\nThe universe dont begin with matter, it begins with *information*. Every particle, every field, is a expression of something deeper.\n\nIn this chapter we will kind of explore how the observer effect basically shows that measurement and meaning are linked.\n\nEinstein proved quantum mechanics was complete in 1935.",
+    "Chapter 2 — Coherence.md": "# Chapter 2 — Coherence\n\nCoherence is the property that lets waves interfere. When coherence is lost the system behaves classically.\n\nThis is really very important for everything that follows."
+  },
+  "Notes": { "Ideas.md": "# Ideas\n\n- Make every chapter an HTML page\n- Link chapters like a website" }
+};
+// demo "AI" suggestions keyed by file; a real build would call an LLM here
+const AI = {
+  "Chapter 1 — Origins.md":[
+    {type:"grammar",find:"dont begin",replace:"doesn't begin",note:"Subject–verb agreement and missing apostrophe."},
+    {type:"grammar",find:"a expression",replace:"an expression",note:"Use “an” before a vowel sound."},
+    {type:"clarity",find:"we will kind of explore how the observer effect basically shows",replace:"we explore how the observer effect shows",note:"Hedging words weaken the claim."},
+    {type:"fact",find:"Einstein proved quantum mechanics was complete in 1935.",replace:"In 1935 Einstein, Podolsky and Rosen argued quantum mechanics was incomplete.",note:"The EPR paper argued the opposite: that QM is incomplete."}],
+  "Chapter 2 — Coherence.md":[
+    {type:"style",find:"This is really very important",replace:"This matters",note:"Tighter, stronger phrasing."},
+    {type:"clarity",find:"When coherence is lost",replace:"When coherence is lost (decoherence),",note:"Name the concept for the reader."}]
+};
+let state = load() || {vault:DEMO, ann:{}, cur:["Book","Chapter 1 — Origins.md"]};
+let mode="review", active=null, uid=Date.now();
+function save(){try{localStorage.setItem("htmlvault",JSON.stringify(state))}catch(e){}}
+function load(){try{return JSON.parse(localStorage.getItem("htmlvault"))}catch(e){return null}}
+const $=id=>document.getElementById(id);
+const curKey=()=>state.cur.join("/");
+const curText=()=>state.vault[state.cur[0]][state.cur[1]];
+const setText=t=>{state.vault[state.cur[0]][state.cur[1]]=t};
+const anns=()=>state.ann[curKey()]||(state.ann[curKey()]=[]);
+
+// ---------- tiny markdown -> html ----------
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function inline(s){return esc(s).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>").replace(/`(.+?)`/g,"<code>$1</code>")}
+function md(src){
+  return src.split(/\n{2,}/).map(b=>{
+    if(/^#{1,6} /.test(b)){const n=b.match(/^#+/)[0].length;return `<h${n}>${inline(b.slice(n+1))}</h${n}>`}
+    if(/^- /.test(b))return "<ul>"+b.split("\n").map(l=>`<li>${inline(l.replace(/^- /,""))}</li>`).join("")+"</ul>";
+    return `<p>${inline(b).replace(/\n/g,"<br>")}</p>`;
+  }).join("\n");
+}
+// insert sentinels around annotated spans, render, then turn sentinels into <mark>
+function renderAnnotated(){
+  let t=curText();
+  const list=anns().filter(a=>t.includes(a.find));
+  list.forEach(a=>{t=t.replace(a.find,`\u0001${a.id}\u0002${a.find}\u0003`)});
+  let h=md(t);
+  const byId=Object.fromEntries(list.map(a=>[a.id,a]));
+  return h.replace(/\u0001(\d+)\u0002/g,(m,id)=>`<mark class="${byId[id].type}" data-id="${id}">`).replace(/\u0003/g,"</mark>");
+}
+
+// ---------- UI ----------
+function drawTree(){
+  $("tree").innerHTML=Object.entries(state.vault).map(([f,files])=>
+    `<div class="folder">📁 ${esc(f)}</div>`+Object.keys(files).map(n=>
+      `<div class="file ${state.cur[0]==f&&state.cur[1]==n?"sel":""}" data-f="${esc(f)}" data-n="${esc(n)}">📄 ${esc(n.replace(/\.md$/,""))}</div>`).join("")).join("");
+}
+function drawDoc(){
+  $("doc").hidden=mode!="review"; $("src").hidden=mode!="edit";
+  if(mode=="edit")$("src").value=curText(); else $("doc").innerHTML=renderAnnotated();
+  $("bEdit").classList.toggle("on",mode=="edit"); $("bReview").classList.toggle("on",mode=="review");
+}
+function drawCards(){
+  const list=anns();
+  $("cards").innerHTML=list.length?list.map(a=>`
+   <div class="card ${a.type} ${active==a.id?"active":""}" data-id="${a.id}">
+     <div class="t">${a.type=="note"?"Your note":a.type}</div>
+     ${a.replace!=null?`<div><del>${esc(a.find)}</del> → <ins>${esc(a.replace)}</ins></div>`:`<div><i>“${esc(a.find)}”</i></div>`}
+     <div>${esc(a.note)}</div>
+     <div class="row">${a.replace!=null?`<button class="on" data-act="accept">Accept</button><button data-act="reject">Reject</button>`:`<button data-act="reject">Resolve</button>`}</div>
+   </div>`).join(""):`<p class="empty">No open annotations. Click ✨ AI review.</p>`;
+}
+function drawAll(){drawTree();drawDoc();drawCards();save()}
+function focus(id){active=id;drawCards();
+  document.querySelectorAll("mark").forEach(m=>m.classList.toggle("active",m.dataset.id==id));
+  document.querySelector(`.card[data-id="${id}"]`)?.scrollIntoView({block:"nearest",behavior:"smooth"});}
+
+$("tree").onclick=e=>{const f=e.target.closest(".file");if(!f)return;
+  if(mode=="edit")setText($("src").value); state.cur=[f.dataset.f,f.dataset.n];active=null;drawAll();};
+$("bEdit").onclick=()=>{mode="edit";drawDoc()};
+$("bReview").onclick=()=>{setText($("src").value||curText());mode="review";drawAll()};
+$("src").oninput=()=>{setText($("src").value);save()};
+$("bAI").onclick=()=>{
+  if(mode=="edit"){setText($("src").value);mode="review"}
+  const t=curText(),have=new Set(anns().map(a=>a.find));
+  (AI[state.cur[1]]||[]).filter(s=>t.includes(s.find)&&!have.has(s.find)).forEach(s=>anns().push({...s,id:++uid}));
+  drawAll();
+};
+$("doc").onclick=e=>{const m=e.target.closest("mark");if(m)focus(+m.dataset.id)};
+$("cards").onclick=e=>{
+  const c=e.target.closest(".card");if(!c)return;const id=+c.dataset.id,act=e.target.dataset.act;
+  if(!act)return focus(id);
+  const a=anns().find(x=>x.id==id);
+  if(act=="accept")setText(curText().replace(a.find,a.replace));
+  state.ann[curKey()]=anns().filter(x=>x.id!=id);active=null;drawAll();
+};
+// select text -> add your own note
+let pending="";
+$("doc").onmouseup=()=>{const s=getSelection().toString().trim();
+  if(s&&curText().includes(s)){pending=s;$("anText").textContent=s;$("addnote").style.display="block";$("anBody").focus();}};
+$("anCancel").onclick=()=>{$("addnote").style.display="none"};
+$("anSave").onclick=()=>{const b=$("anBody").value.trim();if(!b)return;
+  anns().push({id:++uid,type:"note",find:pending,replace:null,note:b});$("anBody").value="";$("addnote").style.display="none";drawAll();};
+$("bExport").onclick=()=>{
+  const title=state.cur[1].replace(/\.md$/,"");
+  const html=`<!doctype html><meta charset="utf-8"><title>${esc(title)}</title><body style="max-width:720px;margin:40px auto;font:17px/1.6 Georgia,serif">${md(curText())}</body>`;
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([html],{type:"text/html"}));a.download=title+".html";a.click();
+};
+drawAll();
+</script>
+</body>
+</html>

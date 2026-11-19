@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "quantum-demo",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["quantum.py", "--demo", "--state", "C:/Users/David/AppData/Local/Temp/claude/0d0853024398a2cf/5ac1ee04-80a9-454d-89d6-7ce9d62bb4b3/scratchpad/qp-demo", "--port", "8765"],
+      "port": 8765
+    }
+  ]
+}
