@@ -119,3 +119,18 @@
         gap: 8px;
     }
 }
+
+/* Imported repair: target the footer class that templates actually emit.
+   Sticky behavior depends on Obsidian/theme scroll containers; this is not
+   a fixed application-wide toolbar. */
+.markdown-preview-view .nav-footer-sticky,
+.markdown-source-view.mod-cm6 .nav-footer-sticky {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+}
+.markdown-preview-view .markdown-preview-section > div:has(> .nav-footer-sticky) {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+}

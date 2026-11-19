@@ -12,3 +12,9 @@ __pycache__/
 *.sqlite-*
 *.db
 plugins/semantic-ai/data.json
+
+# Imported components: runtime settings and local configuration
+legacy/ai-tagger-bundle/plugin/data.json
+apps/research-manager/theophysics_config.json
+apps/research-manager/config/settings.ini
+templates/navigation/_templates/navigation.config.json

@@ -35,3 +35,15 @@ Run each command from the indicated component directory:
 - repository root with pytest installed: python -m pytest apps/registry -q --basetemp .venv/test-runs/NEW_UNIQUE_DIRECTORY (create the parent first). An isolated temp root avoids this machine's inaccessible global pytest-current junction.
 
 The build check restored the imported main.js bytes afterward so the source import stays exact. Node dependencies and the local Python test environment are ignored, not committed.
+
+
+## Second collection batch
+
+| Component | Location | Current role / evidence |
+|---|---|---|
+| Research Manager (DASHBOARD-Obsidian-HTML) | apps/research-manager | Full Python/PySide research manager, not merely HTML; 102 Python files parse. Further runtime acceptance remains separate. |
+| AI-TAGER-OBS | legacy/ai-tagger-bundle | Prior Semantic AI bundle and taxonomy/prompt references; runtime data.json excluded; compiled JS syntax passes. |
+| Dashboard Navigator | plugins/dashboard-navigator | Preferred in-Obsidian front end; TypeScript and production build pass. Pair with apps/dashboard operations through a shared adapter, not by discarding either project. |
+| Navigation-Obsidian | templates/navigation | Five repaired Templater templates and CSS; 10 fixture tests pass; live Obsidian acceptance pending. |
+
+Dashboard pairing direction from David: Dashboard Navigator supplies native vault navigation, stats and searches; apps/dashboard supplies read-only snapshots and operational actions. Shared scope/status/identity and action-history adapters remain to be built. No existing live vault or community-plugin settings were changed.

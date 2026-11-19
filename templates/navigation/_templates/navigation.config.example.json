@@ -1,0 +1,8 @@
+{
+  "vaultHome": "00_INDEX",
+  "recent": "_RECENT",
+  "links": [
+    { "label": "Master Equation", "path": "MASTER_EQUATION_10_LAWS/INDEX" },
+    { "label": "Series map", "path": "SERIES_MAP" }
+  ]
+}
