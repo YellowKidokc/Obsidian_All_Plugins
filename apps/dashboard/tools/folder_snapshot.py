@@ -13,7 +13,7 @@ def timestamp():
     return datetime.now(timezone.utc).isoformat()
 
 
-def capture(roots, include_system=False):
+def capture(roots, include_system=False, *, exclude=None):
     selected = [Path(p).absolute() for p in roots]
     for root in selected:
         if root.is_symlink():
@@ -47,6 +47,8 @@ def capture(roots, include_system=False):
                 ordered = sorted(entries, key=lambda e: e.name.casefold())
             for entry in ordered:
                 child_path = path / entry.name
+                if exclude is not None and exclude(child_path):
+                    continue
                 try:
                     info = entry.stat(follow_symlinks=False)
                     if entry.is_symlink() or getattr(info, 'st_file_attributes', 0) & 0x400:
