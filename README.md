@@ -5,8 +5,7 @@ actions, the paper registry, the dashboard, canonization, semantic tagging and
 review. Markdown files in the vault stay the master copy; every tool here reads
 and writes them safely and logs who changed what.
 
-Status: **plan only**. Nothing has been imported yet except `apps/registry` (seeded from David-OSv3). The Codex prompt is at the bottom; it runs as one pass.
-implementing agent (Codex) is at the bottom of this file.
+Status: **components imported; shared integration remains planned**. The repository now contains Quantum, Dashboard, Semantic AI, Paper Projections, and the existing registry seed. See [the component map](docs/COMPONENT_MAP.md). The broader consolidation prompt remains below for future integration work.
 
 ---
 

@@ -1,0 +1,51 @@
+{
+  "components": [
+    {
+      "source_path": "D:\\GitHub\\OBS_-Quantum_Paper",
+      "source_branch": "OBS-Plugin-Final-Claude",
+      "original_commit": "1f4a0e5d6b0b5f31ecf5116c81a6aae48e19c164",
+      "imported_history_tip": "d9d7441a2ca9119320040d636d00f8cc17faff38",
+      "destination": "apps/quantum",
+      "history_preserved": true,
+      "history_filtered_exclusions": [
+        ".qp_state/"
+      ],
+      "verified_git_blobs": 12,
+      "import_commit": "ca541d8e210a5de560ae25eaab6400cec2d42b08"
+    },
+    {
+      "source_path": "D:\\GitHub\\OBS-BAT-DASHBOARD",
+      "source_branch": "OBS-Plugin-Final-Claude",
+      "original_commit": "dae8f978fb8993df6e33b2ca790aac0dd3d31742",
+      "imported_history_tip": "dae8f978fb8993df6e33b2ca790aac0dd3d31742",
+      "destination": "apps/dashboard",
+      "history_preserved": true,
+      "history_filtered_exclusions": [],
+      "verified_git_blobs": 331,
+      "import_commit": "3023b02d2a32fbb2745c035d716afac4b4880f40"
+    },
+    {
+      "source_path": "D:\\GitHub\\theophysics-semantic-ai",
+      "source_branch": "main",
+      "original_commit": "a8200db2beaa5b1edb079c8a70319445803adbc8",
+      "imported_history_tip": "a8200db2beaa5b1edb079c8a70319445803adbc8",
+      "destination": "plugins/semantic-ai",
+      "history_preserved": true,
+      "history_filtered_exclusions": [],
+      "verified_git_blobs": 44,
+      "import_commit": "a9ba902ffb7c881f96897b39be978d87e530791b"
+    }
+  ],
+  "source_repositories_modified": false,
+  "remote_push_performed": false,
+  "verification": {
+    "quantum_unit_tests": 19,
+    "dashboard_unit_tests": 5,
+    "registry_pytest_tests": 6,
+    "semantic_typescript_and_build": "passed",
+    "git_blobs_verified": 387,
+    "live_vault_acceptance": "not_run",
+    "paid_api_calls": 0,
+    "pytest_environment_note": "Used isolated basetemp after global pytest-current junction permission error."
+  }
+}
