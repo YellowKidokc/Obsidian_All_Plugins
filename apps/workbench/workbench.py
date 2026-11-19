@@ -12,7 +12,7 @@ from urllib.parse import urlencode
 from adapters import (
     add_ledger, import_projection, import_review, prepare, projections, review_target,
 )
-from analytics import add_assessment, coherence, translate
+from analytics import add_assessment, coherence, relationship_graph, translate
 from index import Index, contained, digest
 from navigation import navigation
 from views import export, html_document, workspace
@@ -123,6 +123,11 @@ def main():
     serve = commands.add_parser('serve')
     serve.add_argument('--port', type=int, default=8766)
     commands.add_parser('export')
+    graph = commands.add_parser('graph')
+    scope = graph.add_mutually_exclusive_group()
+    scope.add_argument('--paper')
+    scope.add_argument('--series')
+    commands.add_parser('namer-status')
     nav = commands.add_parser('navigation')
     nav.add_argument('--apply', action='store_true')
     package = commands.add_parser('prepare')
@@ -155,6 +160,10 @@ def main():
     review.add_argument('span', type=int, nargs=2)
     args = cli.parse_args()
     try:
+        if args.command == 'namer-status':
+            print(json.dumps({'status': 'blocked', 'missing': 'Authoritative Master Equation Namer, '
+                              'paragraph profiles and name/1-to-3 scoring fixtures'}))
+            return
         index = Index(args.root, args.state or args.root / '.backside' / 'workbench')
         command = args.command
         if command == 'scan':
@@ -167,6 +176,11 @@ def main():
                 server.serve_forever()
         elif command == 'export':
             print(export(index, snapshot, args.actor))
+        elif command == 'graph':
+            paper_ids = {paper['id'] for paper in snapshot['papers']
+                         if (not args.paper or paper['id'] == args.paper)
+                         and (not args.series or paper['series'] == args.series)}
+            print(json.dumps(relationship_graph(snapshot, paper_ids), ensure_ascii=False))
         elif command == 'navigation':
             print(json.dumps(navigation(index, snapshot, args.actor, args.apply), ensure_ascii=False, indent=2))
         elif command == 'import-projection':

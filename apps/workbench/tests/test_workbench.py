@@ -167,3 +167,53 @@ def test_cdcm_keeps_axiom_and_cell_denominators_distinct(fixture):
     axiom, cell = [record['data'] for record in coherence(index, index.current(), paper, 'fixture')]
     assert (axiom['numerator'], axiom['denominator'], axiom['value']) == (1, 4, 0.25)
     assert (cell['numerator'], cell['denominator'], cell['value']) == (1, 36, 1 / 36)
+
+
+def test_typed_graph_uses_current_candidate_edges(fixture):
+    from analytics import add_assessment, relationship_graph
+
+    index, original, raw = fixture
+    paper = pick(index, original)
+    premise = add_ledger(index, paper, 'fixture', {'type': 'premise', 'text': 'First'}, [7, 7])
+    claim = add_ledger(index, paper, 'fixture', {'type': 'claim', 'text': 'Second'}, [7, 7])
+    add_assessment(index, index.current(), paper, 'fixture', 'relationships',
+                   {'source': claim['id'], 'target': premise['id'], 'type': 'depends_on',
+                    'rationale': 'Fixture dependency', 'review_state': 'approved'}, [7, 7])
+    graph = relationship_graph(index.current(), {paper['id']})
+    assert graph['edges'][0]['source'] == claim['id']
+    assert graph['edges'][0]['target'] == premise['id']
+    assert graph['edges'][0]['review_state'] == 'candidate'
+    assert graph['weak_components'] == [sorted([premise['id'], claim['id']])]
+    original.write_bytes(raw + b'Changed\r\n')
+    index.scan('fixture', ['Unselected'])
+    graph = relationship_graph(index.current(), {paper['id']})
+    assert graph['edges'] == []
+    assert graph['assessment_status'] == 'unassessed'
+
+
+def test_quantum_registry_identity_survives_a_registered_move(fixture, tmp_path):
+    from index import APPS
+    sys.path.insert(0, str(APPS / 'quantum'))
+    from quantum import Library
+
+    index, original, raw = fixture
+    library = Library(tmp_path / 'quantum-state', actor='Fixture owner')
+    vault = library.add_vault('Copy', index.root, portable=True)
+    paper_id = library.register(vault, original.relative_to(index.root).as_posix())
+    library.show_here(paper_id, vault, 'Série One')
+    index = Index(index.root, tmp_path / 'workbench-state')
+    index.scan('fixture', ['Unselected'], library.db)
+    assert pick(index, original)['id'] == paper_id
+    assert pick(index, original)['memberships'] == ['Série One']
+    (index.root / 'Série One' / 'New folder').mkdir()
+    library.move(paper_id, vault, 'Série One/New folder')
+    moved = index.root / 'Série One' / 'New folder' / original.name
+    assert moved.read_bytes() == raw
+    index.scan('fixture', ['Unselected'], library.db)
+    assert pick(index, moved)['id'] == paper_id
+    assert pick(index, moved)['availability'] == 'present'
+    library.move(paper_id, vault, 'Série One/Paper Ω')
+    index.scan('fixture', ['Unselected'], library.db)
+    assert pick(index, original)['id'] == paper_id
+    assert [event['action'] for event in index.current()['quantum_history']].count('move') == 2
+    assert original.read_bytes() == raw

@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import quote, urlencode
 
 from adapters import json_bytes, projections, record_artifact
-from analytics import CDCM_METRICS
+from analytics import CDCM_METRICS, relationship_graph
 from index import METRICS, VERSION, contained, create, digest, key, timestamp
 
 
@@ -86,6 +86,12 @@ def workspace(index, snapshot, query):
             excerpt = '\n'.join(f'{i}  {lines[i - 1]}' for i in range(first, last + 1))
             body += (f'<h3>Source · {escape(target["path"])}</h3>'
                      f'<pre>{escape(excerpt)}</pre>')
+        body += '<h3>Quantum registry</h3>' + table(('Membership',), ((name,) for name in p['memberships']))
+        events = [event for event in snapshot['quantum_history'] if event['paper'] == paper_id]
+        if events:
+            body += table(('Time', 'Actor', 'Action', 'Source', 'Target'),
+                          ((event['at'], event['actor'], event['action'], event['source'], event['target'])
+                           for event in events))
         body += '<h3>Processing</h3>' + table(('Task', 'State'), (
             (task['task'], task['status']) for task in snapshot['processing'] if task['paper_id'] == paper_id
         ))
@@ -138,7 +144,8 @@ def export(index, snapshot, actor):
 
     folder = index.state / 'exports' / key(snapshot['id'], timestamp())
     summary = dashboard_rows(snapshot)
-    payload = dict(snapshot, totals=dict(summary))
+    graph = relationship_graph(snapshot, {paper['id'] for paper in snapshot['papers']})
+    payload = dict(snapshot, totals=dict(summary), graph=graph)
     workbook = Workbook()
     dashboard = workbook.active
     dashboard.title = 'Dashboard'
@@ -199,6 +206,7 @@ def export(index, snapshot, actor):
     paths = {
         'workbench.xlsx': stream.getvalue(),
         'fis.json': json_bytes(payload),
+        'relationships.json': json_bytes(graph),
         'index.html': html_document('Workbench export',
                                    '<h1>Workbench export</h1>' + table(('Measure', 'Total'), summary)
                                    + '<h2>Papers</h2>' + table(('Series', 'Path', 'State'),

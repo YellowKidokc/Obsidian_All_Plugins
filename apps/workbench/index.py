@@ -14,7 +14,10 @@ sys.path.insert(0, str(APPS / 'dashboard' / 'tools'))
 from folder_snapshot import capture, timestamp
 
 VERSION = '1.0'
-EXCLUDED = {'archive', 'archives', 'node_modules', '__pycache__', '_index.md', 'ai review log.md'}
+EXCLUDED = {
+    'archive', 'archives', 'node_modules', '__pycache__', '_index.md', 'ai review log.md',
+    'api_calls', 'api_runs', 'ai_review', 'outbox',
+}
 MEDIA = {'.mp3', '.wav', '.m4a', '.mp4', '.webm', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.pdf'}
 METRICS = {
     'words': ('tokens', 'Unicode word matches with internal apostrophes'),
@@ -139,6 +142,7 @@ class Index:
         if not self.database.exists():
             raise ValueError('Scan a selected folder first')
         with closing(self.connect()) as db:
+            db.execute('BEGIN')
             row = db.execute('SELECT payload FROM snapshots ORDER BY rowid DESC LIMIT 1').fetchone()
             if row is None:
                 raise ValueError('Scan a selected folder first')
@@ -206,7 +210,11 @@ class Index:
                 if source.suffix.lower() != '.md':
                     continue
                 paper_id = registered.get(path) or key(str(self.root), path)
-                raw = contained(self.root, source).read_bytes()
+                target = contained(self.root, source)
+                raw = target.read_bytes()
+                info = target.stat()
+                if info.st_mtime_ns != child['modified_ns'] or len(raw) != child['bytes']:
+                    raise ValueError(f'Source changed during scan: {path}')
                 source_hash = digest(raw)
                 paper = dict(id=paper_id, path=path, folder=source.parent.as_posix(),
                              series=source.parts[0] if len(source.parts) > 1 else '.',

@@ -64,7 +64,8 @@ def add_assessment(index, snapshot, paper, actor, kind, entry, span):
             raise ValueError('A directed relationship needs current source and target record IDs')
         if entry.get('type') not in ('supports', 'depends_on', 'contradicts', 'corresponds_to', 'related_to'):
             raise ValueError('Choose a supported relationship type')
-        entry = dict(entry, direction='source_to_target', review_state='candidate')
+        entry = {key: entry.get(key) for key in ('source', 'target', 'type', 'rationale')}
+        entry.update(direction='source_to_target', review_state='candidate')
     text_key = {'relationships': 'rationale', 'constraints': 'rubric'}.get(kind, 'text')
     if not isinstance(entry.get(text_key), str) or not entry[text_key].strip():
         raise ValueError(f'Missing {text_key}')
@@ -96,3 +97,35 @@ def translate(index, paper, actor, dictionary, span):
     return index.record('ledger', paper, actor,
                         dict(type='equation', text=str(result), dictionary_sha256=dictionary_hash),
                         engine='research-backend/math-translator', locator=span)
+
+
+def relationship_graph(snapshot, paper_ids):
+    """Export current sourced edges and weak components for a specified paper scope."""
+    nodes = {r['id']: dict(id=r['id'], paper_id=r['paper_id'], text=r['data']['text'], kind=r['kind'])
+             for r in snapshot['records'] if r['current'] and r['kind'] in {'atoms', 'ledger'}
+             and r['paper_id'] in paper_ids}
+    edges = [dict(id=r['id'], **r['data'], provenance=r['provenance']) for r in snapshot['records']
+             if r['current'] and r['kind'] == 'relationships'
+             and r['data']['source'] in nodes and r['data']['target'] in nodes]
+    adjacency = {node: set() for node in nodes}
+    for edge in edges:
+        adjacency[edge['source']].add(edge['target'])
+        adjacency[edge['target']].add(edge['source'])
+
+    seen = set()
+    components = []
+    for seed in sorted(nodes):
+        if seed in seen:
+            continue
+        seen.add(seed)
+        pending, component = [seed], []
+        while pending:
+            node = pending.pop()
+            component.append(node)
+            neighbors = adjacency[node] - seen
+            seen.update(neighbors)
+            pending.extend(sorted(neighbors))
+        components.append(sorted(component))
+    return dict(schema_version=VERSION, snapshot_id=snapshot['id'], paper_ids=sorted(paper_ids),
+                nodes=list(nodes.values()), edges=edges, weak_components=components,
+                assessment_status='candidate' if edges else 'unassessed')

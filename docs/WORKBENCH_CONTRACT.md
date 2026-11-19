@@ -25,4 +25,8 @@ Historical dictionaries stay independent. The Research Manager fruits dictionary
 
 ## Remaining implementation
 
-The pilot does not activate the ingest engine, migrate the historical analytics library or edit CDCM workbooks. It does not provide full comparison, sensitivity, graph diagnostics, publication FIS profiles, API shortcut routing, or the original Namer pipeline. Historical SIS/LCS/SRI outputs remain in their original locations. Obsidian desktop, real UNC/NAS behavior, pinned Plannotator UI, and the Windows menu need runtime acceptance. No live vault, paid model calls or private sharing are part of the test workflow.
+The pilot does not activate the ingest engine, migrate the historical analytics library or edit CDCM workbooks. It does not provide full comparison, sensitivity, graph clustering or centrality, publication FIS profiles, API shortcut routing, or the original Namer pipeline. Historical SIS/LCS/SRI outputs remain in their original locations. Obsidian desktop, real UNC/NAS behavior, pinned Plannotator UI, and the Windows menu need runtime acceptance. No live vault, paid model calls or private sharing are part of the test workflow.
+
+## Verification
+
+The copied-fixture suite covers idempotent indexing, UTF-8 paths, malformed and duplicate declarations, distinct identities for identical bytes, a registered Quantum move, changed or missing files, source preservation, review import, incomplete projections and broken receipts. It verifies directed graph scope, known-answer CDCM denominators, and matching HTML, Excel and FIS totals. Dashboard Navigator, Semantic AI and Second Brain Black Hole built from their locked dependencies. The Chromium fixture followed series, folder, paper and ledger links to an exact source span and prepared a projection through the browser.
