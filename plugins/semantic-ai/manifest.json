@@ -1,0 +1,10 @@
+{
+  "id": "semantic-ai",
+  "name": "Semantic AI",
+  "version": "2.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Classify notes with an AI model against categories you define, then browse the results as tags, a concept index, and a graph.",
+  "author": "YellowKidokc",
+  "authorUrl": "https://github.com/YellowKidokc",
+  "isDesktopOnly": false
+}
