@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:obsidian-workbench:record:1.0",
+  "type": "object",
+  "required": ["id", "kind", "paper_id", "actor", "data", "provenance"],
+  "properties": {
+    "id": {"type": "string", "format": "uuid"},
+    "paper_id": {"type": "string"},
+    "kind": {"enum": ["atoms", "ledger", "relationships", "constraints", "mappings", "objections", "media", "metrics", "tasks", "runs", "artifacts", "issues", "reviews"]},
+    "actor": {"type": "string", "minLength": 1},
+    "data": {"type": "object"},
+    "current": {"type": "boolean"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_sha256", "locator", "engine", "schema_version", "prompt_version", "recorded_at", "validation"],
+      "properties": {
+        "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "locator": {
+          "type": ["array", "null"],
+          "items": {"type": "integer", "minimum": 1},
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "engine": {"type": "string"},
+        "schema_version": {"const": "1.0"},
+        "prompt_version": {"type": ["string", "null"]},
+        "recorded_at": {"type": "string", "format": "date-time"},
+        "validation": {"enum": ["candidate", "recorded", "calculated", "validated"]}
+      }
+    }
+  }
+}

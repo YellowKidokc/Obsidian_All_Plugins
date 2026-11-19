@@ -1,5 +1,7 @@
 # Obsidian_All_Plugins
 
+**Copied-vault pilot:** [Run the integrated workbench](apps/workbench/README.md).
+
 **Current coding handoff:** Read [CODEX_START_HERE.md](CODEX_START_HERE.md). It defines the integrated build and current boundaries; the older consolidation prompt below is historical reference.
 
 One home for everything David uses to run his Obsidian vaults: plugins, file

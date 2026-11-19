@@ -7,7 +7,7 @@ from pathlib import Path
 
 # Read README
 readme_path = Path(__file__).parent / "README.md"
-long_description = readme_path.read_text() if readme_path.exists() else ""
+long_description = readme_path.read_text(encoding="utf-8") if readme_path.exists() else ""
 
 setup(
     name="theophysics-ingest",
@@ -17,8 +17,9 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/YellowKidokc/OBS-Plugin-Final-Codex",
-    packages=find_packages(where="src"),
-    package_dir={"": "src"},
+    packages=[*find_packages(where="src"), "config"],
+    py_modules=["orchestrator"],
+    package_dir={"": "src", "config": "config"},
     python_requires=">=3.8",
     install_requires=[
         "psycopg2-binary>=2.9.9",
@@ -37,6 +38,7 @@ setup(
         "pyyaml>=6.0.1",
         "chardet>=5.2.0",
         "pydantic>=2.5.2",
+        "pydantic-settings>=2.1",
     ],
     extras_require={
         "dev": [

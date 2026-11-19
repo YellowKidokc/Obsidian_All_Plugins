@@ -27,7 +27,8 @@ pyyaml>=6.0.1               # YAML parsing
 chardet>=5.2.0              # Character encoding detection
 
 # === Data Validation ===
-pydantic>=2.5.2             # Data validation and settings management
+pydantic>=2.5.2             # Data validation
+pydantic-settings>=2.1      # Environment and dotenv settings
 
 # === Optional: Async PostgreSQL (for high performance) ===
 # asyncpg>=0.29.0           # Uncomment if you need async operations

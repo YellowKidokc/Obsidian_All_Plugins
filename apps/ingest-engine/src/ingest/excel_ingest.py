@@ -116,7 +116,7 @@ class ExcelIngester:
             source_type=SourceType.EXCEL,
             source_path=source_path,
             source_name=Path(source_path).name,
-            metadata={"ingester": "ExcelIngester", "version": "1.0"}
+            ingest_metadata={"ingester": "ExcelIngester", "version": "1.0"}
         )
         if self.session:
             self.session.add(session)

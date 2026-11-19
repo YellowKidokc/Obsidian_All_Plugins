@@ -1,4 +1,4 @@
-import { Notice, Plugin } from 'obsidian';
+import { Modal, Notice, Plugin, requestUrl } from 'obsidian';
 import { DNSettingTab } from './settings';
 import { DNModal } from './dn';
 import { DNSaveSearchModal, DNSaveSearchItem } from './modals/dnsavesearchmodal';
@@ -7,6 +7,12 @@ import { DNInfoModal } from './modals/dninfomodal';
 import { DNQuickDisplayOptionsModal } from './modals/dnquickdisplayoptionsmodal';
 import { DNDataManager } from 'src/data/dndatamanager';
 import { DashboardGenerator, DashboardScriptPanelModal, ScriptExecutionService } from './dashboardpp';
+
+interface WorkbenchInventory {
+	schema_version: string;
+	papers: Array<{ id: string; path: string; availability: string }>;
+	processing: Array<{ paper_id: string; status: string }>;
+}
 
 interface DNSettings {
 	default_view: number;
@@ -175,6 +181,37 @@ export default class DNPlugin extends Plugin {
 		this.addRibbonIcon('gauge', 'Open dashboard navigator', (evt: MouseEvent) => {
 			this.DN_MODAL.default_view = this.settings.default_view;
 			this.DN_MODAL.open();
+		});
+
+		this.addCommand({
+			id: 'workbench-inventory',
+			name: 'Open cached research workbench inventory',
+			callback: async () => {
+				try {
+					const response = await requestUrl('http://127.0.0.1:8766/api/inventory');
+					const snapshot = response.json as WorkbenchInventory;
+					if (snapshot.schema_version !== '1.0' || !Array.isArray(snapshot.papers)) {
+						throw new Error('Unsupported workbench inventory');
+					}
+					const modal = new Modal(this.app);
+					modal.setTitle('Research workbench');
+					modal.contentEl.createEl('a', { text: 'Open local source inspector',
+						href: 'http://127.0.0.1:8766/' });
+					const list = modal.contentEl.createEl('ul');
+					for (const paper of snapshot.papers) {
+						const row = list.createEl('li');
+						const taskStates = snapshot.processing.filter(task => task.paper_id === paper.id);
+						const done = taskStates.filter(task => task.status === 'done').length;
+						const link = row.createEl('a', { text: paper.path,
+							href: 'http://127.0.0.1:8766/?paper=' + encodeURIComponent(paper.id) });
+						link.setAttr('target', '_blank');
+						row.createSpan({ text: ` · ${paper.availability} · ${done}/${taskStates.length} tasks complete` });
+					}
+					modal.open();
+				} catch {
+					new Notice('Start the local Workbench server on port 8766 to open its cached inventory.');
+				}
+			}
 		});
 
 		this.addCommand({
