@@ -1,0 +1,264 @@
+{
+  "fruits_of_spirit": [
+    {
+      "id": 1,
+      "name": "Love",
+      "greek": "agape",
+      "greek_transliteration": "ἀγάπη",
+      "definition": "Unconditional, sacrificial love that seeks the highest good of others",
+      "scripture_reference": "Galatians 5:22",
+      "theological_meaning": "Divine love that flows from God through believers, characterized by selflessness and commitment regardless of circumstances",
+      "physics_mapping": {
+        "concept": "Coherence",
+        "description": "Maximum correlation and alignment between systems, analogous to perfect phase coherence in quantum mechanics",
+        "symbol": "χ_love",
+        "equation": "C_love = max(correlation(self, other))"
+      },
+      "consciousness_mapping": {
+        "state": "Unity consciousness",
+        "description": "The experience of interconnectedness and non-separation from others and the divine"
+      },
+      "practical_manifestations": [
+        "Patience with others",
+        "Kindness in action",
+        "Forgiveness",
+        "Selfless service",
+        "Compassion"
+      ],
+      "opposite_vices": ["Hatred", "Selfishness", "Indifference"],
+      "related_virtues": ["Charity", "Compassion", "Mercy"]
+    },
+    {
+      "id": 2,
+      "name": "Joy",
+      "greek": "chara",
+      "greek_transliteration": "χαρά",
+      "definition": "Deep-seated gladness and delight in God, independent of circumstances",
+      "scripture_reference": "Galatians 5:22",
+      "theological_meaning": "Supernatural joy rooted in relationship with God, transcending temporary happiness based on external conditions",
+      "physics_mapping": {
+        "concept": "Resonance",
+        "description": "Harmonic alignment with fundamental frequencies, like resonant modes in quantum field theory",
+        "symbol": "ω_joy",
+        "equation": "J = amplitude(resonance(soul, divine_frequency))"
+      },
+      "consciousness_mapping": {
+        "state": "Bliss consciousness",
+        "description": "Ananda or spiritual bliss that arises from alignment with truth"
+      },
+      "practical_manifestations": [
+        "Gratitude in all circumstances",
+        "Inner peace",
+        "Contentment",
+        "Celebration of others' success",
+        "Hope in trials"
+      ],
+      "opposite_vices": ["Despair", "Cynicism", "Bitterness"],
+      "related_virtues": ["Gratitude", "Hope", "Contentment"]
+    },
+    {
+      "id": 3,
+      "name": "Peace",
+      "greek": "eirene",
+      "greek_transliteration": "εἰρήνη",
+      "definition": "Wholeness, harmony, and tranquility that comes from right relationship with God",
+      "scripture_reference": "Galatians 5:22",
+      "theological_meaning": "Shalom - complete well-being and reconciliation with God, self, and others",
+      "physics_mapping": {
+        "concept": "Equilibrium",
+        "description": "Stable ground state with minimal entropy, analogous to thermodynamic equilibrium",
+        "symbol": "S_peace",
+        "equation": "P = 1 - (S_current / S_max)"
+      },
+      "consciousness_mapping": {
+        "state": "Equanimity",
+        "description": "Mental calmness and evenness of temper, especially in difficult situations"
+      },
+      "practical_manifestations": [
+        "Calmness under pressure",
+        "Conflict resolution",
+        "Inner stillness",
+        "Trust in God's sovereignty",
+        "Freedom from anxiety"
+      ],
+      "opposite_vices": ["Anxiety", "Chaos", "Strife"],
+      "related_virtues": ["Serenity", "Tranquility", "Harmony"]
+    },
+    {
+      "id": 4,
+      "name": "Patience",
+      "greek": "makrothumia",
+      "greek_transliteration": "μακροθυμία",
+      "definition": "Long-suffering endurance and steadfastness in the face of provocation or delay",
+      "scripture_reference": "Galatians 5:22",
+      "theological_meaning": "God's forbearance toward humanity reflected in believers' ability to endure trials and extend grace to others",
+      "physics_mapping": {
+        "concept": "Temporal coherence",
+        "description": "Maintaining phase relationships over extended time periods, like coherence time in quantum systems",
+        "symbol": "τ_patience",
+        "equation": "Patience = integral(coherence(t), 0, infinity)"
+      },
+      "consciousness_mapping": {
+        "state": "Present-moment awareness",
+        "description": "Ability to remain centered in the now without rushing toward future outcomes"
+      },
+      "practical_manifestations": [
+        "Waiting on God's timing",
+        "Tolerance of others' faults",
+        "Perseverance in trials",
+        "Slow to anger",
+        "Endurance in suffering"
+      ],
+      "opposite_vices": ["Impatience", "Irritability", "Rashness"],
+      "related_virtues": ["Endurance", "Perseverance", "Forbearance"]
+    },
+    {
+      "id": 5,
+      "name": "Kindness",
+      "greek": "chrestotes",
+      "greek_transliteration": "χρηστότης",
+      "definition": "Goodness in action, tender concern for others, and gracious behavior",
+      "scripture_reference": "Galatians 5:22",
+      "theological_meaning": "God's benevolence and goodness expressed through believers in practical, tangible ways",
+      "physics_mapping": {
+        "concept": "Constructive interference",
+        "description": "Positive interactions that amplify good outcomes, like constructive wave interference",
+        "symbol": "I_kind",
+        "equation": "K = sum(positive_interactions) - sum(negative_interactions)"
+      },
+      "consciousness_mapping": {
+        "state": "Loving-kindness (Metta)",
+        "description": "Benevolent, friendly attitude toward all beings"
+      },
+      "practical_manifestations": [
+        "Gentle words",
+        "Helpful actions",
+        "Generosity",
+        "Consideration of others",
+        "Mercy in judgment"
+      ],
+      "opposite_vices": ["Cruelty", "Harshness", "Meanness"],
+      "related_virtues": ["Gentleness", "Tenderness", "Benevolence"]
+    },
+    {
+      "id": 6,
+      "name": "Goodness",
+      "greek": "agathosune",
+      "greek_transliteration": "ἀγαθωσύνη",
+      "definition": "Moral excellence and virtue, uprightness of heart and life",
+      "scripture_reference": "Galatians 5:22",
+      "theological_meaning": "Intrinsic moral quality that reflects God's own goodness and righteousness",
+      "physics_mapping": {
+        "concept": "Order parameter",
+        "description": "Measure of system organization and alignment with optimal states, like order in phase transitions",
+        "symbol": "η_good",
+        "equation": "G = alignment(actions, divine_will)"
+      },
+      "consciousness_mapping": {
+        "state": "Moral clarity",
+        "description": "Clear perception of right and wrong, aligned with universal truth"
+      },
+      "practical_manifestations": [
+        "Integrity in all dealings",
+        "Moral courage",
+        "Righteousness",
+        "Honesty",
+        "Ethical behavior"
+      ],
+      "opposite_vices": ["Evil", "Corruption", "Wickedness"],
+      "related_virtues": ["Righteousness", "Integrity", "Virtue"]
+    },
+    {
+      "id": 7,
+      "name": "Faithfulness",
+      "greek": "pistis",
+      "greek_transliteration": "πίστις",
+      "definition": "Reliability, trustworthiness, and steadfast loyalty to God and others",
+      "scripture_reference": "Galatians 5:22",
+      "theological_meaning": "Unwavering trust in God and consistent reliability in relationships and commitments",
+      "physics_mapping": {
+        "concept": "Conservation laws",
+        "description": "Invariance and consistency over time, like conservation of energy or momentum",
+        "symbol": "Λ_faith",
+        "equation": "F = consistency(commitment, time)"
+      },
+      "consciousness_mapping": {
+        "state": "Devotional consciousness",
+        "description": "Unwavering dedication and trust in the divine"
+      },
+      "practical_manifestations": [
+        "Keeping promises",
+        "Reliability",
+        "Loyalty in relationships",
+        "Consistency in character",
+        "Trust in God's promises"
+      ],
+      "opposite_vices": ["Unfaithfulness", "Betrayal", "Fickleness"],
+      "related_virtues": ["Loyalty", "Trustworthiness", "Dependability"]
+    },
+    {
+      "id": 8,
+      "name": "Gentleness",
+      "greek": "prautes",
+      "greek_transliteration": "πραΰτης",
+      "definition": "Meekness, humility, and controlled strength under God's authority",
+      "scripture_reference": "Galatians 5:22",
+      "theological_meaning": "Power under control, strength tempered by humility and submission to God",
+      "physics_mapping": {
+        "concept": "Controlled energy",
+        "description": "Potential energy held in check, like a stable quantum state with high energy but low entropy",
+        "symbol": "E_gentle",
+        "equation": "Gentleness = power * humility / pride"
+      },
+      "consciousness_mapping": {
+        "state": "Humble awareness",
+        "description": "Recognition of one's place in the cosmic order without ego inflation"
+      },
+      "practical_manifestations": [
+        "Humility",
+        "Teachability",
+        "Controlled responses",
+        "Soft answers",
+        "Strength without aggression"
+      ],
+      "opposite_vices": ["Harshness", "Pride", "Arrogance"],
+      "related_virtues": ["Meekness", "Humility", "Modesty"]
+    },
+    {
+      "id": 9,
+      "name": "Self-Control",
+      "greek": "egkrateia",
+      "greek_transliteration": "ἐγκράτεια",
+      "definition": "Mastery over one's desires, impulses, and actions through the Spirit's power",
+      "scripture_reference": "Galatians 5:22-23",
+      "theological_meaning": "Spirit-empowered discipline that enables believers to resist temptation and govern their passions",
+      "physics_mapping": {
+        "concept": "Feedback control",
+        "description": "Self-regulating systems that maintain stability, like negative feedback in control theory",
+        "symbol": "γ_control",
+        "equation": "SC = regulation(desires) / temptation_strength"
+      },
+      "consciousness_mapping": {
+        "state": "Mindful discipline",
+        "description": "Conscious awareness and regulation of thoughts, emotions, and actions"
+      },
+      "practical_manifestations": [
+        "Discipline in habits",
+        "Resisting temptation",
+        "Emotional regulation",
+        "Delayed gratification",
+        "Moderation in all things"
+      ],
+      "opposite_vices": ["Indulgence", "Impulsivity", "Excess"],
+      "related_virtues": ["Temperance", "Discipline", "Restraint"]
+    }
+  ],
+  "metadata": {
+    "source": "Galatians 5:22-23",
+    "full_verse": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such things there is no law.",
+    "theological_framework": "Theophysics - Bridging theology and physics through consciousness studies",
+    "version": "1.0",
+    "created": "2026-01-18",
+    "description": "Comprehensive mapping of the Fruits of the Spirit with theological, physical, and consciousness dimensions"
+  }
+}
