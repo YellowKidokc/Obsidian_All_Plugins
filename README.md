@@ -217,3 +217,6 @@ DeepSeek. Its analytics-reference library is included.
 See [the import handoff](docs/paper-projections/README.md) for the verified ZIP,
 repair/API design prompt and remaining integration work. This is not yet wired
 to Quantum history, the shared station runner, SQLite, Excel or FIS.
+
+
+The imported [module design notes and code crosswalk](docs/MODULE_NOTES_CROSSWALK.md) map the proposed research tabs to the collected components and unresolved integration work.

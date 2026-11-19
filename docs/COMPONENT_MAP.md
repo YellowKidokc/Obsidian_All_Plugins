@@ -62,3 +62,8 @@ Read each IMPORT_STATUS.md before running anything. Source histories and origina
 Current architecture direction: native Dashboard Navigator + operations Dashboard; Quantum for registry/history; maintained Semantic AI for tagging; reviewed research/ingestion adapters for definitions and structured data; Paper Projections for adaptations and analysis; navigation templates and generated folder indexes for click-through reading. Shared integration remains work to implement, not an achievement implied by collection.
 
 No original source directory was removed. No push or production vault activation has occurred.
+
+
+## Module design notes
+
+Obsidian-Plugin-Module-Notes is preserved under docs/module-notes with history and 46 source blobs verified. This is design/documentation, not a runnable plugin. See [MODULE_NOTES_CROSSWALK.md](MODULE_NOTES_CROSSWALK.md) for the proposed research modules mapped to the imported code and remaining gaps.

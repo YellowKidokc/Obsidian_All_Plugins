@@ -1,0 +1,13 @@
+{
+  "source_url": "https://github.com/YellowKidokc/Obsidian-Plugin-Module-Notes",
+  "source_path": "D:\\GitHub\\Obsidian-Plugin-Module-Notes",
+  "source_branch": "main",
+  "source_commit": "0c075ce73ef3040452682f8c81939daebf8c09d4",
+  "destination": "docs/module-notes",
+  "import_commit": "06512e92ffba19ef7f0678b9dcc3267e0463052f",
+  "git_blobs_verified": 46,
+  "embedded_archive_entries": 13,
+  "classification": "design_documentation_not_executable_plugin",
+  "source_changed": false,
+  "push_performed": false
+}
