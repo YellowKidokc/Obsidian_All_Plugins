@@ -1,0 +1,15 @@
+{
+  "unit_tests": 8,
+  "unit_tests_passed": true,
+  "gui_smoke": {
+    "projection_rows": 21,
+    "initial_selection": 21,
+    "title": "Paper Projection Workbench"
+  },
+  "paid_api_calls": 0,
+  "limitations": [
+    "No live paid API test",
+    "No full mouse-driven acceptance test",
+    "No existing FIS/SQLite/Excel station integration yet"
+  ]
+}

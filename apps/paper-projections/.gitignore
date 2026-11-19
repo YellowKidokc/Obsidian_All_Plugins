@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env*
+INBOX/*
+!INBOX/.gitkeep
+OUTBOX/*
+!OUTBOX/.gitkeep

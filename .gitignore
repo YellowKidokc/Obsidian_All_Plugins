@@ -1,0 +1,14 @@
+.env*
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.lake/
+.pytest_cache/
+.qp_state/
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.db
+plugins/semantic-ai/data.json

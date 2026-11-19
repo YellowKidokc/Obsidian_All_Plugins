@@ -1,0 +1,364 @@
+{
+  "schema_version": "1.0",
+  "built_at": "2026-11-19T01:56:18.559603+00:00",
+  "tests_exit_code": 0,
+  "paid_calls": 0,
+  "credential_pattern_scan": "No potential literal credentials found in app text/code scan; not a comprehensive secret audit.",
+  "files": [
+    {
+      "path": "IMPLEMENTATION_REFERENCE/00_REPAIR_AND_API_DESIGN_PROMPT_20261118.md",
+      "bytes": 10104,
+      "sha256": "a51b328e44f1a3aab870fbce804d2814c48e059fa276e90f5ef3da0e5f1e4832"
+    },
+    {
+      "path": "IMPLEMENTATION_REFERENCE/source_inventory.json",
+      "bytes": 19851,
+      "sha256": "29837ae8640a4521232820721b0d736441a01997eedb4f9123f346bb1c96c446"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/FOLDER_NAVIGATION_SPEC.md",
+      "bytes": 2709,
+      "sha256": "31ab7fb52e248bb3aad397a376e612237d5e96144e853529c1b2d9eaa6a3d0a6"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/index.html",
+      "bytes": 9045,
+      "sha256": "666e12da04d879cc2f688c9bd3fbb5e70870d828fed5f6739dd6baf6a536d4da"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/INTEGRATION_HANDOFF.md",
+      "bytes": 3698,
+      "sha256": "1efc42603013cc41dd71a2b787e49a8fd86abdbd8d3963ab0dd12108fc9e66e4"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/registry.json",
+      "bytes": 34373,
+      "sha256": "658f90d8bb7da94d5a68b80a19e8d5919eea53fe3852135cc73e03d5a6df0461"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/ARCHIVE/README_Analytics_Architecture.md",
+      "bytes": 2224,
+      "sha256": "204ec8b9feb27663fe7f07294b038105359bd9baec4e4795c16661834da2aae6"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Custom_Modules/theophysics_analytics/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Custom_Modules/theophysics_analytics/engine.py",
+      "bytes": 7932,
+      "sha256": "bbf0027ebb8515cc59a492a8189732a9b9c0256f3b725aa984eb7ff4bc962ea7"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Custom_Modules/theophysics_analytics/README.md",
+      "bytes": 2823,
+      "sha256": "2ac78e91d176823785fb36ad558ce3119a3cc80f0bb91a019bcd830f530dd918"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Dashboards/Analysis_Dashboard.md",
+      "bytes": 469,
+      "sha256": "4e360b962f846d88033c8b75386effe3c1ac7b6fcd293769548b047c3b2b8d3d"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Dashboards/Analytics_Hub.md",
+      "bytes": 952,
+      "sha256": "2ff9cb1a58cc33f372013127c60e562dbe8fd74f9dfcff3633269de4b3f9a219"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Dashboards/dashboard_index.md",
+      "bytes": 1382,
+      "sha256": "41fc02ff607e159603cc2a127d5725e2524dc7dc624664027f068662e67510c0"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Dashboards/Data_Extraction_Dashboard.md",
+      "bytes": 412,
+      "sha256": "bcc96e85579391143185fb139c0ddf2c547b5338c25a6f9901da8adb857b2d96"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Dashboards/Linking_Dashboard.md",
+      "bytes": 380,
+      "sha256": "7ff6f2aa9d9c5bf0e0889119e75401cd4017cadf9367c11d4bac4ad6e2158c1c"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Dashboards/Paper_Management_Dashboard.md",
+      "bytes": 416,
+      "sha256": "98234c5b4a5627f638fff3731373a6cf91fbb9ab9d78a997eeef1e9e8d50fe8d"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Dashboards/System_Dashboard.md",
+      "bytes": 376,
+      "sha256": "32f2ee58c09e69b58013fab225487003c65dfd64dbcae667569b2ab4bb440a3d"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Dashboards/Utilities_Dashboard.md",
+      "bytes": 386,
+      "sha256": "7af04d79a2e87b9e9fe6a403ea7c75e02226008711cf1e4f7e9bfc7bf340becc"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Dashboards/Visualization_Dashboard.md",
+      "bytes": 404,
+      "sha256": "b7c87110f442b14e719db2e029c20e75d0f98be32cc0e9e1390154973b4b1342"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/_Index.md",
+      "bytes": 810,
+      "sha256": "ed346e513c071a97c2a081f3f93e6984f198941f6196c9cd192ba8da2d9f9acf"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/ADMIN_DASHBOARD.md",
+      "bytes": 11013,
+      "sha256": "33c2aa32d1ef6a2997bdc530088562e0db086e75d3b4bd8bec953a5b732a154b"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Atoms.md",
+      "bytes": 194,
+      "sha256": "52c8862636b32af0aeea5033027c7cc2898191405f150fddf53fa4037d75cf5f"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Compression 1.md",
+      "bytes": 3659,
+      "sha256": "7f1c0decb69156274a65d20fd3e02f6647c026b012754e6e0f5931c3450ccdb0"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Compression.md",
+      "bytes": 3659,
+      "sha256": "7f1c0decb69156274a65d20fd3e02f6647c026b012754e6e0f5931c3450ccdb0"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Concept_Hubs_Index.md",
+      "bytes": 83,
+      "sha256": "ae8d99d776a5e2b1e35597dbce7a4ad2d836558e11a7faf8ea13840d47ab2b19"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/GLOBAL_STATS_VIEW.md",
+      "bytes": 645,
+      "sha256": "08612ca99a93498553541be0b8b7f0a62ed87742553fdc8acaf57abc30f30f10"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/graph view.md",
+      "bytes": 2971,
+      "sha256": "74df36354c54e2608835e0e4a433da681f4ebd89fc4cfce4650b75db1100c4a1"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Interaction_Map.md",
+      "bytes": 6920,
+      "sha256": "dffb9e76fcd5df4adbc2b7559146e26f2f764f1804f6976b2eb78a81a9e96463"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Laws.md",
+      "bytes": 220,
+      "sha256": "216b50b5ab1368f54b2487187e1607622278476a97cca0d8d6ca6c70003fda94"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/LOCAL_STATS_VIEW.md",
+      "bytes": 551,
+      "sha256": "687cf6ba055ec11cf54b6039e780b10dc4bcd3b21d922cd296f91ff6e7056732"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/MASTER_INDEX.md",
+      "bytes": 13772,
+      "sha256": "b84599a938b789c36cdd651582320f5a05f648e8c58aa37f17b23f8cb0eeff99"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Mermaid diagrams.md",
+      "bytes": 1575,
+      "sha256": "d64d077c517295f5d2a9bb5ab3294dda1a71b624002d0c42b8c4e77fb1d31109"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Mermaid_Maps.md",
+      "bytes": 3646,
+      "sha256": "dcb436ee27d7b897f14d6676227b34c0d26d5acbf1344f1a905b947c87264774"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Molecules.md",
+      "bytes": 233,
+      "sha256": "f023c78c6ff95111f314107aeda1fc01e791a167a4603e0686b919760b0809f2"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Statistics.md",
+      "bytes": 1663,
+      "sha256": "7acbe93e70dc8eac92d822114b15d4ddc8c5db9a4b58e84ce6e5579322edf228"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Tags_Index.md",
+      "bytes": 155,
+      "sha256": "1d307b500d55cdab988705ac3603fd7e3909075d63d22d962165dbe2736c3bec"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Trinity_Heatmap.md",
+      "bytes": 496,
+      "sha256": "9bbb5fad839a1e59e3a22d9b1c03427bfbc9be58ba502ef9b18ca0c0d681db8e"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Validation.md",
+      "bytes": 224,
+      "sha256": "da466a41346a01b0d2bef432bac842592a041cd545c8b2b926ebfb8c180b55ed"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/VAULT-PACKAGING-GUIDE.md",
+      "bytes": 12095,
+      "sha256": "adc875c7bfd96c7036fd2b2396c645e7aac8ca39d26089ebb51891a5b7f422d6"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Docs/Charting_Engine_Strategy.md",
+      "bytes": 4145,
+      "sha256": "52fd5d8f3068f41cb304a01f790ca4dbe93143da93a3173cd5333b7a6b518398"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Scripts/Utilities/README.md",
+      "bytes": 4116,
+      "sha256": "6032441091b5979537e63d6b77446031670105d77daaaeb48d6110f6fd862fab"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Utilities/README.md",
+      "bytes": 4116,
+      "sha256": "6032441091b5979537e63d6b77446031670105d77daaaeb48d6110f6fd862fab"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Folder_Navigation/README.md",
+      "bytes": 2049,
+      "sha256": "a271e9c68d5e07426e15ae109713c86bf5c04ae9e3b10aef34e753c8de47c056"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Folder_Navigation/THEOPHYSICS_WELCOME.md",
+      "bytes": 1957,
+      "sha256": "05a84873c5b9f4bff40551d41d5451323a4ac062808f3e79eb58feb512ce0c6d"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Native_Tools/01_Vault_Overview.md",
+      "bytes": 597,
+      "sha256": "7fc470d19e9d1b82814ed4d86c2be2ba665878adc5ef0a60aa89c32f96ff17a9"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Native_Tools/02_Tag_Explorer.md",
+      "bytes": 427,
+      "sha256": "f44c0a08d49b149fc967834709cb113ce5e54b0f4d1232f39cf870e24718aa00"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/Native_Tools/03_Task_Manager.md",
+      "bytes": 403,
+      "sha256": "fd08e256ddf3e39792ac884e0136c05338caa957c22edf7040207cf0412fbce0"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/breakthrough_vault_schema.sql",
+      "bytes": 3742,
+      "sha256": "53784ebdd94bccfc73adc9517a913019f61a91930d702d18b9f01dee220648a0"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/gap_analysis.txt",
+      "bytes": 220,
+      "sha256": "543504ae7ebf073bdf817aa22a2e33a7b6be1729db2698ac260c93eee071d615"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/HIDDEN_INSIGHTS.md",
+      "bytes": 8434,
+      "sha256": "f29763ce89f1d4d057dab2dbd7f4ce57e188aaabb44d7dc8c3794624eece1121"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/INTEGRATION_GUIDE.md",
+      "bytes": 13473,
+      "sha256": "5b681ff30aecb49930fae803926ba090c4e0b310e47d452b1cdc2ea6f080b2e1"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/MASTER_EQUATION_ANALYSIS.md",
+      "bytes": 15429,
+      "sha256": "52b2423e1c9208eca6d8207f392e30d6099efa9a2806e60777e918072a46b766"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/master_equation_map.json",
+      "bytes": 8780,
+      "sha256": "65c8a42aef39ddd612cae3a3822f565733d2db0a5cc8509db501a6997191f378"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/master_equation_schema.sql",
+      "bytes": 13179,
+      "sha256": "fc1ba71d79b24e4ed2190f481f716cecd20dd4190cb2865b9f6294712d049067"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/priority_fixes.sql",
+      "bytes": 5953,
+      "sha256": "12c4d01d6ba285ae71f2ec9b0ccbdd65495bebfad8bda98f0f497259f9b4ca9d"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/QUICK_SUMMARY.txt",
+      "bytes": 6757,
+      "sha256": "66b1d0088012654dc00f0184ac2472697496360554befbb8a9d5eaf3e44b08ef"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/README.txt",
+      "bytes": 2082,
+      "sha256": "7a7d146b2795556f27198f196f2d08b9136684767169acc6b05de859582e80ed"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/README_COMPLETE.md",
+      "bytes": 11030,
+      "sha256": "e82effbbbe55884c7a4ce64b6e5f8d55c7d83739f254548339dfebbd462c72d4"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/sync_to_postgres.py",
+      "bytes": 9100,
+      "sha256": "a4f78d73aae41b7e6ce35fb124bf4c805a62fd64a1ad3b36ad1620aae158dcc4"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/SYSTEM_INTEGRATION.md",
+      "bytes": 13472,
+      "sha256": "a06f6f965f1aa0977b7bed2cc8b3f61184b2b9b43e12d3ac23d4aa255c03185a"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/EXISTING_ANALYTICS_LIBRARY/SNAPSHOTS/theophysics_complete/SYSTEM_MAP.txt",
+      "bytes": 15710,
+      "sha256": "a7771e0c3703241b405aead959588cf58213735f28c2ef4659719d5d5fcf5eaf"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/INSTALL_RECEIPT.json",
+      "bytes": 1006,
+      "sha256": "954fd4627949d8d08fe8205c5fec41f158f919ffebda0ff9e804b5984c612e5e"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/LOCAL_VERIFICATION.json",
+      "bytes": 363,
+      "sha256": "a84a0e50b9b0095e05455e8e4b826943ed01ed4b5d5b70d52ed701984cf0f5e2"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/projection_catalog.json",
+      "bytes": 6344,
+      "sha256": "2b66a90efb41c086c6fe3b0c8ff5200b4686f603c49505b26322382fb9fa82a1"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/projections.py",
+      "bytes": 24226,
+      "sha256": "7a7d76506bc3795e5c49031a7d2f208e25ee01f7d96ebcd83162936f30245278"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/BACKSIDE/test_projections.py",
+      "bytes": 4885,
+      "sha256": "112d3468c7c49f1768dd08a0c7889f93b08f2d3281bdf1ad4ffb0d973120c23f"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/OPEN_ANALYTICS_LIBRARY.bat",
+      "bytes": 91,
+      "sha256": "c39814568a83bcaa92af143a446e682f4fbe198b56c5c741f4bc459ea5c127fd"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/READ_ME_FIRST.md",
+      "bytes": 4362,
+      "sha256": "9e640406b4fb9fae830fd582ac02ce99d9b82b79d2d26ff6032f83bfe5009290"
+    },
+    {
+      "path": "PAPER_PROJECTIONS/START_PROJECTIONS.bat",
+      "bytes": 330,
+      "sha256": "895c238045a5c56ecc51f2bd0476ab1365b29c0f850e3e30faf12e6b858f855f"
+    },
+    {
+      "path": "START_HERE_CODEX.md",
+      "bytes": 4229,
+      "sha256": "35a42a0eedca99075cdc47911bd324823b81352266e923c62fec87491b5f1090"
+    },
+    {
+      "path": "VERIFICATION.txt",
+      "bytes": 1244,
+      "sha256": "bbf66fe1a8812532a4510f5801b683c521623ef122394e8f5dc08256f33f7552"
+    }
+  ]
+}

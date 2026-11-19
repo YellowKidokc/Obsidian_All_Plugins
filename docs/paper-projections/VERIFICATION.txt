@@ -1,0 +1,18 @@
+Calling: Executive summary
+Calling: Executive summary
+Saved, awaiting review: Executive summary
+Calling: Executive summary
+
+test_all_projections_preserve_bytes_and_package (test_projections.ProjectionTests.test_all_projections_preserve_bytes_and_package) ... ok
+test_api_failure_is_not_retried (test_projections.ProjectionTests.test_api_failure_is_not_retried) ... ok
+test_api_success_and_resume_skip_completed (test_projections.ProjectionTests.test_api_success_and_resume_skip_completed) ... ok
+test_bad_hash_and_reference_are_rejected (test_projections.ProjectionTests.test_bad_hash_and_reference_are_rejected) ... ok
+test_import_validates_and_cannot_promote_or_overwrite (test_projections.ProjectionTests.test_import_validates_and_cannot_promote_or_overwrite) ... ok
+test_new_versions_are_isolated (test_projections.ProjectionTests.test_new_versions_are_isolated) ... ok
+test_tampered_snapshot_rejected (test_projections.ProjectionTests.test_tampered_snapshot_rejected) ... ok
+test_truncation_retains_raw_and_never_accepts_result (test_projections.ProjectionTests.test_truncation_retains_raw_and_never_accepts_result) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.367s
+
+OK

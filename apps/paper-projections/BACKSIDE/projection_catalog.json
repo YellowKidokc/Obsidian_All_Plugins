@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "projections": [
+    {
+      "code": "executive_summary",
+      "title": "Executive summary",
+      "instruction": "State the thesis, distinct contribution, reasoning, evidence, limitations and next decision in 300-500 words.",
+      "execution": "api"
+    },
+    {
+      "code": "reader_9th_grade",
+      "title": "9th grade reader",
+      "instruction": "Adapt for a ninth-grade reader. Define technical words and preserve qualifications and dependencies. Reading level is a target, not a certified result.",
+      "execution": "api"
+    },
+    {
+      "code": "skeptic",
+      "title": "Skeptic version",
+      "instruction": "Reconstruct the strongest charitable argument and strongest objections. Separate declared commitments from inferences, evidence and open bridges. Do not invent concessions or dismiss theological premises merely for being theological.",
+      "execution": "api"
+    },
+    {
+      "code": "formal",
+      "title": "Formal version",
+      "instruction": "Give definitions, typed predicates, explicit assumptions, argument steps and obligations. Do not turn assumed conclusions into derived theorems. Mark unproved steps.",
+      "execution": "api"
+    },
+    {
+      "code": "seo",
+      "title": "SEO version",
+      "instruction": "Provide faithful title, description, slug, heading outline, search-intent hypotheses and article adaptation. No fabricated search-volume data or keyword rankings.",
+      "execution": "api"
+    },
+    {
+      "code": "proof_explorer",
+      "title": "Proof explorer",
+      "instruction": "Return an inspectable claim/premise/step/dependency/objection map with source line references. Formal proof status is unverified unless an actual compiler receipt is supplied.",
+      "execution": "api"
+    },
+    {
+      "code": "citation_audit",
+      "title": "Citation audit",
+      "instruction": "Inventory actual citations, claims needing sources, quote/locator gaps and proposed verification actions. You have no browsing tool in this call. External verification must remain not_verified; do not fabricate citations or claim sources were checked.",
+      "execution": "api"
+    },
+    {
+      "code": "literature_comparison",
+      "title": "Literature comparison",
+      "instruction": "Compare only literature actually supplied in the source. Separate sourced comparison from suggested research. If no comparison corpus is supplied, state the gap; do not claim a completed literature search.",
+      "execution": "api"
+    },
+    {
+      "code": "contradiction_pass",
+      "title": "Contradiction pass",
+      "instruction": "Identify candidate internal contradictions with both exact source spans, predicates, scope and conditions. Distinguish contradiction, tension, ambiguity and changed context. No finding is not proof of consistency.",
+      "execution": "api"
+    },
+    {
+      "code": "lossless_preservation",
+      "title": "Lossless preservation",
+      "instruction": "LOCAL: preserve the exact original bytes and SHA-256; no model rewriting.",
+      "execution": "local"
+    },
+    {
+      "code": "ai_package",
+      "title": "AI package",
+      "instruction": "LOCAL: package the original, numbered source, prompt files and manifest for another AI.",
+      "execution": "local"
+    },
+    {
+      "code": "substack",
+      "title": "Substack projection",
+      "instruction": "Adapt to an engaging Substack article with title, subtitle, body, source-aware caveats and closing question. Do not publish or invent anecdotes.",
+      "execution": "api"
+    },
+    {
+      "code": "theorem_extraction",
+      "title": "Theorem extraction",
+      "instruction": "Extract candidate definitions, assumptions and theorem statements with dependency IDs and proof obligations. Distinguish formalizable propositions from analogies. Do not claim Lean compilation.",
+      "execution": "api"
+    },
+    {
+      "code": "graph_nodes",
+      "title": "Graph nodes",
+      "instruction": "Extract stable source-local node IDs and typed directed candidate edges. Include source_refs and rationale. Relatedness is not support; no automatic canon promotion.",
+      "execution": "api"
+    },
+    {
+      "code": "obsidian_nodes",
+      "title": "Obsidian nodes",
+      "instruction": "Propose Markdown node notes and a map of content with stable source-local IDs and wikilinks. Return proposed note contents in items; do not modify the vault.",
+      "execution": "api"
+    },
+    {
+      "code": "glossary",
+      "title": "Glossary extraction",
+      "instruction": "Extract terms, distinct senses, source definitions, exact references and missing definitions. Separate author definition from an explanatory paraphrase.",
+      "execution": "api"
+    },
+    {
+      "code": "equation_cards",
+      "title": "Equation cards",
+      "instruction": "Extract equations verbatim with symbols, units if supplied, assumptions, domain, interpretation and limits. Mark unknown units and analogy versus mathematical identity; never invent an equation.",
+      "execution": "api"
+    },
+    {
+      "code": "audio_script",
+      "title": "Audio script",
+      "instruction": "Write a conversational audio adaptation with spoken transitions, pronunciation notes and source-faithful limits. Do not create fictional testimony.",
+      "execution": "api"
+    },
+    {
+      "code": "tts_narration",
+      "title": "TTS narration",
+      "instruction": "Produce narration-ready text with spoken equation expansions and pronunciations, preserving the argument. This is TEXT, not a synthesized audio file.",
+      "execution": "api"
+    },
+    {
+      "code": "video_script",
+      "title": "Video script",
+      "instruction": "Write a scene-based video script: narration, on-screen text and source-linked claims. Durations are estimates. Do not claim a rendered video exists.",
+      "execution": "api"
+    },
+    {
+      "code": "visual_storyboard",
+      "title": "Visual storyboard",
+      "instruction": "Propose scene cards: purpose, composition, visual type, labels, source_refs and narration links. Distinguish conceptual illustration from evidence. This is a storyboard, not generated images.",
+      "execution": "api"
+    }
+  ]
+}

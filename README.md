@@ -206,3 +206,15 @@ tools unless a component already depends on more; all existing tests pass and
 new behaviour has tests. If something is ambiguous, choose the safer option and
 list it in the PR description under "Decisions for David".
 ```
+
+
+## Added: Paper Projection Workbench (2026-11-18)
+
+The standalone 21-projection workbench is in `apps/paper-projections`. Launch
+`apps/paper-projections/START_PROJECTIONS.bat`. It preserves source snapshots,
+prepares prompts/AI packages, imports JSON results, and can explicitly call
+DeepSeek. Its analytics-reference library is included.
+
+See [the import handoff](docs/paper-projections/README.md) for the verified ZIP,
+repair/API design prompt and remaining integration work. This is not yet wired
+to Quantum history, the shared station runner, SQLite, Excel or FIS.

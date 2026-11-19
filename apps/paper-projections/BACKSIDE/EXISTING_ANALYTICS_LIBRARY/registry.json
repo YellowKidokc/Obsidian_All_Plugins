@@ -1,0 +1,503 @@
+{
+  "version": "1.0",
+  "status": "reference_library_not_integrated_execution",
+  "excluded": "Databases, workbooks, nested source/data collections, backups, environments and most archive content. No original moved or edited.",
+  "groups": [
+    {
+      "group": "theophysics_complete",
+      "source_root": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete",
+      "assessment": "ADAPT: ontology/schema reference; version meanings and translate PostgreSQL before SQLite use.",
+      "max_directory_levels": 1,
+      "files": [
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\HIDDEN_INSIGHTS.md",
+          "relative": "HIDDEN_INSIGHTS.md",
+          "bytes": 8434,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "f29763ce89f1d4d057dab2dbd7f4ce57e188aaabb44d7dc8c3794624eece1121",
+          "snapshot": "SNAPSHOTS/theophysics_complete/HIDDEN_INSIGHTS.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\INTEGRATION_GUIDE.md",
+          "relative": "INTEGRATION_GUIDE.md",
+          "bytes": 13473,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "5b681ff30aecb49930fae803926ba090c4e0b310e47d452b1cdc2ea6f080b2e1",
+          "snapshot": "SNAPSHOTS/theophysics_complete/INTEGRATION_GUIDE.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\MASTER_EQUATION_ANALYSIS.md",
+          "relative": "MASTER_EQUATION_ANALYSIS.md",
+          "bytes": 15429,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "52b2423e1c9208eca6d8207f392e30d6099efa9a2806e60777e918072a46b766",
+          "snapshot": "SNAPSHOTS/theophysics_complete/MASTER_EQUATION_ANALYSIS.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\QUICK_SUMMARY.txt",
+          "relative": "QUICK_SUMMARY.txt",
+          "bytes": 6757,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "66b1d0088012654dc00f0184ac2472697496360554befbb8a9d5eaf3e44b08ef",
+          "snapshot": "SNAPSHOTS/theophysics_complete/QUICK_SUMMARY.txt"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\README.txt",
+          "relative": "README.txt",
+          "bytes": 2082,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "7a7d146b2795556f27198f196f2d08b9136684767169acc6b05de859582e80ed",
+          "snapshot": "SNAPSHOTS/theophysics_complete/README.txt"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\README_COMPLETE.md",
+          "relative": "README_COMPLETE.md",
+          "bytes": 11030,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "e82effbbbe55884c7a4ce64b6e5f8d55c7d83739f254548339dfebbd462c72d4",
+          "snapshot": "SNAPSHOTS/theophysics_complete/README_COMPLETE.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\SYSTEM_INTEGRATION.md",
+          "relative": "SYSTEM_INTEGRATION.md",
+          "bytes": 13472,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "a06f6f965f1aa0977b7bed2cc8b3f61184b2b9b43e12d3ac23d4aa255c03185a",
+          "snapshot": "SNAPSHOTS/theophysics_complete/SYSTEM_INTEGRATION.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\SYSTEM_MAP.txt",
+          "relative": "SYSTEM_MAP.txt",
+          "bytes": 15710,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "a7771e0c3703241b405aead959588cf58213735f28c2ef4659719d5d5fcf5eaf",
+          "snapshot": "SNAPSHOTS/theophysics_complete/SYSTEM_MAP.txt"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\breakthrough_vault_schema.sql",
+          "relative": "breakthrough_vault_schema.sql",
+          "bytes": 3742,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "53784ebdd94bccfc73adc9517a913019f61a91930d702d18b9f01dee220648a0",
+          "snapshot": "SNAPSHOTS/theophysics_complete/breakthrough_vault_schema.sql"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\gap_analysis.txt",
+          "relative": "gap_analysis.txt",
+          "bytes": 220,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "543504ae7ebf073bdf817aa22a2e33a7b6be1729db2698ac260c93eee071d615",
+          "snapshot": "SNAPSHOTS/theophysics_complete/gap_analysis.txt"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\master_equation_map.json",
+          "relative": "master_equation_map.json",
+          "bytes": 8780,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "65c8a42aef39ddd612cae3a3822f565733d2db0a5cc8509db501a6997191f378",
+          "snapshot": "SNAPSHOTS/theophysics_complete/master_equation_map.json"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\master_equation_schema.sql",
+          "relative": "master_equation_schema.sql",
+          "bytes": 13179,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "fc1ba71d79b24e4ed2190f481f716cecd20dd4190cb2865b9f6294712d049067",
+          "snapshot": "SNAPSHOTS/theophysics_complete/master_equation_schema.sql"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\priority_fixes.sql",
+          "relative": "priority_fixes.sql",
+          "bytes": 5953,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "12c4d01d6ba285ae71f2ec9b0ccbdd65495bebfad8bda98f0f497259f9b4ca9d",
+          "snapshot": "SNAPSHOTS/theophysics_complete/priority_fixes.sql"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine\\theophysics_complete\\sync_to_postgres.py",
+          "relative": "sync_to_postgres.py",
+          "bytes": 9100,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "a4f78d73aae41b7e6ce35fb124bf4c805a62fd64a1ad3b36ad1620aae158dcc4",
+          "snapshot": "SNAPSHOTS/theophysics_complete/sync_to_postgres.py"
+        }
+      ]
+    },
+    {
+      "group": "Data_Analytics",
+      "source_root": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics",
+      "assessment": "REVIEW: extraction, linking and paper utilities; nested source collections excluded.",
+      "max_directory_levels": 5,
+      "files": [
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\ADMIN_DASHBOARD.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\ADMIN_DASHBOARD.md",
+          "bytes": 11013,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "33c2aa32d1ef6a2997bdc530088562e0db086e75d3b4bd8bec953a5b732a154b",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/ADMIN_DASHBOARD.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Atoms.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Atoms.md",
+          "bytes": 194,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "52c8862636b32af0aeea5033027c7cc2898191405f150fddf53fa4037d75cf5f",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Atoms.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Compression 1.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Compression 1.md",
+          "bytes": 3659,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "7f1c0decb69156274a65d20fd3e02f6647c026b012754e6e0f5931c3450ccdb0",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Compression 1.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Compression.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Compression.md",
+          "bytes": 3659,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "7f1c0decb69156274a65d20fd3e02f6647c026b012754e6e0f5931c3450ccdb0",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Compression.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Concept_Hubs_Index.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Concept_Hubs_Index.md",
+          "bytes": 83,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "ae8d99d776a5e2b1e35597dbce7a4ad2d836558e11a7faf8ea13840d47ab2b19",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Concept_Hubs_Index.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\GLOBAL_STATS_VIEW.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\GLOBAL_STATS_VIEW.md",
+          "bytes": 645,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "08612ca99a93498553541be0b8b7f0a62ed87742553fdc8acaf57abc30f30f10",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/GLOBAL_STATS_VIEW.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Interaction_Map.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Interaction_Map.md",
+          "bytes": 6920,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "dffb9e76fcd5df4adbc2b7559146e26f2f764f1804f6976b2eb78a81a9e96463",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Interaction_Map.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\LOCAL_STATS_VIEW.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\LOCAL_STATS_VIEW.md",
+          "bytes": 551,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "687cf6ba055ec11cf54b6039e780b10dc4bcd3b21d922cd296f91ff6e7056732",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/LOCAL_STATS_VIEW.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Laws.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Laws.md",
+          "bytes": 220,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "216b50b5ab1368f54b2487187e1607622278476a97cca0d8d6ca6c70003fda94",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Laws.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\MASTER_INDEX.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\MASTER_INDEX.md",
+          "bytes": 13772,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "b84599a938b789c36cdd651582320f5a05f648e8c58aa37f17b23f8cb0eeff99",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/MASTER_INDEX.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Mermaid diagrams.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Mermaid diagrams.md",
+          "bytes": 1575,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "d64d077c517295f5d2a9bb5ab3294dda1a71b624002d0c42b8c4e77fb1d31109",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Mermaid diagrams.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Mermaid_Maps.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Mermaid_Maps.md",
+          "bytes": 3646,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "dcb436ee27d7b897f14d6676227b34c0d26d5acbf1344f1a905b947c87264774",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Mermaid_Maps.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Molecules.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Molecules.md",
+          "bytes": 233,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "f023c78c6ff95111f314107aeda1fc01e791a167a4603e0686b919760b0809f2",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Molecules.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Statistics.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Statistics.md",
+          "bytes": 1663,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "7acbe93e70dc8eac92d822114b15d4ddc8c5db9a4b58e84ce6e5579322edf228",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Statistics.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Tags_Index.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Tags_Index.md",
+          "bytes": 155,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "1d307b500d55cdab988705ac3603fd7e3909075d63d22d962165dbe2736c3bec",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Tags_Index.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Trinity_Heatmap.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Trinity_Heatmap.md",
+          "bytes": 496,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "9bbb5fad839a1e59e3a22d9b1c03427bfbc9be58ba502ef9b18ca0c0d681db8e",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Trinity_Heatmap.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\VAULT-PACKAGING-GUIDE.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\VAULT-PACKAGING-GUIDE.md",
+          "bytes": 12095,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "adc875c7bfd96c7036fd2b2396c645e7aac8ca39d26089ebb51891a5b7f422d6",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/VAULT-PACKAGING-GUIDE.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\Validation.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\Validation.md",
+          "bytes": 224,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "da466a41346a01b0d2bef432bac842592a041cd545c8b2b926ebfb8c180b55ed",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/Validation.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\_Index.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\_Index.md",
+          "bytes": 810,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "ed346e513c071a97c2a081f3f93e6984f198941f6196c9cd192ba8da2d9f9acf",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/_Index.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Dashboards\\graph view.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Dashboards\\graph view.md",
+          "bytes": 2971,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "74df36354c54e2608835e0e4a433da681f4ebd89fc4cfce4650b75db1100c4a1",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Dashboards/graph view.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Docs\\Charting_Engine_Strategy.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Docs\\Charting_Engine_Strategy.md",
+          "bytes": 4145,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "52fd5d8f3068f41cb304a01f790ca4dbe93143da93a3173cd5333b7a6b518398",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Docs/Charting_Engine_Strategy.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Scripts\\Utilities\\README.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Scripts\\Utilities\\README.md",
+          "bytes": 4116,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "6032441091b5979537e63d6b77446031670105d77daaaeb48d6110f6fd862fab",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Scripts/Utilities/README.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\Data_Analytics\\Theophysics_Analytics\\Scripts\\Utilities\\README.md",
+          "relative": "Theophysics_Analytics\\Scripts\\Utilities\\README.md",
+          "bytes": 4116,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "6032441091b5979537e63d6b77446031670105d77daaaeb48d6110f6fd862fab",
+          "snapshot": "SNAPSHOTS/Data_Analytics/Theophysics_Analytics/Scripts/Utilities/README.md"
+        }
+      ]
+    },
+    {
+      "group": "ARCHIVE",
+      "source_root": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\ARCHIVE",
+      "assessment": "HISTORICAL_ONLY: archive architecture and diff manifest; no archived executable promoted.",
+      "max_directory_levels": 1,
+      "files": [
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\ARCHIVE\\README_Analytics_Architecture.md",
+          "relative": "README_Analytics_Architecture.md",
+          "bytes": 2224,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "204ec8b9feb27663fe7f07294b038105359bd9baec4e4795c16661834da2aae6",
+          "snapshot": "SNAPSHOTS/ARCHIVE/README_Analytics_Architecture.md"
+        }
+      ]
+    },
+    {
+      "group": "Custom_Modules",
+      "source_root": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\04_Custom_Modules",
+      "assessment": "ADAPT: symbolic hypothesis expressions; missing problems dependency and README/code mismatch.",
+      "max_directory_levels": 2,
+      "files": [
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\04_Custom_Modules\\theophysics_analytics\\README.md",
+          "relative": "theophysics_analytics\\README.md",
+          "bytes": 2823,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "2ac78e91d176823785fb36ad558ce3119a3cc80f0bb91a019bcd830f530dd918",
+          "snapshot": "SNAPSHOTS/Custom_Modules/theophysics_analytics/README.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\04_Custom_Modules\\theophysics_analytics\\__init__.py",
+          "relative": "theophysics_analytics\\__init__.py",
+          "bytes": 0,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "snapshot": "SNAPSHOTS/Custom_Modules/theophysics_analytics/__init__.py"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\04_Custom_Modules\\theophysics_analytics\\engine.py",
+          "relative": "theophysics_analytics\\engine.py",
+          "bytes": 7932,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "bbf0027ebb8515cc59a492a8189732a9b9c0256f3b725aa984eb7ff4bc962ea7",
+          "snapshot": "SNAPSHOTS/Custom_Modules/theophysics_analytics/engine.py"
+        }
+      ]
+    },
+    {
+      "group": "Dashboards",
+      "source_root": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\03_Dashboards",
+      "assessment": "ADAPT: navigation and dashboard concepts; old links and Dataview paths require repair.",
+      "max_directory_levels": 1,
+      "files": [
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\03_Dashboards\\Analysis_Dashboard.md",
+          "relative": "Analysis_Dashboard.md",
+          "bytes": 469,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "4e360b962f846d88033c8b75386effe3c1ac7b6fcd293769548b047c3b2b8d3d",
+          "snapshot": "SNAPSHOTS/Dashboards/Analysis_Dashboard.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\03_Dashboards\\Analytics_Hub.md",
+          "relative": "Analytics_Hub.md",
+          "bytes": 952,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "2ff9cb1a58cc33f372013127c60e562dbe8fd74f9dfcff3633269de4b3f9a219",
+          "snapshot": "SNAPSHOTS/Dashboards/Analytics_Hub.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\03_Dashboards\\Data_Extraction_Dashboard.md",
+          "relative": "Data_Extraction_Dashboard.md",
+          "bytes": 412,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "bcc96e85579391143185fb139c0ddf2c547b5338c25a6f9901da8adb857b2d96",
+          "snapshot": "SNAPSHOTS/Dashboards/Data_Extraction_Dashboard.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\03_Dashboards\\Linking_Dashboard.md",
+          "relative": "Linking_Dashboard.md",
+          "bytes": 380,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "7ff6f2aa9d9c5bf0e0889119e75401cd4017cadf9367c11d4bac4ad6e2158c1c",
+          "snapshot": "SNAPSHOTS/Dashboards/Linking_Dashboard.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\03_Dashboards\\Paper_Management_Dashboard.md",
+          "relative": "Paper_Management_Dashboard.md",
+          "bytes": 416,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "98234c5b4a5627f638fff3731373a6cf91fbb9ab9d78a997eeef1e9e8d50fe8d",
+          "snapshot": "SNAPSHOTS/Dashboards/Paper_Management_Dashboard.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\03_Dashboards\\System_Dashboard.md",
+          "relative": "System_Dashboard.md",
+          "bytes": 376,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "32f2ee58c09e69b58013fab225487003c65dfd64dbcae667569b2ab4bb440a3d",
+          "snapshot": "SNAPSHOTS/Dashboards/System_Dashboard.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\03_Dashboards\\Utilities_Dashboard.md",
+          "relative": "Utilities_Dashboard.md",
+          "bytes": 386,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "7af04d79a2e87b9e9fe6a403ea7c75e02226008711cf1e4f7e9bfc7bf340becc",
+          "snapshot": "SNAPSHOTS/Dashboards/Utilities_Dashboard.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\03_Dashboards\\Visualization_Dashboard.md",
+          "relative": "Visualization_Dashboard.md",
+          "bytes": 404,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "b7c87110f442b14e719db2e029c20e75d0f98be32cc0e9e1390154973b4b1342",
+          "snapshot": "SNAPSHOTS/Dashboards/Visualization_Dashboard.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\03_Dashboards\\dashboard_index.md",
+          "relative": "dashboard_index.md",
+          "bytes": 1382,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "41fc02ff607e159603cc2a127d5725e2524dc7dc624664027f068662e67510c0",
+          "snapshot": "SNAPSHOTS/Dashboards/dashboard_index.md"
+        }
+      ]
+    },
+    {
+      "group": "Native_Tools",
+      "source_root": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\01_Native_Tools",
+      "assessment": "ADAPT: Obsidian Dataview templates; plugin-dependent, not standalone Python execution.",
+      "max_directory_levels": 1,
+      "files": [
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\01_Native_Tools\\01_Vault_Overview.md",
+          "relative": "01_Vault_Overview.md",
+          "bytes": 597,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "7fc470d19e9d1b82814ed4d86c2be2ba665878adc5ef0a60aa89c32f96ff17a9",
+          "snapshot": "SNAPSHOTS/Native_Tools/01_Vault_Overview.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\01_Native_Tools\\02_Tag_Explorer.md",
+          "relative": "02_Tag_Explorer.md",
+          "bytes": 427,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "f44c0a08d49b149fc967834709cb113ce5e54b0f4d1232f39cf870e24718aa00",
+          "snapshot": "SNAPSHOTS/Native_Tools/02_Tag_Explorer.md"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\01_Native_Tools\\03_Task_Manager.md",
+          "relative": "03_Task_Manager.md",
+          "bytes": 403,
+          "review_status": "inventoried_not_runtime_tested",
+          "sha256": "fd08e256ddf3e39792ac884e0136c05338caa957c22edf7040207cf0412fbce0",
+          "snapshot": "SNAPSHOTS/Native_Tools/03_Task_Manager.md"
+        }
+      ]
+    },
+    {
+      "group": "Folder_Navigation",
+      "source_root": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS",
+      "assessment": "REUSE_PATTERN: clickable hierarchy plus purpose summaries; historic welcome paths/labels need reconciliation. Static notes, not verified recursive generator.",
+      "max_directory_levels": 1,
+      "files": [
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\README.md",
+          "relative": "README.md",
+          "bytes": 2049,
+          "sha256": "a271e9c68d5e07426e15ae109713c86bf5c04ae9e3b10aef34e753c8de47c056",
+          "snapshot": "SNAPSHOTS/Folder_Navigation/README.md",
+          "review_status": "read_navigation_design_reference"
+        },
+        {
+          "source": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\THEOPHYSICS_WELCOME.md",
+          "relative": "THEOPHYSICS_WELCOME.md",
+          "bytes": 1957,
+          "sha256": "05a84873c5b9f4bff40551d41d5451323a4ac062808f3e79eb58feb512ce0c6d",
+          "snapshot": "SNAPSHOTS/Folder_Navigation/THEOPHYSICS_WELCOME.md",
+          "review_status": "read_navigation_design_reference"
+        }
+      ]
+    }
+  ]
+}

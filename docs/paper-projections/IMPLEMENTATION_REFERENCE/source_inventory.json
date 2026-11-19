@@ -1,0 +1,487 @@
+{
+  "scope": "\\\\192.168.2.50\\h_hp\\Desktop\\Folders\\D_TOOLS_AND_SYSTEMS\\28_Theophysics_Engines\\THEOPHYSICS_PAPER_INTELLIGENCE\\04_ANALYTICS\\02_Python_Engine",
+  "method": "Static inventory and Python AST parse, excluding environments and generated backside; files over 2MB size-only. No scripts executed or databases opened.",
+  "files": [
+    {
+      "path": "docs\\All_Vaults_Global_Analytics_README.md",
+      "bytes": 2049,
+      "sha256": "a271e9c68d5e07426e15ae109713c86bf5c04ae9e3b10aef34e753c8de47c056"
+    },
+    {
+      "path": "docs\\ANALYTICS_ARCHITECTURE.md",
+      "bytes": 8025,
+      "sha256": "61249f86c24f2c80949ecbc32fc77cb3556b718c1617fe7425933d9a48faac28"
+    },
+    {
+      "path": "docs\\COHERENCE_ANALYSIS_OVERVIEW.md",
+      "bytes": 12114,
+      "sha256": "624565ff38ea895f8bab96d9afd33b94ab8659c8f088b201ea2ec1403bedcc78"
+    },
+    {
+      "path": "docs\\UNIFIED_MEASUREMENT_MATRIX.md",
+      "bytes": 10031,
+      "sha256": "9c29a59fa01c2d7fbb721a4fe852154a12cd745dcfe4bcd93b370bea1c1990d2"
+    },
+    {
+      "path": "reports\\dashboard_data.json",
+      "bytes": 102131,
+      "sha256": "db7bce25b9eb567d567189ee6357461e8fd0e680234a782e7b5d333f272647c5"
+    },
+    {
+      "path": "reports\\GLOBAL_ANALYTICS_SUMMARY.md",
+      "bytes": 615,
+      "sha256": "0e26dad7962901d5ea4c4a8ba70a278f768e5fbd8568fb70936bdc26805af2ea"
+    },
+    {
+      "path": "scripts\\chi_computation.py",
+      "bytes": 13075,
+      "sha256": "b4e4cd6ac989390ef3f24a9d1cd74169c3e27a78bdfe267ac38792e684b27f49",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "scripts\\dashboard_generator.py",
+      "bytes": 29968,
+      "sha256": "88805ec32e284b72f127b1681d83d8ff0f834586594b75c9ca79f9bc718607fc",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "scripts\\README.md",
+      "bytes": 728,
+      "sha256": "1f965625eb58d8e922e42a2381ee0297929db2ae6b9e6b8b3fef1cb0a47afcc2"
+    },
+    {
+      "path": "theophysics_complete\\breakthrough_vault_schema.sql",
+      "bytes": 3742,
+      "sha256": "53784ebdd94bccfc73adc9517a913019f61a91930d702d18b9f01dee220648a0"
+    },
+    {
+      "path": "theophysics_complete\\HIDDEN_INSIGHTS.md",
+      "bytes": 8434,
+      "sha256": "f29763ce89f1d4d057dab2dbd7f4ce57e188aaabb44d7dc8c3794624eece1121"
+    },
+    {
+      "path": "theophysics_complete\\INTEGRATION_GUIDE.md",
+      "bytes": 13473,
+      "sha256": "5b681ff30aecb49930fae803926ba090c4e0b310e47d452b1cdc2ea6f080b2e1"
+    },
+    {
+      "path": "theophysics_complete\\MASTER_EQUATION_ANALYSIS.md",
+      "bytes": 15429,
+      "sha256": "52b2423e1c9208eca6d8207f392e30d6099efa9a2806e60777e918072a46b766"
+    },
+    {
+      "path": "theophysics_complete\\master_equation_map.json",
+      "bytes": 8780,
+      "sha256": "65c8a42aef39ddd612cae3a3822f565733d2db0a5cc8509db501a6997191f378"
+    },
+    {
+      "path": "theophysics_complete\\master_equation_schema.sql",
+      "bytes": 13179,
+      "sha256": "fc1ba71d79b24e4ed2190f481f716cecd20dd4190cb2865b9f6294712d049067"
+    },
+    {
+      "path": "theophysics_complete\\priority_fixes.sql",
+      "bytes": 5953,
+      "sha256": "12c4d01d6ba285ae71f2ec9b0ccbdd65495bebfad8bda98f0f497259f9b4ca9d"
+    },
+    {
+      "path": "theophysics_complete\\README_COMPLETE.md",
+      "bytes": 11030,
+      "sha256": "e82effbbbe55884c7a4ce64b6e5f8d55c7d83739f254548339dfebbd462c72d4"
+    },
+    {
+      "path": "theophysics_complete\\sync_to_postgres.py",
+      "bytes": 9100,
+      "sha256": "a4f78d73aae41b7e6ce35fb124bf4c805a62fd64a1ad3b36ad1620aae158dcc4",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "theophysics_complete\\SYSTEM_INTEGRATION.md",
+      "bytes": 13472,
+      "sha256": "a06f6f965f1aa0977b7bed2cc8b3f61184b2b9b43e12d3ac23d4aa255c03185a"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\config.yaml",
+      "bytes": 1605,
+      "sha256": "95feb36a7f36b96d17a0b4c3ec9dd1e95daa60cc7981b6b5704f57c753703ac5"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\README.md",
+      "bytes": 3250,
+      "sha256": "1f2e18be5bfba661d4cede58d8304c7480ec84ab535cb9618d5c4f33f2f382c7"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\yaml_frontmatter_template.md",
+      "bytes": 331,
+      "sha256": "89d07ee8cd3f977c59562fee409911a2b03e018bc48961b8eec2fcfbe92bf44f"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\00_Templates\\01_Asset_Template.md",
+      "bytes": 1896,
+      "sha256": "ffa82ee1cdc21f0250b67ab028d5fcf60e18d98ef044bd5a1943596f2972823f"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\00_Templates\\02_Foundation_Template.md",
+      "bytes": 2111,
+      "sha256": "cef02cee2e6b6a9d073408fde05042b4e41a40035f5a1d84baf557c4027f3e8c"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\00_Templates\\03_Analysis_Template.md",
+      "bytes": 2722,
+      "sha256": "4697c4388ae643bb8cba59a34a88700c57424caa08eda201996c8c410cf3d6ec"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\00_Templates\\04_Integration_Template.md",
+      "bytes": 2724,
+      "sha256": "58b195392ead75ec95a730cfdd9950749d7b7fa5d0677e0c32ef7e9b9ca7978d"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\00_Templates\\05_Doctrine_Template.md",
+      "bytes": 3124,
+      "sha256": "b23f322f010edfbffcd6df17464d685a58c95585f98fa040e704dd3e23547952"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\00_Templates\\06_Publication_Template.md",
+      "bytes": 4145,
+      "sha256": "03c9cb0c712467b18e50d93cf54703afbe5ef13933c70662e1938dd3b8d7f9ca"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\00_Templates\\Tag_Reference.md",
+      "bytes": 2199,
+      "sha256": "427a2b70ef4d10e1cc6075d16453419509051420321881cf717cb34f8e46bff2"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\01_Assets\\README.md",
+      "bytes": 1677,
+      "sha256": "0ad4881f62e46768fb24b954f7ca14d937aebf0f5571fc8c34a77aa0c9a8e817"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\02_Foundations\\README.md",
+      "bytes": 2029,
+      "sha256": "5deaad9de4cc697439b36f3f28a9598e475178dc2babd6d259ac02d83677ba15"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\03_Analysis\\README.md",
+      "bytes": 2221,
+      "sha256": "aca47f617eaf2b51e9fc3616201f132d8c0e1524baade7e55d20a9638933994c"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\04_Integration\\README.md",
+      "bytes": 2206,
+      "sha256": "071c094d446a86112a7bef3e60d3b8dcfdbf6b8d98f3fee05ba829d3c83aedcd"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\05_Doctrine\\README.md",
+      "bytes": 2473,
+      "sha256": "1cd97510142f9b00662583fd881f7cdd12ea9af11f9b3160b1c04638abae0a22"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\06_Publication\\README.md",
+      "bytes": 2892,
+      "sha256": "1c54aa8a667a3e762cde9e8bda1bd466ce8aa8abbd12b82874bdb2cdc5b14c3b"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Admin\\Admin Wizard.md",
+      "bytes": 1043,
+      "sha256": "2b65ad6c50ca547b452ed9776ca49a13f169f7cba7671e6c0753eef9dadd7904"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\MOCs\\Characters\\GF.md",
+      "bytes": 170,
+      "sha256": "5dab72d062d1ac18e632e919c9654c8e8ac3447be497db55de166eda28579eb6"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\MOCs\\Topics\\trinity.md",
+      "bytes": 169,
+      "sha256": "0689766503b54a4e8a2bc13753bc96b020c8590d60e555a3da27782200cdb1d1"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\auto_linker.py",
+      "bytes": 4717,
+      "sha256": "dab579df388db53ef5b7a3cee90ba3862b3dc6d9ceca07b5106db7a271ebbd12",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\concept_hub_generator.py",
+      "bytes": 2858,
+      "sha256": "c67d5a8d4a4b9533dc91357164c35e8581fc62da0cf19fca303f0d6e27c5b320",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\cooccurrence_analyzer.py",
+      "bytes": 1474,
+      "sha256": "156e2c7caa49c7ac5d6959f04f8d4d5d89118159b98e6661ef29dc24d6878386",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\duplicate_finder.py",
+      "bytes": 4621,
+      "sha256": "2a6889331822b4d8b8ee00b2865addfd9813e707d2222e8a822b15c0498ce550",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\grace_vault_manager.py",
+      "bytes": 7306,
+      "sha256": "3a00689c2b3e1e3482acff634d4dae8c3b0799b16185f26a2c092d90eee32383",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\paper_compare.py",
+      "bytes": 7156,
+      "sha256": "2acf8503f70502faecde9f7a3d207968e52efc7e55adf6d4aec8e9c62ee33da6",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\quick_stats.py",
+      "bytes": 3644,
+      "sha256": "d70cb75457c52f8a7bc5926ac6b08fd098ced8f6c65b0925bc014e6de7ca2c32",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\toolkit_manager.py",
+      "bytes": 3959,
+      "sha256": "d59d5255af07fcf036cdbf910541c55eed52d81df1fecada226a12ba8d5bfc79",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\uid_generator.py",
+      "bytes": 1995,
+      "sha256": "afcf7ff3681387fcf0fde3621efb9c3f70c319935ed43c972c0afa223b3fa32e",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\validation_scaffold.py",
+      "bytes": 3787,
+      "sha256": "d577256f75c239a509a8e7854677c5671c94a42173f3cc43d3a2d6a5599ab1f5",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\vault_refresh.py",
+      "bytes": 6999,
+      "sha256": "171c93149e5f939959c47a5b1656ecfd9af4e706d097b2d54d5a74c2dfe4e7d2",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Analysis\\analyze_coherence.py",
+      "bytes": 12895,
+      "sha256": "8b6a2c4ad6a6010bfdd3f6ceefeacbfc9b739250535b85f36237019dce0d3673",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Analysis\\analyze_paper.py",
+      "bytes": 16266,
+      "sha256": "13b1c3e0488cb07785bd606ea4b2b2808572559e33ba0da421edabd16104e530",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Analysis\\cooccurrence_analyzer.py",
+      "bytes": 1483,
+      "sha256": "3adbeb3bfadfcdb072dffcbbb8c39b7b780894ed086e5b2f825a823c4562fb79",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Analysis\\correlation_engine.py",
+      "bytes": 11284,
+      "sha256": "830180fed261486df662370025710d870e197f429b0f5fc3c3128bece1f13b56",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Analysis\\co_term_density.py",
+      "bytes": 3963,
+      "sha256": "43c15e16e81b093257835cbcfd2e28d2fe26f3d33c2e873b97ee40da9bddfdc3",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Analysis\\dns_calculator.py",
+      "bytes": 4003,
+      "sha256": "03aab6df9a9ea82458127fb97cf078b8f1465a31452b61314932af771da3ac31",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Analysis\\matter_analysis.py",
+      "bytes": 1017,
+      "sha256": "fb5958e335b6b0b7f7ad235b2237b40669a23989d5c5c3c8ce7bf229d13dc345",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Analysis\\overlap_calculator.py",
+      "bytes": 3134,
+      "sha256": "58bf163508953ad476d961b6113d18bf306caf65cd0f67e61d1a336663771434",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Analysis\\smart_breakthrough_detector.py",
+      "bytes": 6904,
+      "sha256": "77ebd9234ff4ec54d0d7da962651061101c7cb87e3f49284d47805833efc4ad8",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\add_all_missing_sections.py",
+      "bytes": 11247,
+      "sha256": "264a5bf35049528533fd6b912b0445166f264e7aa7cccfd6d90ad2c6f919c816",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\add_missing_sections_final.py",
+      "bytes": 9142,
+      "sha256": "3121bd8142f9a7ccd08d819da3b69d9d647f8062efd805e8848d4cb4bd3fb61f",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\add_yaml_frontmatter.py",
+      "bytes": 5364,
+      "sha256": "d4d609358b5e1e12f52ed35700429f836b5ef296f881ccc3db97b77c0ea5c01d",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\build_all_paper_mappings.py",
+      "bytes": 1684,
+      "sha256": "f3c6de2226ee397b80c266e67347adebe7add7483ba389d246b80e03f71f59b3",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\check_and_fix_assembled.py",
+      "bytes": 6291,
+      "sha256": "a9f911cdda4824471f5e17f6453fbefb5cd0913d317c37d183bcc11cd8f80b8c",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\check_missing_sections.py",
+      "bytes": 3748,
+      "sha256": "3db6cb5f5a79e2365a250b1485cca9a6c0cedd1ea813de3db1607f447214049e",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\clean_concepts.py",
+      "bytes": 810,
+      "sha256": "df9a65c22c43ac65c8a5cee4e6414b8650fad042014dbc2cafc6858c974f492a",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\consolidate_p01.py",
+      "bytes": 1713,
+      "sha256": "082825fa104c6aad058e9d494a23cf5339190a5041ad2dc613e5d7cf48d552bd",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\consolidate_papers.py",
+      "bytes": 3429,
+      "sha256": "efb59c51fcba2fbb6eff959b0f8006983ef2512f0c985d65b7f915859b4af98d",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\create_master_1-14.py",
+      "bytes": 3475,
+      "sha256": "7a04b2aec38802d7bddca74fa653db4c3e902f2a11c30eb2bf316ccf93bac3ef",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\create_remaining_sections.py",
+      "bytes": 7057,
+      "sha256": "d96858d38e1959b12c28a202cafeb2eb33533a1d021fd0f1aa55d75e4e87e80b",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Paper_Management\\extract_missing_sections.py",
+      "bytes": 7753,
+      "sha256": "a673806f981a858e5ff622c6f6559fd28d0dc502e32fe762bb5fe139774fd5d1",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Visualization\\build_mermaid.py",
+      "bytes": 6876,
+      "sha256": "a357964c3f69e362f281a3ea417da237db42b598f75a275e794de70881c78179",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Visualization\\cosmic_fate_curves.py",
+      "bytes": 1801,
+      "sha256": "4389f1f99dddc872ea4de6347f69374f73eff3983cc75b1e422e1e6b72afdcec",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Visualization\\generate_paper4_visualizations.py",
+      "bytes": 16862,
+      "sha256": "6aa215620a1e453f1790f75dded620c8864d1ed6ea9a2fad378b652e6294e6d5",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Visualization\\law1_visualizations.py",
+      "bytes": 10296,
+      "sha256": "4ca0e307e14063b847151df2b6764b3f149b5ad370aece0420fbeaee21de4c73",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Visualization\\master_equation_network.py",
+      "bytes": 3501,
+      "sha256": "fb71cd5a4dfe261ccb7bfd8e0210eaefeae64c50805ded1fa6eb2c93f655102d",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Visualization\\render_integrated_information.py",
+      "bytes": 4008,
+      "sha256": "0e088071f60c45013f13f47bbec72a3500171293eda157c7c2c96015b9be9deb",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Visualization\\render_soul_field_potential.py",
+      "bytes": 4594,
+      "sha256": "85bc678fe04434e310756612f5aabbd616e5654fc081d7e0d1b5164ebf8d9df7",
+      "syntax": "parse_error",
+      "error": "unterminated string literal (detected at line 1) (<unknown>, line 1)"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Visualization\\render_three_stage_collapse.py",
+      "bytes": 3152,
+      "sha256": "dcef12b540bdb5b2fb54f38e6fcf9c706e35b3821f38d322c1f06308a9e68a5e",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Visualization\\render_three_stage_collapse_v2.py",
+      "bytes": 3382,
+      "sha256": "101f9a29db52bc02f3a44780736bfd2fda9398d97e5446e5c4c66009ce85b552",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Scripts\\Visualization\\render_yukawa_coupling.py",
+      "bytes": 3853,
+      "sha256": "d288367c0c56dd7cb15f23d595bc5bfae0edb996d870ae85826ac6537ef9ac1a",
+      "syntax": "parse_ok"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Tasks\\run_daily.bat",
+      "bytes": 209,
+      "sha256": "caf089344da1498bff50d379d2f153f7ddf6cc179e47908b92e1143eb1eda658"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Tasks\\run_daily.ps1",
+      "bytes": 239,
+      "sha256": "561c3e1b61a50c56e9b1c250934358991cefcda287c6e946e555abdcd41de8fd"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Templates\\Wizard\\WIZ - Audit Vault.md",
+      "bytes": 154,
+      "sha256": "67666260c9aae97b55d064dafdffbdd7ebf4c60781c860b504d926df6c56d7df"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Templates\\Wizard\\WIZ - Build MOCs.md",
+      "bytes": 1416,
+      "sha256": "9a7c8e590db899be76dbf2b33e0eaf09a2f25effae17631d15fb0bc48a71c8eb"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Templates\\Wizard\\WIZ - Build Paper Series.md",
+      "bytes": 84,
+      "sha256": "1765f08175da05843c21fe5e1b6b6e6d5b2595fed6b0f8916e2056aa6bfd71a3"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Templates\\Wizard\\WIZ - Link Palette.md",
+      "bytes": 728,
+      "sha256": "eaae0ec517c2deaac4449fdded315efe6c00eecef96d283d3ac2dae51abfc1aa"
+    },
+    {
+      "path": "toolkits\\BreakthroughVaultToolkit_v2\\Templates\\Wizard\\WIZ - Setup Folders.md",
+      "bytes": 560,
+      "sha256": "dc030a31dd0f54632f7ff798c99dd2da7792556c6e1fa1587c9e38bc1fd98766"
+    }
+  ]
+}

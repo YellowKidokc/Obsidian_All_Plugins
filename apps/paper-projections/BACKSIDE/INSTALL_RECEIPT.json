@@ -1,0 +1,30 @@
+{
+  "destination": "\\\\192.168.2.50\\h_hp\\Documents\\B_series\\.APPS\\PAPER_PROJECTIONS",
+  "verified_files": [
+    {
+      "path": "READ_ME_FIRST.md",
+      "sha256": "0333d79f24e451c379bd996f849d85a9153257e17ab4d60a97e1c44b591b7ba7"
+    },
+    {
+      "path": "START_PROJECTIONS.bat",
+      "sha256": "895c238045a5c56ecc51f2bd0476ab1365b29c0f850e3e30faf12e6b858f855f"
+    },
+    {
+      "path": "BACKSIDE\\LOCAL_VERIFICATION.json",
+      "sha256": "a84a0e50b9b0095e05455e8e4b826943ed01ed4b5d5b70d52ed701984cf0f5e2"
+    },
+    {
+      "path": "BACKSIDE\\projections.py",
+      "sha256": "7a7d76506bc3795e5c49031a7d2f208e25ee01f7d96ebcd83162936f30245278"
+    },
+    {
+      "path": "BACKSIDE\\projection_catalog.json",
+      "sha256": "2b66a90efb41c086c6fe3b0c8ff5200b4686f603c49505b26322382fb9fa82a1"
+    },
+    {
+      "path": "BACKSIDE\\test_projections.py",
+      "sha256": "112d3468c7c49f1768dd08a0c7889f93b08f2d3281bdf1ad4ffb0d973120c23f"
+    }
+  ],
+  "paid_calls": 0
+}
