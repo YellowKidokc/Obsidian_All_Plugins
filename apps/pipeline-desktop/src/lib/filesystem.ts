@@ -16,6 +16,7 @@ import {
   stat,
 } from '@tauri-apps/plugin-fs';
 import { open } from '@tauri-apps/plugin-dialog';
+import { isTauri as isTauriRuntime } from '@tauri-apps/api/core';
 import type { FileEntry, PipelineFile, Node } from '../types';
 import { parseMarkdownFile, serializeToMarkdown, frontmatterToNode } from './frontmatter';
 
@@ -23,7 +24,7 @@ import { parseMarkdownFile, serializeToMarkdown, frontmatterToNode } from './fro
  * Check if running in Tauri environment
  */
 export function isTauri(): boolean {
-  return typeof window !== 'undefined' && '__TAURI__' in window;
+  return isTauriRuntime();
 }
 
 /**

@@ -58,6 +58,7 @@
     "navigation_tests": 10,
     "navigation_live_vault_acceptance": "not_run",
     "source_folders_unchanged": true,
-    "paid_api_calls": 0
+    "paid_api_calls": 0,
+    "research_manager_gui_construction": "passed offscreen with isolated config/database, no vault, provider availability probe disabled"
   }
 }

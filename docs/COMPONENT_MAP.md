@@ -47,3 +47,18 @@ The build check restored the imported main.js bytes afterward so the source impo
 | Navigation-Obsidian | templates/navigation | Five repaired Templater templates and CSS; 10 fixture tests pass; live Obsidian acceptance pending. |
 
 Dashboard pairing direction from David: Dashboard Navigator supplies native vault navigation, stats and searches; apps/dashboard supplies read-only snapshots and operational actions. Shared scope/status/identity and action-history adapters remain to be built. No existing live vault or community-plugin settings were changed.
+
+
+## Third collection batch and current recommendations
+
+| Component | Location | Decision / checked boundary |
+|---|---|---|
+| Python-OBS-backend | apps/research-backend | Retain substantive definitions/research backend; 112 Python syntax checks, window construction and 3 CDCM fixtures pass. Reconcile with Research Manager module by module. |
+| OBS-Plugin-Final-Codex | apps/ingest-engine | Real Excel/HTML/Markdown ingestion code; 12 syntax checks pass; configuration and packaging repairs required before activation. |
+| LOWES-OBS-DONE-RIGHT- | apps/pipeline-desktop | Keep as optional Tauri/React prototype; fixed two startup defects, web/native compile checks and 5 startup tests pass. Live-vault use is not cleared. |
+
+Read each IMPORT_STATUS.md before running anything. Source histories and original commit IDs are recorded in COMPONENT_IMPORTS_BATCH3_20261118.json. The ingestion engine is not an Obsidian frontend despite the older README brief. The desktop prototype is not a replacement for the preferred Dashboard Navigator plugin.
+
+Current architecture direction: native Dashboard Navigator + operations Dashboard; Quantum for registry/history; maintained Semantic AI for tagging; reviewed research/ingestion adapters for definitions and structured data; Paper Projections for adaptations and analysis; navigation templates and generated folder indexes for click-through reading. Shared integration remains work to implement, not an achievement implied by collection.
+
+No original source directory was removed. No push or production vault activation has occurred.

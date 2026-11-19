@@ -18,3 +18,6 @@ legacy/ai-tagger-bundle/plugin/data.json
 apps/research-manager/theophysics_config.json
 apps/research-manager/config/settings.ini
 templates/navigation/_templates/navigation.config.json
+
+apps/research-backend/theophysics_config.json
+**/.claude/settings.local.json

@@ -5,7 +5,7 @@ actions, the paper registry, the dashboard, canonization, semantic tagging and
 review. Markdown files in the vault stay the master copy; every tool here reads
 and writes them safely and logs who changed what.
 
-Status: **components imported; shared integration remains planned**. The repository now contains Quantum, Dashboard, Semantic AI, Paper Projections, and the existing registry seed. See [the component map](docs/COMPONENT_MAP.md). The broader consolidation prompt remains below for future integration work.
+Status: **components imported; shared integration remains planned**. The repository now contains Quantum, operations Dashboard, Dashboard Navigator, Semantic AI, Paper Projections, research backends, an ingestion candidate, navigation templates, an optional desktop prototype, and the existing registry seed. See [the component map](docs/COMPONENT_MAP.md). The broader consolidation prompt remains below for future integration work.
 
 ---
 

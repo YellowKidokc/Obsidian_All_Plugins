@@ -257,6 +257,18 @@ export function AppProvider({ children }: { children: ReactNode }) {
     }
   }, [state.activeFile, state.activeFilePath]);
 
+  // Refresh files
+  const refreshFiles = useCallback(async () => {
+    if (!state.vaultPath) return;
+
+    try {
+      const files = await readDirectoryTree(state.vaultPath);
+      dispatch({ type: 'SET_FILES', payload: files });
+    } catch (error) {
+      console.error('Failed to refresh files:', error);
+    }
+  }, [state.vaultPath]);
+
   // Create new file
   const createNewFile = useCallback(
     async (name: string) => {
@@ -296,18 +308,6 @@ access_tier: owner
     },
     [state.vaultPath, openFile, refreshFiles]
   );
-
-  // Refresh files
-  const refreshFiles = useCallback(async () => {
-    if (!state.vaultPath) return;
-
-    try {
-      const files = await readDirectoryTree(state.vaultPath);
-      dispatch({ type: 'SET_FILES', payload: files });
-    } catch (error) {
-      console.error('Failed to refresh files:', error);
-    }
-  }, [state.vaultPath]);
 
   // Auto-save effect
   useEffect(() => {
