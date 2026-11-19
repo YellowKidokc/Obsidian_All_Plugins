@@ -162,3 +162,34 @@ def record_artifact(index, actor, path, kind):
                     actor=actor, sha256=digest(path.read_bytes()), created_at=timestamp())
     create(path.with_name(path.name + '.receipt.json'), json_bytes(artifact))
     return artifact
+
+
+def preview_ingest(index, relative, actor):
+    """Run the installed ingestion component's local parsers on a copied file."""
+    try:
+        from orchestrator import IngestOrchestrator
+    except ModuleNotFoundError as error:
+        raise ValueError('Install apps/ingest-engine into the workbench Python environment') from error
+
+    source = contained(index.root, relative)
+    if not source.is_file():
+        raise ValueError('Select one local source file')
+    raw = source.read_bytes()
+    with TemporaryDirectory() as scratch:
+        copied = Path(scratch) / source.name
+        copied.write_bytes(raw)
+        engine = IngestOrchestrator()
+        try:
+            preview = engine.preview(str(copied))
+        finally:
+            engine.close()
+        if 'error' in preview:
+            raise ValueError(preview['error'])
+        # Keep the selected address in the receipt and remove the temporary mirror path.
+        for key in ('file', 'file_path', 'source'):
+            if key in preview and preview[key] == str(copied):
+                preview[key] = source.relative_to(index.root).as_posix()
+    return {'schema_version': VERSION, 'status': 'candidate', 'actor': actor,
+            'engine': 'theophysics-ingest/1.0.0', 'recorded_at': timestamp(),
+            'source_path': source.relative_to(index.root).as_posix(),
+            'source_sha256': digest(raw), 'preview': preview}

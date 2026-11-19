@@ -1,4 +1,4 @@
-# Ingest engine: useful code, repair required before activation
+# Ingest engine: packaged offline preview
 
 Source: H:/Documents/OBS-Plugin-Final-Codex, YellowKidokc/OBS-Plugin-Final-Codex. Imported with history; originals unchanged.
 
@@ -11,3 +11,7 @@ Despite the README's plugin-oriented specification, the actual implementation is
 - python-frontmatter is missing in the current global environment. Dependencies belong in a dedicated environment, followed by offline parsing fixtures and explicit database integration tests.
 
 Keep this as a candidate ETL/definition adapter, not a finished plugin or verified database synchronization path. No ingestion against user files or production database was run. Do not confuse its source enums/IDs with canon or shared document-identity authority.
+
+## Workbench integration
+
+The workbench pilot repairs the installed CLI, updates settings to Pydantic 2, and preserves the existing SQL column name through a compatible ORM attribute. A clean installation ran the CLI and parsed copied Markdown, HTML and Excel inputs without opening a database connection. Use `theophysics-ingest PATH --preview` or the workbench's `preview-ingest` command. PostgreSQL ingestion remains outside the workbench and requires separate runtime validation.

@@ -157,7 +157,7 @@ class MarkdownIngester:
             source_type=SourceType.MARKDOWN,
             source_path=source_path,
             source_name=Path(source_path).name,
-            metadata={"ingester": "MarkdownIngester", "version": "1.0"}
+            ingest_metadata={"ingester": "MarkdownIngester", "version": "1.0"}
         )
         if self.session:
             self.session.add(session)

@@ -151,7 +151,7 @@ class Index:
             result['records'] = [json.loads(item[0]) for item in db.execute(
                 'SELECT payload FROM records ORDER BY rowid')]
         papers = {p['id']: p for p in result['papers']}
-        latest = {}
+        task_events = {}
         for record in result['records']:
             paper = papers.get(record['paper_id'])
             current = paper and paper['availability'] == 'present' and paper['sha256'] == record['provenance']['source_sha256']
@@ -170,9 +170,20 @@ class Index:
                                             and digest(artifact) == payload['artifact_sha256']) else 'broken'
                     except (OSError, ValueError):
                         status = 'broken'
-                latest[(record['paper_id'], payload['task'])] = dict(
-                    paper_id=record['paper_id'], task=payload['task'], status=status)
-        result['processing'] = list(latest.values())
+                task_events.setdefault((record['paper_id'], payload['task']), []).append(
+                    (status, payload.get('artifact_sha256')))
+        result['processing'] = []
+        for (paper_id, code), events in task_events.items():
+            states = {status for status, _ in events}
+            verified = {artifact for status, artifact in events if status == 'done'}
+            status = events[-1][0]
+            if len(verified) > 1 and code not in {'ai_package', 'lossless_preservation'}:
+                status = 'conflict'
+            elif verified:
+                status = 'done'
+            elif 'broken' in states:
+                status = 'broken'
+            result['processing'].append(dict(paper_id=paper_id, task=code, status=status))
         return result
 
     def check_root(self, snapshot):

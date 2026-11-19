@@ -10,7 +10,7 @@ from html import escape
 from urllib.parse import urlencode
 
 from adapters import (
-    add_ledger, import_projection, import_review, prepare, projections, review_target,
+    add_ledger, import_projection, import_review, prepare, preview_ingest, projections, review_target,
 )
 from analytics import add_assessment, coherence, relationship_graph, translate
 from index import Index, contained, digest
@@ -128,6 +128,7 @@ def main():
     scope.add_argument('--paper')
     scope.add_argument('--series')
     commands.add_parser('namer-status')
+    commands.add_parser('preview-ingest').add_argument('path', type=Path)
     nav = commands.add_parser('navigation')
     nav.add_argument('--apply', action='store_true')
     package = commands.add_parser('prepare')
@@ -168,6 +169,9 @@ def main():
         command = args.command
         if command == 'scan':
             print(index.scan(args.actor, args.exclude, args.quantum_db))
+            return
+        if command == 'preview-ingest':
+            print(json.dumps(preview_ingest(index, args.path, args.actor), ensure_ascii=False, default=str))
             return
         snapshot = index.current()
         if command == 'serve':

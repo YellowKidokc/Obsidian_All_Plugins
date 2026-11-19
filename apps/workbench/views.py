@@ -149,9 +149,11 @@ def export(index, snapshot, actor):
     workbook = Workbook()
     dashboard = workbook.active
     dashboard.title = 'Dashboard'
-    dashboard.append(('Measure', 'Value'))
-    for row in summary:
-        dashboard.append(row)
+    dashboard.append(('Measure', 'Snapshot value', 'Recalculate from rows'))
+    formulas = ("=COUNTA(Papers!A:A)-1", '=COUNTIF(Papers!E:E,"present")',
+                "=COUNTA(Passages!A:A)-1", '=COUNTIF(Processing!C:C,"done")')
+    for row, formula in zip(summary, formulas):
+        dashboard.append((*row, formula))
     chart = BarChart()
     chart.title = 'Snapshot totals'
     chart.add_data(Reference(dashboard, min_col=2, min_row=1, max_row=5), titles_from_data=True)

@@ -25,6 +25,7 @@ In these examples, replace `wb` with the Python command and root/actor arguments
 | `wb add-research-record PAPER constraints ratings.json 8 10` | Records sourced constraint assessment. Supply `axiom`, `rubric` and a `scores` object. Use named constraints from `analytics.py` and scores -1, 0, 1 or null. |
 | `wb add-research-record PAPER relationships edge.json 8 10` | Adds a candidate directed relationship with `source`, `target`, `type` and `rationale`. Use current atom or ledger record IDs. |
 | `wb graph --series SERIES` | Shows directed candidate links and weakly connected components in a paper, series or corpus scope. |
+| `wb preview-ingest RELATIVE_PATH` | Prints a source-hashed candidate preview for one local Markdown, HTML or Excel file. First install `apps/ingest-engine` into the same Python environment. |
 | `wb namer-status` | Reports the missing authoritative Namer dependency. |
 | `wb calculate-cdcm PAPER` | Records violation densities per fully assessed axiom and per scored cell. Missing scores remain unassessed. |
 | `wb translate-math PAPER versioned-table.csv 8 10` | Runs the imported MTL translator over an exact span using a supplied MATH_TRANSLATION_TABLE CSV. Records the dictionary hash. |

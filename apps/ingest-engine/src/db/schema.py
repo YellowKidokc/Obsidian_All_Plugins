@@ -14,8 +14,7 @@ from sqlalchemy import (
     create_engine, Column, Integer, String, Text, DateTime, Boolean,
     ForeignKey, JSON, Enum, Float, Table, UniqueConstraint, Index
 )
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship, sessionmaker
+from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from datetime import datetime
 import enum
 
@@ -93,7 +92,7 @@ class IngestSession(Base):
     records_updated = Column(Integer, default=0)
     records_failed = Column(Integer, default=0)
     error_log = Column(Text, nullable=True)
-    metadata = Column(JSON, nullable=True)  # Additional context
+    ingest_metadata = Column("metadata", JSON, nullable=True)  # Retain the database column name
 
     # Relationships
     records = relationship("IngestRecord", back_populates="session")

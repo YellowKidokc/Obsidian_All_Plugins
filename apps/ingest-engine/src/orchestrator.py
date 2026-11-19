@@ -430,7 +430,7 @@ def main():
     args = parser.parse_args()
 
     # Initialize engine
-    engine = IngestOrchestrator(args.db)
+    engine = IngestOrchestrator(None if args.preview else args.db)
 
     if args.preview:
         result = engine.preview(args.path)

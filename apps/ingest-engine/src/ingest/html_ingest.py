@@ -114,7 +114,7 @@ class HTMLIngester:
             source_type=SourceType.HTML,
             source_path=source,
             source_name=Path(source).name if not is_url else source,
-            metadata={
+            ingest_metadata={
                 "ingester": "HTMLIngester",
                 "version": "1.0",
                 "is_url": is_url

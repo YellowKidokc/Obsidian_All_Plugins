@@ -104,13 +104,15 @@ def test_projection_receipts_review_and_export_parity(fixture):
         import_projection(index, index.current(), run.name, 'fixture', json.dumps(dict(payload, truncated=True)))
     result = import_projection(index, index.current(), run.name, 'fixture', json.dumps(payload))
     assert json.loads(result.read_bytes())['verification'] == 'generated_unreviewed'
+    prepare(index, paper, 'fixture', ['contradiction_pass'])
+    assert next(t for t in index.current()['processing'] if t['task'] == 'contradiction_pass')['status'] == 'done'
     target = review_target(index, paper, render_html=True)
     decision = json.dumps(dict(decision='annotated', target=str(target), feedback='Clarify the scope'))
     log = import_review(index, paper, 'Fixture reviewer', decision, [7, 7], target)
     assert 'Clarify the scope' in log.read_text()
     report = export(index, index.current(), 'fixture')
     workbook = load_workbook(report / 'workbench.xlsx', read_only=True)
-    excel = dict(workbook['Dashboard'].values)
+    excel = {label: value for label, value, _ in workbook['Dashboard'].values}
     fis = json.loads((report / 'fis.json').read_bytes())
     for label, value in fis['totals'].items():
         assert excel[label] == value
