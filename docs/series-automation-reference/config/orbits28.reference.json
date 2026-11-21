@@ -1,0 +1,60 @@
+{
+  "contract": "orbits28.reference/0.1",
+  "standing": "WORKING_DRAFT_NOT_CANON_OR_PROOF",
+  "source_name": "08_DIRECTIONAL_ORBITS_TEMPLATE_DRAFT.md",
+  "source_sha256": "cbbac3b46f9f7ef462d9d944b7bae35bddb784e99756f0c7da0209e39f17ad4f",
+  "groups": {
+    "core": [
+      "Operator",
+      "Readout",
+      "Boundary",
+      "Invariant",
+      "Transition",
+      "State"
+    ],
+    "conditions": [
+      "Domain Context",
+      "Scope Resolution",
+      "Initial State Preconditions",
+      "Admissible Inputs",
+      "Allowed Actions",
+      "Knowledge Accountability",
+      "Capacity Agency",
+      "Receiver Source Limits",
+      "Time Closure",
+      "Required Invariants",
+      "Postconditions",
+      "Outside Scope"
+    ],
+    "spiritual_moral": [
+      "Truth",
+      "Love",
+      "Grace",
+      "Justice",
+      "Mercy",
+      "Free Will",
+      "Personal Agency",
+      "Accountability",
+      "Relationship and Restoration",
+      "External Help and Cost Bearing"
+    ]
+  },
+  "shared_envelope": [
+    "value",
+    "applicability",
+    "reason_if_not_applicable",
+    "epistemic_status",
+    "source_refs_with_hash_and_locator",
+    "missing_information"
+  ],
+  "direction_metadata": [
+    "source_of_capacity",
+    "acting_subject",
+    "mechanism",
+    "recipient",
+    "object",
+    "context",
+    "response_event"
+  ],
+  "boundary": "Metadata are not extra ORBITS slots. Distinguish God from created receiver; unlimited source does not imply unbounded receiver. Unknown is not zero. Do not treat theological predicates as formally derived merely because a field is filled."
+}

@@ -1,0 +1,91 @@
+{
+  "status": "PENDING_REVIEW",
+  "proposals": [
+    {
+      "proposal_id": "P01",
+      "title": "Explicit ORBITS coverage and analysis product",
+      "status": "PENDING_REVIEW_NOT_ADDED_TO_ORIGINAL_MATRIX",
+      "roles": [
+        "ORB",
+        "MTH",
+        "CAS",
+        "RCP"
+      ],
+      "candidate_capabilities": [
+        "C23",
+        "C24"
+      ],
+      "reason": "ORB appears in the role legend but in none of the 33 output-row role mappings.",
+      "fields": [
+        "existing contract ID/version",
+        "six core fields",
+        "twelve condition fields",
+        "ten spiritual/moral fields",
+        "source/actor/recipient/response where applicable",
+        "source locators",
+        "not-applicable reasons",
+        "review standing"
+      ],
+      "acceptance": "Use the actual approved field definitions. Missing definitions remain pending. A six-lens operator map is not interchangeable with ORBITS; no invented field completion."
+    },
+    {
+      "proposal_id": "P02",
+      "title": "Workspace setup and routing plan, with later authorized-action receipts",
+      "status": "PENDING_REVIEW_NOT_ADDED_TO_ORIGINAL_MATRIX",
+      "roles": [
+        "INB",
+        "STR",
+        "REV",
+        "RCP"
+      ],
+      "candidate_capabilities": [
+        "C02",
+        "C03",
+        "C05",
+        "C11"
+      ],
+      "reason": "The matrix specifies manifests and health reports but no dedicated operational setup/routing product for the requested folder automation.",
+      "fields": [
+        "existing role-folder mapping",
+        "template versions",
+        "source hash",
+        "proposed destination",
+        "reason",
+        "collision",
+        "authorization scope",
+        "idempotency key",
+        "later execution/undo receipt"
+      ],
+      "acceptance": "Phase 1 is preview-only. Do not recreate 42 folders or rename to 21. Later execution requires scoped approval, preserves originals and refuses overwrite."
+    },
+    {
+      "proposal_id": "P03",
+      "title": "Operational review/voting queue and policy evaluation",
+      "status": "PENDING_REVIEW_NOT_ADDED_TO_ORIGINAL_MATRIX",
+      "roles": [
+        "REV",
+        "CAN",
+        "GAP",
+        "RCP"
+      ],
+      "candidate_capabilities": [
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "reason": "M24 is review history; it does not fully specify incoming tasks, voter eligibility, revision-bound votes, quorum/authority policy and outstanding decisions.",
+      "fields": [
+        "proposal revision/hash",
+        "review request",
+        "eligible actor provenance",
+        "read scope",
+        "vote event",
+        "policy version",
+        "reserved authority",
+        "blocking issues",
+        "decision reference"
+      ],
+      "acceptance": "Idempotent actor/revision-bound events; no invented quorum, source self-approval or model canon; old votes do not approve edited content."
+    }
+  ]
+}

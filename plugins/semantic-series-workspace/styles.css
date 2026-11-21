@@ -1,0 +1,9 @@
+.semantic-series-workspace pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+button.semantic-series-workspace-marker {
+  margin-inline: 0.35em;
+  font-size: var(--font-ui-smaller);
+}

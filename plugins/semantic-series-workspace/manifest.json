@@ -1,0 +1,9 @@
+{
+  "id": "semantic-series-workspace",
+  "name": "Semantic AI — Series Workspace",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Prepare private, source-bound Series Workspace reviews and preview their outputs.",
+  "author": "YellowKidokc",
+  "isDesktopOnly": false
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:semantic-series:findings:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sourceSha256", "findings", "limitations", "missingInputs", "recommendation"],
+  "properties": {
+    "sourceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["start", "end", "quote", "text"],
+        "properties": {
+          "start": { "type": "integer", "minimum": 0 },
+          "end": { "type": "integer", "minimum": 1 },
+          "quote": { "type": "string", "minLength": 1 },
+          "text": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "missingInputs": { "type": "array", "items": { "type": "string" } },
+    "recommendation": {
+      "enum": [null, "cannot_assess", "recommend_eligible", "recommend_eligible_with_conditions", "not_yet", "recommend_reject"]
+    }
+  }
+}

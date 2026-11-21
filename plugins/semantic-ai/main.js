@@ -29,8 +29,7 @@ __export(main_exports, {
 module.exports = __toCommonJS(main_exports);
 var import_obsidian11 = require("obsidian");
 
-// src/types.ts
-var PROVIDER_IDS = ["openai", "deepseek", "anthropic", "ollama", "custom"];
+// ../semantic-shared/providers.ts
 var PROVIDERS = {
   openai: {
     name: "OpenAI",
@@ -68,6 +67,15 @@ var PROVIDERS = {
     keyUrl: "https://ollama.com",
     suggestedModels: ["llama3.1", "mistral", "qwen2.5"]
   },
+  openrouter: {
+    name: "OpenRouter",
+    wireFormat: "openai",
+    defaultEndpoint: "https://openrouter.ai/api/v1/chat/completions",
+    defaultModel: "",
+    requiresKey: true,
+    keyUrl: "https://openrouter.ai/settings/keys",
+    suggestedModels: []
+  },
   custom: {
     name: "Custom endpoint",
     wireFormat: "openai",
@@ -78,6 +86,21 @@ var PROVIDERS = {
     suggestedModels: []
   }
 };
+function activeProvider(settings) {
+  var _a;
+  const id = settings.provider;
+  const info = PROVIDERS[id] || PROVIDERS.openai;
+  const config = ((_a = settings.providers) == null ? void 0 : _a[id]) || { apiKey: "", endpoint: "", model: "" };
+  return {
+    id,
+    config,
+    endpoint: config.endpoint || info.defaultEndpoint,
+    model: config.model || info.defaultModel
+  };
+}
+
+// src/types.ts
+var PROVIDER_IDS = ["openai", "deepseek", "anthropic", "ollama", "custom"];
 function defaultProviderConfigs() {
   const configs = {};
   for (const id of PROVIDER_IDS) {
@@ -937,6 +960,129 @@ var import_obsidian3 = require("obsidian");
 // src/ai/classifier.ts
 var import_obsidian = require("obsidian");
 
+// ../semantic-shared/transport.ts
+var ProviderTransport = class {
+  constructor(connection, request) {
+    this.connection = connection;
+    this.request = request;
+  }
+  /**
+   * Send a prompt to the active provider and return the raw text reply.
+   * Public so other features can reuse the same transport and credentials.
+   */
+  async complete(prompt, maxTokens = 4096) {
+    const { id, config, endpoint, model } = this.connection;
+    const info = PROVIDERS[id] || PROVIDERS.openai;
+    if (info.requiresKey && !config.apiKey) {
+      throw new Error(`No API key set for ${info.name}. Add one in the plugin settings.`);
+    }
+    if (!endpoint) {
+      throw new Error(`No endpoint set for ${info.name}. Add one in the plugin settings.`);
+    }
+    switch (info.wireFormat) {
+      case "anthropic":
+        return this.callAnthropic(endpoint, config.apiKey, model, prompt, maxTokens);
+      case "ollama":
+        return this.callOllama(endpoint, model, prompt);
+      case "openai":
+      default:
+        return this.callOpenAICompatible(endpoint, config.apiKey, model, prompt, maxTokens, info.name);
+    }
+  }
+  /** OpenAI, DeepSeek, and any other chat-completions-compatible endpoint. */
+  async callOpenAICompatible(endpoint, apiKey, model, prompt, maxTokens, providerName) {
+    var _a, _b, _c;
+    const headers = { "Content-Type": "application/json" };
+    if (apiKey) {
+      headers["Authorization"] = `Bearer ${apiKey}`;
+    }
+    const requestParams = {
+      url: endpoint,
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        model,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.3,
+        max_tokens: maxTokens
+      }),
+      throw: false
+    };
+    const response = await this.request(requestParams);
+    if (response.status !== 200) {
+      throw new Error(`${providerName} error ${response.status}: ${this.errorDetail(response.text)}`);
+    }
+    const data = response.json;
+    const text = (_c = (_b = (_a = data == null ? void 0 : data.choices) == null ? void 0 : _a[0]) == null ? void 0 : _b.message) == null ? void 0 : _c.content;
+    if (typeof text !== "string") {
+      throw new Error(`${providerName} returned an unexpected response shape.`);
+    }
+    return text;
+  }
+  async callAnthropic(endpoint, apiKey, model, prompt, maxTokens) {
+    var _a, _b;
+    const requestParams = {
+      url: endpoint,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01"
+      },
+      body: JSON.stringify({
+        model,
+        max_tokens: maxTokens,
+        messages: [{ role: "user", content: prompt }]
+      }),
+      throw: false
+    };
+    const response = await this.request(requestParams);
+    if (response.status !== 200) {
+      throw new Error(`Anthropic error ${response.status}: ${this.errorDetail(response.text)}`);
+    }
+    const data = response.json;
+    const text = (_b = (_a = data == null ? void 0 : data.content) == null ? void 0 : _a[0]) == null ? void 0 : _b.text;
+    if (typeof text !== "string") {
+      throw new Error("Anthropic returned an unexpected response shape.");
+    }
+    return text;
+  }
+  async callOllama(endpoint, model, prompt) {
+    const requestParams = {
+      url: endpoint,
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ model, prompt, stream: false }),
+      throw: false
+    };
+    const response = await this.request(requestParams);
+    if (response.status !== 200) {
+      throw new Error(`Ollama error ${response.status}: ${this.errorDetail(response.text)}`);
+    }
+    const data = response.json;
+    if (typeof (data == null ? void 0 : data.response) !== "string") {
+      throw new Error("Ollama returned an unexpected response shape.");
+    }
+    return data.response;
+  }
+  /** Pull a readable message out of an error body without dumping the whole payload. */
+  errorDetail(body) {
+    var _a;
+    if (!body) {
+      return "no response body";
+    }
+    try {
+      const parsed = JSON.parse(body);
+      const message = ((_a = parsed == null ? void 0 : parsed.error) == null ? void 0 : _a.message) || (parsed == null ? void 0 : parsed.error) || (parsed == null ? void 0 : parsed.message);
+      if (typeof message === "string") {
+        return message;
+      }
+    } catch (e) {
+    }
+    return body.length > 300 ? `${body.slice(0, 300)}\u2026` : body;
+  }
+};
+
 // src/epistemic/prompts.ts
 var EPISTEMIC_TYPE_PROMPTS = {
   AXIOM: "What is stipulated as a starting commitment, and what is explicitly not included in it?",
@@ -1626,17 +1772,8 @@ function buildTagHierarchy(tags) {
 }
 
 // src/ai/classifier.ts
-function activeProvider(settings) {
-  var _a;
-  const id = settings.provider;
-  const info = PROVIDERS[id] || PROVIDERS.openai;
-  const config = ((_a = settings.providers) == null ? void 0 : _a[id]) || { apiKey: "", endpoint: "", model: "" };
-  return {
-    id,
-    config,
-    endpoint: config.endpoint || info.defaultEndpoint,
-    model: config.model || info.defaultModel
-  };
+function activeProvider3(settings) {
+  return { ...activeProvider(settings), id: settings.provider };
 }
 var AIClassifier = class {
   constructor(settings, promptManager) {
@@ -1693,7 +1830,7 @@ var AIClassifier = class {
     const prompt = this.promptManager.buildClassificationPrompt(content, types);
     const inputTokens = estimatePromptTokens(prompt, "");
     const estimatedOutputTokens = Math.ceil(inputTokens * 0.2);
-    const { model } = activeProvider(this.settings);
+    const { model } = activeProvider3(this.settings);
     return {
       inputTokens,
       estimatedOutputTokens,
@@ -1703,120 +1840,8 @@ var AIClassifier = class {
   /* ---------------------------------------------------------------------- */
   /* Provider transport                                                     */
   /* ---------------------------------------------------------------------- */
-  /**
-   * Send a prompt to the active provider and return the raw text reply.
-   * Public so other features can reuse the same transport and credentials.
-   */
   async complete(prompt, maxTokens = 4096) {
-    const { id, config, endpoint, model } = activeProvider(this.settings);
-    const info = PROVIDERS[id] || PROVIDERS.openai;
-    if (info.requiresKey && !config.apiKey) {
-      throw new Error(`No API key set for ${info.name}. Add one in the plugin settings.`);
-    }
-    if (!endpoint) {
-      throw new Error(`No endpoint set for ${info.name}. Add one in the plugin settings.`);
-    }
-    switch (info.wireFormat) {
-      case "anthropic":
-        return this.callAnthropic(endpoint, config.apiKey, model, prompt, maxTokens);
-      case "ollama":
-        return this.callOllama(endpoint, model, prompt);
-      case "openai":
-      default:
-        return this.callOpenAICompatible(endpoint, config.apiKey, model, prompt, maxTokens, info.name);
-    }
-  }
-  /** OpenAI, DeepSeek, and any other chat-completions-compatible endpoint. */
-  async callOpenAICompatible(endpoint, apiKey, model, prompt, maxTokens, providerName) {
-    var _a, _b, _c;
-    const headers = { "Content-Type": "application/json" };
-    if (apiKey) {
-      headers["Authorization"] = `Bearer ${apiKey}`;
-    }
-    const requestParams = {
-      url: endpoint,
-      method: "POST",
-      headers,
-      body: JSON.stringify({
-        model,
-        messages: [{ role: "user", content: prompt }],
-        temperature: 0.3,
-        max_tokens: maxTokens
-      }),
-      throw: false
-    };
-    const response = await (0, import_obsidian.requestUrl)(requestParams);
-    if (response.status !== 200) {
-      throw new Error(`${providerName} error ${response.status}: ${this.errorDetail(response.text)}`);
-    }
-    const data = response.json;
-    const text = (_c = (_b = (_a = data == null ? void 0 : data.choices) == null ? void 0 : _a[0]) == null ? void 0 : _b.message) == null ? void 0 : _c.content;
-    if (typeof text !== "string") {
-      throw new Error(`${providerName} returned an unexpected response shape.`);
-    }
-    return text;
-  }
-  async callAnthropic(endpoint, apiKey, model, prompt, maxTokens) {
-    var _a, _b;
-    const requestParams = {
-      url: endpoint,
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": apiKey,
-        "anthropic-version": "2023-06-01"
-      },
-      body: JSON.stringify({
-        model,
-        max_tokens: maxTokens,
-        messages: [{ role: "user", content: prompt }]
-      }),
-      throw: false
-    };
-    const response = await (0, import_obsidian.requestUrl)(requestParams);
-    if (response.status !== 200) {
-      throw new Error(`Anthropic error ${response.status}: ${this.errorDetail(response.text)}`);
-    }
-    const data = response.json;
-    const text = (_b = (_a = data == null ? void 0 : data.content) == null ? void 0 : _a[0]) == null ? void 0 : _b.text;
-    if (typeof text !== "string") {
-      throw new Error("Anthropic returned an unexpected response shape.");
-    }
-    return text;
-  }
-  async callOllama(endpoint, model, prompt) {
-    const requestParams = {
-      url: endpoint,
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ model, prompt, stream: false }),
-      throw: false
-    };
-    const response = await (0, import_obsidian.requestUrl)(requestParams);
-    if (response.status !== 200) {
-      throw new Error(`Ollama error ${response.status}: ${this.errorDetail(response.text)}`);
-    }
-    const data = response.json;
-    if (typeof (data == null ? void 0 : data.response) !== "string") {
-      throw new Error("Ollama returned an unexpected response shape.");
-    }
-    return data.response;
-  }
-  /** Pull a readable message out of an error body without dumping the whole payload. */
-  errorDetail(body) {
-    var _a;
-    if (!body) {
-      return "no response body";
-    }
-    try {
-      const parsed = JSON.parse(body);
-      const message = ((_a = parsed == null ? void 0 : parsed.error) == null ? void 0 : _a.message) || (parsed == null ? void 0 : parsed.error) || (parsed == null ? void 0 : parsed.message);
-      if (typeof message === "string") {
-        return message;
-      }
-    } catch (e) {
-    }
-    return body.length > 300 ? `${body.slice(0, 300)}\u2026` : body;
+    return new ProviderTransport(activeProvider3(this.settings), import_obsidian.requestUrl).complete(prompt, maxTokens);
   }
   /* ---------------------------------------------------------------------- */
   /* Response handling                                                      */
@@ -1899,7 +1924,7 @@ var AIClassifier = class {
   /* Configuration                                                          */
   /* ---------------------------------------------------------------------- */
   validateConfiguration() {
-    const { id, config, endpoint } = activeProvider(this.settings);
+    const { id, config, endpoint } = activeProvider3(this.settings);
     const info = PROVIDERS[id] || PROVIDERS.openai;
     if (info.requiresKey && !config.apiKey) {
       return { valid: false, error: `no API key set for ${info.name}` };
@@ -1920,7 +1945,7 @@ var AIClassifier = class {
     }
     try {
       const response = await this.complete('Respond with exactly: {"test": "success"}', 64);
-      const { id, model } = activeProvider(this.settings);
+      const { id, model } = activeProvider3(this.settings);
       if (response.includes("success")) {
         return { success: true, message: `Connected to ${PROVIDERS[id].name} using ${model}.` };
       }
@@ -2177,7 +2202,7 @@ var SemanticAISettingTab = class extends import_obsidian3.PluginSettingTab {
         await this.saveAndRedraw();
       });
     });
-    const active = activeProvider(this.plugin.settings);
+    const active = activeProvider3(this.plugin.settings);
     new import_obsidian3.Setting(containerEl).setName("Test connection").setDesc(`Sends one short prompt to ${PROVIDERS[active.id].name} using ${active.model || "the default model"}.`).addButton((button) => {
       button.setButtonText("Test").onClick(async () => {
         button.setButtonText("Testing\u2026");
