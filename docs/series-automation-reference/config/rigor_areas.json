@@ -1,0 +1,118 @@
+{
+  "schema": "series.rigor/0.1",
+  "assessment_states": [
+    "unknown",
+    "not_started",
+    "not_applicable",
+    "in_progress",
+    "completed",
+    "stale",
+    "unavailable"
+  ],
+  "result_verdicts": [
+    "unknown",
+    "pass",
+    "fail",
+    "inconclusive",
+    "mixed"
+  ],
+  "metric_provenance": [
+    "measured_from_records",
+    "computed_from_declared_map",
+    "not_measured",
+    "demo"
+  ],
+  "areas": [
+    {
+      "code": "01",
+      "title": "Claims",
+      "roles": [
+        "CAS",
+        "WRT"
+      ]
+    },
+    {
+      "code": "02",
+      "title": "Foundations",
+      "roles": [
+        "CAS",
+        "STR",
+        "TRM",
+        "MTH",
+        "THE"
+      ]
+    },
+    {
+      "code": "03",
+      "title": "Derivations",
+      "roles": [
+        "MTH",
+        "CAS"
+      ]
+    },
+    {
+      "code": "04",
+      "title": "Sources",
+      "roles": [
+        "RES",
+        "THE",
+        "STQ",
+        "HIS"
+      ]
+    },
+    {
+      "code": "05",
+      "title": "Formal checks",
+      "roles": [
+        "RCP",
+        "MTH",
+        "CAS"
+      ]
+    },
+    {
+      "code": "06",
+      "title": "Computational tests",
+      "roles": [
+        "RCP",
+        "MTH",
+        "CAS"
+      ]
+    },
+    {
+      "code": "07",
+      "title": "Alternatives",
+      "roles": [
+        "SYN",
+        "CAS",
+        "HIS"
+      ]
+    },
+    {
+      "code": "08",
+      "title": "Failure and boundaries",
+      "roles": [
+        "CAS",
+        "GAP"
+      ]
+    },
+    {
+      "code": "09",
+      "title": "Dependencies",
+      "roles": [
+        "CAS",
+        "STR",
+        "RCP"
+      ]
+    },
+    {
+      "code": "10",
+      "title": "Contribution",
+      "roles": [
+        "SYN",
+        "RES",
+        "REV",
+        "CAS"
+      ]
+    }
+  ]
+}

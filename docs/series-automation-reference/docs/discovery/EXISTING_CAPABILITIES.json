@@ -1,0 +1,312 @@
+{
+  "source_catalog_sha256": "e168d61de85847ec4545a5f5974c4c9edb98ea20811fe2979704c9811de61879",
+  "basis": "Discovery observations, not current execution verification",
+  "capabilities": [
+    {
+      "reference_id": "C01",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "API station catalog and shared runner",
+      "existing_short_code": "API/_system",
+      "purpose": "Register movable stations, present one button/console surface, prepare inputs, route INBOX lanes, invoke local or provider-backed work, publish analysis and archive replaced output.",
+      "implementation_as_reported": "implemented framework; individual stations vary",
+      "evidence_as_reported": "Catalog and metadata inspected; no execution. Historical test files exist."
+    },
+    {
+      "reference_id": "C02",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Series workspace creation and validation",
+      "existing_short_code": "SERIES_KIT",
+      "purpose": "Create a standard series structure, validate depth/naming/copies/templates, extract templates, build indexes/views, and propose safe routing with receipts.",
+      "implementation_as_reported": "mixed: scripts/templates present; handoff target and routing partly proposed",
+      "evidence_as_reported": "README/handoff/templates inspected; programs not run."
+    },
+    {
+      "reference_id": "C03",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "FIS multi-root inventory",
+      "existing_short_code": "101",
+      "purpose": "Walk configured roots in one scan and record files, folders, markers and unreadable paths; retain collection boundaries.",
+      "implementation_as_reported": "implemented station; later stage absent",
+      "evidence_as_reported": "Station metadata/prompt inspected; not executed."
+    },
+    {
+      "reference_id": "C04",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "FIS exact-copy grouping",
+      "existing_short_code": "102",
+      "purpose": "Group same-size files from station 101, hash candidates, and report every exact-copy location without choosing a winner.",
+      "implementation_as_reported": "implemented",
+      "evidence_as_reported": "Station inspected; latest execution unknown."
+    },
+    {
+      "reference_id": "C05",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "FIS folder classification",
+      "existing_short_code": "103",
+      "purpose": "Apply rule-based folder kind/domain classification, then send unresolved folder metadata only to Forge as shadow inference.",
+      "implementation_as_reported": "implemented folder classifier; document classifier absent",
+      "evidence_as_reported": "Prompt/metadata inspected; endpoint not called."
+    },
+    {
+      "reference_id": "C06",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Standard title, aliases and series identity",
+      "existing_short_code": "56 + standard_title",
+      "purpose": "Assign standard title metadata, author/date/keywords/move, recognize series prefixes, and retain prior filenames in previous_names.",
+      "implementation_as_reported": "implemented",
+      "evidence_as_reported": "Code/catalog rules inspected; not run."
+    },
+    {
+      "reference_id": "C07",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Master Equation semantic namer",
+      "existing_short_code": "105",
+      "purpose": "Propose semantic identity, type, function, lifecycle, two vectors, dependencies, kill conditions and a short filename without renaming.",
+      "implementation_as_reported": "code/prompt present; registration/execution status unclear",
+      "evidence_as_reported": "Files inspected; no run and no catalog registration confirmed."
+    },
+    {
+      "reference_id": "C08",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "David-OS registry and progress views",
+      "existing_short_code": "FIS_HTML registry",
+      "purpose": "Render one registry page showing document identity, keywords, relationships and receipt-backed progress boxes.",
+      "implementation_as_reported": "implemented prototype; campus-wide integration incomplete",
+      "evidence_as_reported": "Handoff, plan, code filenames and historical outputs inspected; not rerun."
+    },
+    {
+      "reference_id": "C09",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "FIS naming checker/repair loop",
+      "existing_short_code": "naming-loop/0.1-baseline",
+      "purpose": "Check proposed naming components with local models, offer repairs and preserve HOLDs/stop reasons.",
+      "implementation_as_reported": "implemented experimental loop",
+      "evidence_as_reported": "Historical execution artifact inspected; no current run."
+    },
+    {
+      "reference_id": "C10",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Series relationship map",
+      "existing_short_code": "series_relationship_map v2",
+      "purpose": "Inventory series artifacts, register papers, detect exact copies and derive typed proposed relationships with standings.",
+      "implementation_as_reported": "implemented",
+      "evidence_as_reported": "Historical complete=true artifact inspected; latest run not performed."
+    },
+    {
+      "reference_id": "C11",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "POF audited CLI and reversible file actions",
+      "existing_short_code": "POF CLI",
+      "purpose": "Provide multi-provider chat, manifests, FIS action extraction, conversion dispatch, NLP routing, preview-by-default moves/renames/archives, receipts and undo.",
+      "implementation_as_reported": "implemented code",
+      "evidence_as_reported": "README, code/catalog filenames and tests inspected; not executed."
+    },
+    {
+      "reference_id": "C12",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "POF duplicate live-copy decision station",
+      "existing_short_code": "01_duplicate_live_copies",
+      "purpose": "Ask which identical live copy should be canonical while retaining an auditable station lifecycle.",
+      "implementation_as_reported": "implemented definition; execution unconfirmed",
+      "evidence_as_reported": "Definition/prompt present; no receipt."
+    },
+    {
+      "reference_id": "C13",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "YouTube research acquisition pipeline",
+      "existing_short_code": "01-13 YT",
+      "purpose": "Grab, clean, index, apply lenses, catalog, watch, convert, summarize, deeply analyze, tidy and produce channel summaries.",
+      "implementation_as_reported": "mixed legacy/native stations",
+      "evidence_as_reported": "Catalog/station metadata inspected; programs not run."
+    },
+    {
+      "reference_id": "C14",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Deep evidence intake and source passage records",
+      "existing_short_code": "30 / 39 / SERIES 18-21",
+      "purpose": "Run multiple evidence passes and preserve original research, outside sources, exact passages, citations and literature comparisons.",
+      "implementation_as_reported": "API bundle implemented; SERIES records are templates",
+      "evidence_as_reported": "Prompt delegation and templates inspected; no execution."
+    },
+    {
+      "reference_id": "C15",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "CKG readable paper review",
+      "existing_short_code": "25",
+      "purpose": "Produce a multi-call readable review covering synopsis, question ladder, every serious leg, argument history, claims, evidence, walk-through and audit.",
+      "implementation_as_reported": "implemented prompt/runner; latest sampled artifact is dry-run",
+      "evidence_as_reported": "Prompts and dry-run artifact inspected; live success not established."
+    },
+    {
+      "reference_id": "C16",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Theology triage and scripture coverage",
+      "existing_short_code": "10 + 07_SCRIPTURE",
+      "purpose": "Apply a 17-probe theology rubric, extract claims/premises/hidden premises and preserve every scriptural passage found in code or model analysis.",
+      "implementation_as_reported": "implemented prompt/layer",
+      "evidence_as_reported": "Prompt and workbench rules inspected; not run."
+    },
+    {
+      "reference_id": "C17",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Physics-theology mirror analysis",
+      "existing_short_code": "11",
+      "purpose": "Map proposed theological/physics process correspondences, stage order, transferred constraints, errors and breakpoints.",
+      "implementation_as_reported": "implemented prompt/layer",
+      "evidence_as_reported": "Prompt inspected; not run."
+    },
+    {
+      "reference_id": "C18",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Deep bridge intake",
+      "existing_short_code": "15",
+      "purpose": "Extract one to five proposed math/science to moral/theological correspondences and expose limits, counterreadings and overreach.",
+      "implementation_as_reported": "implemented station",
+      "evidence_as_reported": "Prompt/metadata inspected; not run."
+    },
+    {
+      "reference_id": "C19",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Claims, proofs, evidence and logic extraction",
+      "existing_short_code": "21 / 23 CPEL",
+      "purpose": "Extract claim/proof/evidence/logic objects and assemble CPEL/HTML artifacts.",
+      "implementation_as_reported": "mixed legacy/native; bridge unfinished",
+      "evidence_as_reported": "Catalog/workspace boundary inspected; no run."
+    },
+    {
+      "reference_id": "C20",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Claim atom bundle and atom builder",
+      "existing_short_code": "45 / 62",
+      "purpose": "Generate claim/axiom node records using vendored atom pipelines and established templates.",
+      "implementation_as_reported": "implemented wrapper around vendored scripts",
+      "evidence_as_reported": "Delegation paths inspected; not run."
+    },
+    {
+      "reference_id": "C21",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Claim atom standard and canon store",
+      "existing_short_code": "claim-atom-standard / canon-store",
+      "purpose": "Define claim/atom JSON-LD and schema conventions, run prompt/provider calls, store papers/runs/receipts, review canon candidates and expose API client/server surfaces.",
+      "implementation_as_reported": "mixed implemented systems and proposal generations",
+      "evidence_as_reported": "README/schema/code and one historical receipt inspected; no new call or review validation."
+    },
+    {
+      "reference_id": "C22",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Mathematical translation contract",
+      "existing_short_code": "MATH_TRANSLATION / SERIES 25",
+      "purpose": "Translate paper reasoning into explicit mathematical components without silently converting analogy into proof.",
+      "implementation_as_reported": "contract implemented in workbench; per-paper completion unknown",
+      "evidence_as_reported": "Contract/test file presence inspected; tests not run."
+    },
+    {
+      "reference_id": "C23",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Axiom operator mapping",
+      "existing_short_code": "69",
+      "purpose": "Map an Axiom Node through physics, mathematics, language, consciousness, emotion and logic with explicit verification boundaries.",
+      "implementation_as_reported": "implemented station definition",
+      "evidence_as_reported": "Prompt/metadata inspected; not run."
+    },
+    {
+      "reference_id": "C24",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "ORBITS record and request surface",
+      "existing_short_code": "SERIES 27 ORBITS",
+      "purpose": "Record established ORBITS analysis (Operator, Readout, Boundary, Invariant, Transition, State) in a series workspace.",
+      "implementation_as_reported": "template/proposed routing",
+      "evidence_as_reported": "Template catalog inspected."
+    },
+    {
+      "reference_id": "C25",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Lean/formal paper workflow",
+      "existing_short_code": "50-55, 66-68",
+      "purpose": "Pair axioms, identify God-is-unproven boundaries, extract Lean atoms, review Lean papers, audit sorry/axioms, triage and select formalization targets.",
+      "implementation_as_reported": "mixed legacy/native stations",
+      "evidence_as_reported": "Station metadata/files inspected; no Lean or test execution."
+    },
+    {
+      "reference_id": "C26",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Atoms-repository Lean corpus and cross-tagging",
+      "existing_short_code": "lean / lean_cross_tag",
+      "purpose": "Store Theophysics Lean declarations and index/cross-tag formal artifacts against atom records.",
+      "implementation_as_reported": "code/files present; individual proof status unverified here",
+      "evidence_as_reported": "Filenames and selected documentation inspected; not compiled."
+    },
+    {
+      "reference_id": "C27",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Story extraction and story bank",
+      "existing_short_code": "14 / 41",
+      "purpose": "Extract reusable facts, human moments, connections, memorable lines, devices and story spines with source locators and verification state.",
+      "implementation_as_reported": "implemented layer/front station",
+      "evidence_as_reported": "Prompt and output contract inspected; not run."
+    },
+    {
+      "reference_id": "C28",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Story grading, craft and media surfaces",
+      "existing_short_code": "24 / 69 Kait / 70 / SERIES 30-31",
+      "purpose": "Assess story quality, run craft passes, preserve quotations and media links, and expose VEO production clients.",
+      "implementation_as_reported": "mixed dry-run, templates and UI clients",
+      "evidence_as_reported": "Artifacts/services inspected; no execution."
+    },
+    {
+      "reference_id": "C29",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Argument grading and gap mapping",
+      "existing_short_code": "49 / 58 / 71",
+      "purpose": "Build/grade arguments, classify strength and originality, map covered/partial/missing arguments and assemble an argument kit.",
+      "implementation_as_reported": "implemented stations; some HTML views planned",
+      "evidence_as_reported": "Catalog/prompt pointers inspected; not run."
+    },
+    {
+      "reference_id": "C30",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Paper audit and intelligence chain",
+      "existing_short_code": "43 / 46 / 63 / 65",
+      "purpose": "Grade papers, compute statistics, combine reports, run a configured station chain and produce paper-intelligence outputs.",
+      "implementation_as_reported": "implemented stations/chain",
+      "evidence_as_reported": "Catalog/config/test filenames inspected; not run."
+    },
+    {
+      "reference_id": "C31",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "API Deep integrated analytics and publication gate",
+      "existing_short_code": "57",
+      "purpose": "Assemble per-paper analytics across overview, ledger, Fruits, Master Equation, Lean and axioms; package a source-hashed handoff.",
+      "implementation_as_reported": "implemented assembly; approval/publishing separate",
+      "evidence_as_reported": "Historical saved-run status inspected; no full paid run and no current approval verification."
+    },
+    {
+      "reference_id": "C32",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Canon review, decisions and publication records",
+      "existing_short_code": "72 / SERIES 33-39",
+      "purpose": "Review canon candidates and maintain attributed AI reviews, crew proposals/votes/rulings, private audit, publication, change log, gaps and export packets.",
+      "implementation_as_reported": "station plus templates; decisions require human ruling",
+      "evidence_as_reported": "Metadata/templates inspected; not run."
+    },
+    {
+      "reference_id": "C33",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "Receipts, attribution, history and undo",
+      "existing_short_code": "run.json / receipts / undo",
+      "purpose": "Record source/destination/hash, provider/model/prompt/response hashes, timestamps, costs, run status and reversible file actions across systems.",
+      "implementation_as_reported": "implemented independently in several systems",
+      "evidence_as_reported": "Representative receipts inspected; schemas not unified."
+    },
+    {
+      "reference_id": "C34",
+      "reference_scope": "Local row reference in this hash-bound discovery, not canonical identity",
+      "name": "React organizer, search, identity, taxonomy and rollback UI",
+      "existing_short_code": "frontend-v2",
+      "purpose": "Provide a low-friction UI for classification, search, system status, identity/taxonomy operations, activity and undo.",
+      "implementation_as_reported": "UI implemented; backend integration mixed/incomplete",
+      "evidence_as_reported": "README/package/services inspected; frontend not built or run."
+    }
+  ]
+}

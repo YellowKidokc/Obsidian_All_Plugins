@@ -1,5 +1,7 @@
 # Codex: build the focused Obsidian research workbench
 
+**Latest Semantic AI requirement:** read [Two installations and output control](docs/DUAL_SEMANTIC_AI_AND_OUTPUT_CONTROL.md). David wants two independently installable plugins with isolated identities/settings and one maintained shared engine: preserve existing Semantic AI and add a Series Workspace plugin. Implement explicit preview/annotation/managed-record/export routing instead of a wall of callouts. The companion role/output/prompt references live under `docs/series-automation-reference`; they remain specifications and review candidates, not current runtime results or a new identity authority.
+
 David's instruction: consolidate the collected tools into one focused Obsidian system. Keep useful components modular, reuse existing working code, and build the missing connections. This document is the current implementation handoff; older imported plans are references, not authorization to execute every historical script or replace the current architecture.
 
 ## Begin with the actual repository

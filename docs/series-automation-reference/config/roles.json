@@ -1,0 +1,389 @@
+{
+  "schema": "series.roles/0.1",
+  "status": "WORKING_DESIGN_NOT_MIGRATION_AUTHORITY",
+  "roles": [
+    {
+      "view_order": 1,
+      "code": "INB",
+      "title": "Inbox",
+      "inputs": "Intact arrivals",
+      "work": "Observe stable source bytes, hash and propose membership/routes.",
+      "fields": [
+        "arrival",
+        "source path",
+        "hash",
+        "declared identity",
+        "proposed role",
+        "hold reason"
+      ],
+      "outputs": "Intake and routing proposals",
+      "boundary": "Unstable or ambiguous sources remain on HOLD.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 2,
+      "code": "REV",
+      "title": "AI Crew and Review",
+      "inputs": "Reads, reviews, votes, concerns and contributions",
+      "work": "Queue exact-edition reviews, append votes/issues and evaluate explicit policy.",
+      "fields": [
+        "target hash",
+        "reviewer",
+        "read scope",
+        "findings",
+        "vote",
+        "policy reference"
+      ],
+      "outputs": "Review queue, issue history, attribution and pending decisions",
+      "boundary": "Read is not agreement; a model cannot sign for David.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 3,
+      "code": "STR",
+      "title": "Structure and Navigation",
+      "inputs": "Standards, manifests, templates and navigation",
+      "work": "Validate manifests and role applicability; generate navigation and Bases.",
+      "fields": [
+        "workspace kind",
+        "existing IDs",
+        "roles",
+        "requiredness",
+        "roots",
+        "schema version"
+      ],
+      "outputs": "Setup preview and series indexes",
+      "boundary": "Do not rename existing folders or create 21 roles inside every paper.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 4,
+      "code": "CAN",
+      "title": "Canonical Selection",
+      "inputs": "Actual authorized edition selections",
+      "work": "Validate ruling provenance and exact selected edition; show pending recommendations.",
+      "fields": [
+        "work",
+        "edition hash",
+        "ruling authority",
+        "scope",
+        "conditions"
+      ],
+      "outputs": "Authority and pending-eligibility views",
+      "boundary": "A successful API call, CAN folder or confidence score does not admit canon.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 5,
+      "code": "SYN",
+      "title": "Paradigm and Synthesis",
+      "inputs": "Integrated argument and alternatives",
+      "work": "Prepare bounded synthesis tasks and identify missing joins.",
+      "fields": [
+        "question",
+        "premises",
+        "case references",
+        "alternatives",
+        "scope"
+      ],
+      "outputs": "Synthesis drafts and argument overview",
+      "boundary": "Generated synthesis remains a draft.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 6,
+      "code": "CAS",
+      "title": "The Case",
+      "inputs": "Claims and their whole supporting/challenging case",
+      "work": "Link claims to assumptions, evidence, falsifiers, objections and exact proofs; report stale support.",
+      "fields": [
+        "claim",
+        "source span",
+        "assumptions",
+        "evidence",
+        "kill condition",
+        "objections",
+        "dependencies",
+        "scope"
+      ],
+      "outputs": "Case cards and dependency-impact reports",
+      "boundary": "Use addressable sections initially; split independent records when needed, not every sentence.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 7,
+      "code": "HIS",
+      "title": "Intellectual History",
+      "inputs": "Earlier models and documented changes",
+      "work": "Track explicit predecessor/successor and attributed reasons.",
+      "fields": [
+        "prior edition",
+        "successor",
+        "reason",
+        "source",
+        "decision"
+      ],
+      "outputs": "History and retained-edition views",
+      "boundary": "Newest timestamp is not authority; inferred lineage stays proposed.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 8,
+      "code": "MTH",
+      "title": "Mathematics and Operators",
+      "inputs": "Equations, derivations, operators and translations",
+      "work": "Check declared fields/versions, units/domains and prepare mathematical review.",
+      "fields": [
+        "expression",
+        "version/hash",
+        "variables",
+        "units",
+        "domain",
+        "assumptions",
+        "boundaries",
+        "steps",
+        "translation"
+      ],
+      "outputs": "Math cards and derivation-gap reports",
+      "boundary": "Field completion is not mathematical validity. Preserve compiler/project layout.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 9,
+      "code": "THE",
+      "title": "Theology and Scripture",
+      "inputs": "Passage uses, interpretations, doctrine and witnesses",
+      "work": "Resolve shared passages, compare quoted spans and index local uses.",
+      "fields": [
+        "passage",
+        "translation/edition",
+        "quoted span",
+        "use type",
+        "interpretation",
+        "disagreements",
+        "bridge reference"
+      ],
+      "outputs": "Scripture-use and theology views",
+      "boundary": "Passage, interpretation and proposed mathematical correspondence retain separate standing.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 10,
+      "code": "TRM",
+      "title": "Terms and Definitions",
+      "inputs": "Shared sense versions and local uses",
+      "work": "Resolve senses and detect proposed new or conflicting definitions.",
+      "fields": [
+        "term",
+        "sense reference",
+        "version",
+        "definition",
+        "context",
+        "source"
+      ],
+      "outputs": "Glossary and hover-definition payloads",
+      "boundary": "Do not merge different senses or infer agreement from repeated words.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 11,
+      "code": "RES",
+      "title": "Research and Sources",
+      "inputs": "Dossiers, source records, passages and literature",
+      "work": "Index acquisition/provenance and check locators; propose support relationships.",
+      "fields": [
+        "source type",
+        "permanent reference",
+        "edition",
+        "access date",
+        "locator",
+        "excerpt",
+        "provenance"
+      ],
+      "outputs": "Dossier and source-support review queue",
+      "boundary": "Resolving a citation or matching a quote does not establish relevance or support.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 12,
+      "code": "WRT",
+      "title": "Writing and Editions",
+      "inputs": "Drafts, articles and work editions",
+      "work": "Retain edition observations and explicit lineage; assemble writing packets.",
+      "fields": [
+        "work",
+        "edition/hash",
+        "audience",
+        "status",
+        "inputs",
+        "contribution"
+      ],
+      "outputs": "Edition register and writing requests",
+      "boundary": "Do not automatically rewrite manuscripts or merge distinct works by title.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 13,
+      "code": "RDR",
+      "title": "Reader Versions and Responses",
+      "inputs": "Reading levels, FAQs and speaker responses",
+      "work": "Prepare audience projections from permitted source-bound claims.",
+      "fields": [
+        "parent edition",
+        "audience",
+        "question",
+        "speaker/source",
+        "scope",
+        "review"
+      ],
+      "outputs": "FAQ and reader drafts",
+      "boundary": "Do not invent quotations or remove source qualifications.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 14,
+      "code": "STQ",
+      "title": "Stories and Quotations",
+      "inputs": "Illustration, satire, testimony and quotations",
+      "work": "Index story uses/provenance and prepare story/quote tasks.",
+      "fields": [
+        "illustrates reference",
+        "standing",
+        "source",
+        "format",
+        "attribution",
+        "use purpose"
+      ],
+      "outputs": "Story companions and quote cards",
+      "boundary": "Invented stories illustrate, not empirical evidence; historical accounts need evidence assessment.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 15,
+      "code": "ORB",
+      "title": "ORBITS Analysis",
+      "inputs": "Existing six core, twelve condition and ten spiritual fields",
+      "work": "Validate the versioned 28-field contract and source/actor/recipient/response distinctions.",
+      "fields": [
+        "contract version",
+        "system",
+        "operator",
+        "relation",
+        "boundaries",
+        "inputs",
+        "tests",
+        "extensions"
+      ],
+      "outputs": "ORBITS coverage and analysis requests",
+      "boundary": "Do not invent missing field definitions or reduce the full contract to its ten spiritual fields.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 16,
+      "code": "MED",
+      "title": "Media and Assets",
+      "inputs": "Audio, video, images, slides, captions and uses",
+      "work": "Inventory/probe assets and report empty/missing files and unresolved parents.",
+      "fields": [
+        "hash",
+        "type",
+        "duration/dimensions",
+        "transcript",
+        "parent/use",
+        "attribution"
+      ],
+      "outputs": "Media register and playback links",
+      "boundary": "A readable audio stream is not a reviewed transcript. Preserve asset packages.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 17,
+      "code": "RCP",
+      "title": "Runs and Verification Receipts",
+      "inputs": "Formal, computational and other execution records",
+      "work": "Check exact code/input/output bindings, toolchain, assumptions and current applicability.",
+      "fields": [
+        "run ID",
+        "tool/version",
+        "hashes",
+        "command",
+        "exit state",
+        "result",
+        "scope"
+      ],
+      "outputs": "Receipt and stale-evidence reports",
+      "boundary": "A failed run can be fully executed; compile success is scoped to exact statements/assumptions.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 18,
+      "code": "PAU",
+      "title": "Private Audit",
+      "inputs": "Restricted findings and private review bodies",
+      "work": "Enforce default exclusion from exports/model bundles, including indirect leaks.",
+      "fields": [
+        "privacy",
+        "allowed scope",
+        "edition",
+        "findings",
+        "approved public projection"
+      ],
+      "outputs": "Restricted review and export audit",
+      "boundary": "A privacy label alone does not enforce privacy; exports need an allowlist.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 19,
+      "code": "PUB",
+      "title": "Publication and Export",
+      "inputs": "Rendered pages and release/export packets",
+      "work": "Generate common-snapshot Markdown/HTML/Bases/maps with versioned manifests.",
+      "fields": [
+        "snapshot",
+        "template version",
+        "audience",
+        "assets",
+        "output hashes",
+        "release decision"
+      ],
+      "outputs": "Preview HTML and export bundles",
+      "boundary": "Rendering is not publication permission. No automatic deploy or external posting.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 20,
+      "code": "GAP",
+      "title": "Gaps and Missing Work",
+      "inputs": "Unresolved requirements, stale inputs and next tasks",
+      "work": "Compute gaps using applicability and records, not physical folder presence alone.",
+      "fields": [
+        "applicability",
+        "missing item",
+        "reason",
+        "owner",
+        "dependency",
+        "next task",
+        "completion condition"
+      ],
+      "outputs": "Gap queue and checkpoints",
+      "boundary": "Unknown/unavailable is not zero; unused optional roles are not automatically failures.",
+      "implementation": "SPECIFICATION_ONLY"
+    },
+    {
+      "view_order": 21,
+      "code": "SUP",
+      "title": "Superseded Editions",
+      "inputs": "Retained retired sources and explicit replacements",
+      "work": "Show retirement/supersession events and link to prior exact editions.",
+      "fields": [
+        "old/new edition",
+        "decision",
+        "reason",
+        "locations"
+      ],
+      "outputs": "Supersession history",
+      "boundary": "No deletion, ID reuse or automatic latest-wins selection.",
+      "implementation": "SPECIFICATION_ONLY"
+    }
+  ]
+}

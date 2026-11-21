@@ -1,0 +1,364 @@
+{
+  "schema": "semantic.workspace.task-registry.reference/0.1",
+  "status": "IMPLEMENTATION_INPUT_REQUIRES_REVIEW",
+  "roles_are_not_task_classes": true,
+  "automatic_fanout": false,
+  "provider_execution_default": false,
+  "task_families": [
+    {
+      "task_family": "P01",
+      "title": "P01 Claim extraction \u2014 extraction \u2014 M05 / Rigor 01",
+      "roles": [
+        "CAS",
+        "MTH",
+        "SYN",
+        "THE",
+        "WRT"
+      ],
+      "desired_outputs": [
+        "M05"
+      ],
+      "task_classes": [
+        "extraction"
+      ],
+      "mixed_classes_require_separate_runs": false,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P01 Claim extraction \u2014 extraction \u2014 M05 / Rigor 01"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P02",
+      "title": "P02 Foundation identification \u2014 extraction/criticism, separate calls \u2014 M06 / Rigor 02",
+      "roles": [
+        "CAS",
+        "MTH",
+        "STR",
+        "THE",
+        "TRM"
+      ],
+      "desired_outputs": [
+        "M06"
+      ],
+      "task_classes": [
+        "extraction",
+        "criticism"
+      ],
+      "mixed_classes_require_separate_runs": true,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P02 Foundation identification \u2014 extraction/criticism, separate calls \u2014 M06 / Rigor 02"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P03",
+      "title": "P03 Derivation criticism \u2014 criticism \u2014 M07 / Rigor 03",
+      "roles": [
+        "CAS",
+        "GAP",
+        "MTH",
+        "RCP"
+      ],
+      "desired_outputs": [
+        "M07"
+      ],
+      "task_classes": [
+        "criticism"
+      ],
+      "mixed_classes_require_separate_runs": false,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P03 Derivation criticism \u2014 criticism \u2014 M07 / Rigor 03"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P04",
+      "title": "P04 Source-support assessment \u2014 validation \u2014 M08 / Rigor 04",
+      "roles": [
+        "CAS",
+        "HIS",
+        "RES",
+        "STQ",
+        "THE"
+      ],
+      "desired_outputs": [
+        "M08"
+      ],
+      "task_classes": [
+        "validation"
+      ],
+      "mixed_classes_require_separate_runs": false,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P04 Source-support assessment \u2014 validation \u2014 M08 / Rigor 04"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P05",
+      "title": "P05 Scripture-use extraction \u2014 extraction \u2014 M09 / Rigor 04",
+      "roles": [
+        "CAS",
+        "RES",
+        "STQ",
+        "STR",
+        "THE"
+      ],
+      "desired_outputs": [
+        "M09"
+      ],
+      "task_classes": [
+        "extraction"
+      ],
+      "mixed_classes_require_separate_runs": false,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P05 Scripture-use extraction \u2014 extraction \u2014 M09 / Rigor 04"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P06",
+      "title": "P06 Theological interpretation comparison \u2014 extraction then criticism \u2014 M10 / Rigors 02, 04, 07, 08",
+      "roles": [
+        "CAN",
+        "CAS",
+        "HIS",
+        "RES",
+        "REV",
+        "THE"
+      ],
+      "desired_outputs": [
+        "M10"
+      ],
+      "task_classes": [
+        "extraction",
+        "criticism"
+      ],
+      "mixed_classes_require_separate_runs": true,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P06 Theological interpretation comparison \u2014 extraction then criticism \u2014 M10 / Rigors 02, 04, 07, 08"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P07",
+      "title": "P07 Alternatives reconstruction \u2014 criticism \u2014 M14 / Rigor 07",
+      "roles": [
+        "CAS",
+        "GAP",
+        "HIS",
+        "RES",
+        "SYN"
+      ],
+      "desired_outputs": [
+        "M14"
+      ],
+      "task_classes": [
+        "criticism"
+      ],
+      "mixed_classes_require_separate_runs": false,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P07 Alternatives reconstruction \u2014 criticism \u2014 M14 / Rigor 07"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P08",
+      "title": "P08 Failure and boundaries \u2014 criticism \u2014 M15 / Rigor 08",
+      "roles": [
+        "CAS",
+        "GAP",
+        "PAU",
+        "REV"
+      ],
+      "desired_outputs": [
+        "M15"
+      ],
+      "task_classes": [
+        "criticism"
+      ],
+      "mixed_classes_require_separate_runs": false,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P08 Failure and boundaries \u2014 criticism \u2014 M15 / Rigor 08"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P09",
+      "title": "P09 Dependency proposal \u2014 extraction \u2014 M03/M16 / Rigor 09",
+      "roles": [
+        "CAS",
+        "GAP",
+        "MED",
+        "MTH",
+        "PUB",
+        "RCP",
+        "RES",
+        "REV",
+        "STR",
+        "THE"
+      ],
+      "desired_outputs": [
+        "M03",
+        "M16"
+      ],
+      "task_classes": [
+        "extraction"
+      ],
+      "mixed_classes_require_separate_runs": false,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P09 Dependency proposal \u2014 extraction \u2014 M03/M16 / Rigor 09"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P10",
+      "title": "P10 Contribution comparison \u2014 criticism/validation \u2014 M17 / Rigor 10",
+      "roles": [
+        "HIS",
+        "RES",
+        "REV",
+        "SYN",
+        "WRT"
+      ],
+      "desired_outputs": [
+        "M17"
+      ],
+      "task_classes": [
+        "criticism",
+        "validation"
+      ],
+      "mixed_classes_require_separate_runs": true,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P10 Contribution comparison \u2014 criticism/validation \u2014 M17 / Rigor 10"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P11",
+      "title": "P11 Story/quotation classification \u2014 extraction/validation \u2014 M18",
+      "roles": [
+        "MED",
+        "RDR",
+        "RES",
+        "STQ",
+        "WRT"
+      ],
+      "desired_outputs": [
+        "M18"
+      ],
+      "task_classes": [
+        "extraction",
+        "validation"
+      ],
+      "mixed_classes_require_separate_runs": true,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P11 Story/quotation classification \u2014 extraction/validation \u2014 M18"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P12",
+      "title": "P12 Media semantic QA \u2014 validation \u2014 M19/O06",
+      "roles": [
+        "CAS",
+        "MED",
+        "MTH",
+        "PUB",
+        "RCP",
+        "RDR",
+        "REV",
+        "WRT"
+      ],
+      "desired_outputs": [
+        "M19",
+        "O06"
+      ],
+      "task_classes": [
+        "validation"
+      ],
+      "mixed_classes_require_separate_runs": false,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P12 Media semantic QA \u2014 validation \u2014 M19/O06"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "P13",
+      "title": "P13 Contradiction proposal \u2014 criticism \u2014 O04",
+      "roles": [
+        "CAS",
+        "GAP",
+        "REV",
+        "TRM"
+      ],
+      "desired_outputs": [
+        "O04"
+      ],
+      "task_classes": [
+        "criticism"
+      ],
+      "mixed_classes_require_separate_runs": false,
+      "prompt_source": {
+        "file": "docs/discovery/PROMPT_CANDIDATES.md",
+        "heading": "### P13 Contradiction proposal \u2014 criticism \u2014 O04"
+      },
+      "output_default": "preview_only",
+      "implementation": "REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "canon_assess",
+      "roles": [
+        "CAN",
+        "REV",
+        "GAP"
+      ],
+      "task_classes": [
+        "canon_assessment"
+      ],
+      "prompt": "Using exact supplied source editions, prior reviewed findings, blockers and actual governing rulings, recommend eligibility, conditions, rejection or cannot_assess. Cite scope and missing inputs. Do not create a ruling, alter canon, approve IDs or fabricate execution evidence.",
+      "output_default": "preview_only",
+      "implementation": "PROPOSED_REFERENCE_NOT_EXECUTED"
+    },
+    {
+      "task_family": "orbits28_extract",
+      "roles": [
+        "ORB",
+        "MTH",
+        "CAS"
+      ],
+      "task_classes": [
+        "extraction"
+      ],
+      "prompt": "Using the supplied source edition and actual orbits28 reference, propose source-located values for all six core, twelve condition and ten spiritual/moral fields. Mark unknown or not applicable with reasons. Keep source/actor/recipient/response separate, distinguish admitted premises from derivations, and list added bridges/tests rather than executing or claiming them. Do not infer divine and created-system properties interchangeably.",
+      "return_contract": "config/orbits28.reference.json",
+      "output_default": "preview_only",
+      "implementation": "PROPOSED_REFERENCE_NOT_EXECUTED"
+    }
+  ],
+  "result_contract": "../DUAL_SEMANTIC_AI_AND_OUTPUT_CONTROL.md",
+  "note": "Thirteen existing prompt families plus two separately marked canon/ORBITS proposals. These are not fifteen scheduled provider calls. Task schemas and output policies must be implemented/validated; absent details remain pending."
+}
