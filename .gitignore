@@ -21,3 +21,6 @@ templates/navigation/_templates/navigation.config.json
 
 apps/research-backend/theophysics_config.json
 **/.claude/settings.local.json
+
+plugins/semantic-series-workspace/data.json
+plugins/semantic-series-workspace/main.js

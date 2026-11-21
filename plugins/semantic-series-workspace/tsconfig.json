@@ -1,0 +1,15 @@
+{
+  "extends": "../semantic-ai/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2018",
+    "lib": ["DOM", "ES2020"],
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "obsidian": ["../semantic-ai/node_modules/obsidian"],
+      "@codemirror/state": ["../semantic-ai/node_modules/@codemirror/state"],
+      "@codemirror/view": ["../semantic-ai/node_modules/@codemirror/view"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}
